@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="../public/css/neat.css"/>
+    <link rel="stylesheet" href="../public/css/my_common.css"/>
+    <link rel="stylesheet" href="../public/css/swiper.min.css">
+    <link rel="stylesheet" href="css/address_management.css"/>
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function () {
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+                    };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+</head>
+<body>
+    <header>
+        <i class="return-btn"></i>
+        <h1 class="header-title">地址管理</h1>
+    </header>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">    <!--必须包有这层，滚动才会生效-->
+                <div class="single-address">
+                    <div class="consignee-mes">
+                        <p>
+                            <span class="consignee-name">何云</span>
+                            <span class="consignee-phone">15695481242</span>
+                        </p>
+                        <p class="consignee-address">北京海淀区四环到五环之间北京市海淀区上地东路科实大厦A座401北京海淀区四环到五环之间北京市海淀区上地东路科实大厦A座401</p>
+                    </div>
+                    <div class="operating clearfix">
+                        <div>
+                            <i class="circle-icon"></i>
+                            <span>设为默认</span>
+                        </div>
+                        <div>
+                            <label>
+                                <i class="edit-icon"></i>
+                                <span>编辑</span>
+                            </label>
+                            <label>
+                                <i class="delete-icon"></i>
+                                <span>删除</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="single-address">
+                    <div class="consignee-mes">
+                        <p>
+                            <span class="consignee-name">何云</span>
+                            <span class="consignee-phone">15695481242</span>
+                        </p>
+                        <p class="consignee-address">北京海淀区四环到五环之间北京市海淀区上地东路科实大厦A座401北京海淀区四环到五环之间北京市海淀区上地东路科实大厦A座401</p>
+                    </div>
+                    <div class="operating clearfix">
+                        <div>
+                            <i class="circle-icon"></i>
+                            <span>设为默认</span>
+                        </div>
+                        <div>
+                            <label>
+                                <i class="edit-icon"></i>
+                                <span>编辑</span>
+                            </label>
+                            <label>
+                                <i class="delete-icon"></i>
+                                <span>删除</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="single-address">
+                    <div class="consignee-mes">
+                        <p>
+                            <span class="consignee-name">何云</span>
+                            <span class="consignee-phone">15695481242</span>
+                        </p>
+                        <p class="consignee-address">北京海淀区四环到五环之间北京市海淀区上地东路科实大厦A座401北京海淀区四环到五环之间北京市海淀区上地东路科实大厦A座401</p>
+                    </div>
+                    <div class="operating clearfix">
+                        <div>
+                            <i class="circle-icon"></i>
+                            <span>设为默认</span>
+                        </div>
+                        <div>
+                            <label>
+                                <i class="edit-icon"></i>
+                                <span>编辑</span>
+                            </label>
+                            <label>
+                                <i class="delete-icon"></i>
+                                <span>删除</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="single-address">
+                    <div class="consignee-mes">
+                        <p>
+                            <span class="consignee-name">何云</span>
+                            <span class="consignee-phone">15695481242</span>
+                        </p>
+                        <p class="consignee-address">北京海淀区四环到五环之间北京市海淀区上地东路科实大厦A座401北京海淀区四环到五环之间北京市海淀区上地东路科实大厦A座401</p>
+                    </div>
+                    <div class="operating clearfix">
+                        <div>
+                            <i class="circle-icon"></i>
+                            <span>设为默认</span>
+                        </div>
+                        <div>
+                            <label>
+                                <i class="edit-icon"></i>
+                                <span>编辑</span>
+                            </label>
+                            <label>
+                                <i class="delete-icon"></i>
+                                <span>删除</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-scrollbar"></div>
+    </div>
+    <footer class="address-management-footer">
+        <div>新增收货地址</div>
+    </footer>
+    <script src="../public/js/jquery.js"></script>
+    <script src="../public/js/swiper.min.js"></script>
+    <script src="js/address.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/address/css/address_list.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/address/css/address_management.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/address/css/new_address.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/address/js/address.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/index/css/index.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/index/js/index.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/login/css/login.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/login/js/login_about.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/my_center/css/feedback.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/my_center/css/help_feedback.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/my_center/css/my_center.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/my_center/css/my_message.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/my_center/css/personal_information.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/my_center/css/system-function.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/my_center/js/my_center.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/order/css/confirm_order.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/order/css/my_order.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/order/css/order_details.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/order/css/payment.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/order/css/success_payment.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/order/js/order.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/product/css/product_details.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/product/css/product_list.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/product/js/product.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/js/jump.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/sass/my_common.scss" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shoppingcar/css/shoppingcar.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shoppingcar/js/shoppingcar_01.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sort/css/sort.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sort/js/sort.js" charset="UTF-8" />
+  </component>
+</project>

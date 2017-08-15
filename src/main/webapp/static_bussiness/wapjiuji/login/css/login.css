@@ -1,0 +1,87 @@
+.content-padded{
+    margin:10px;
+}
+.login-panel{
+    border:1px solid #e8e8e8;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+.input-row{
+    height:45px;
+    position: relative;
+    background-color:#fff;
+}
+.input-row{
+    border-bottom:1px solid #e8e8e8;
+}
+.person-icon,
+.lock-icon,
+.code-icon{
+    font-size: 20px;
+    color: #bab9b9;
+    padding: 0 15px 0 14px;
+    float: left;
+    width: 13%;
+    margin-top: 4px;
+}
+.eye-hidden-icon,
+.eye-show-icon{
+    position: absolute;
+    right: 15px;
+    font-size: 20px;
+    color: #bab9b9;
+    bottom: 3px;
+    width: 40px;
+    text-align: center;
+}
+.person-icon:before{
+    content:'\ee39';
+}
+.lock-icon:before{
+    content:'\ee33';
+}
+.eye-hidden-icon:before{
+    content:'\e9ef';
+}
+.eye-show-icon:before{
+    content: '\e9ee';
+}
+.code-icon:before{
+    content:'\e033';
+}
+.user-account,
+.login-password,
+.confirm-password,
+.reset-password,
+.new-password{
+    font-size:16px;
+    width:72%;
+    overflow: hidden;
+}
+.user-password{
+    font-size:16px;
+    width:70%;
+    overflow: hidden;
+}
+.verification-code{
+    font-size:16px;
+    width:70%;
+    overflow: hidden;
+}
+.protocol span{
+    font-size:16px;
+    color:#999;
+    padding-top: 5px;
+    float: left;
+}
+.fast-reg{
+    float:left;
+    font-size:16px;
+    color:#5F5F5F;
+}
+.forget-pdw{
+    float:right;
+    font-size:16px;
+    color:#5F5F5F;
+}
+

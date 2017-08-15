@@ -1,0 +1,120 @@
+.swiper-container {
+    width: 100%;
+    /*height: 100%;*/
+    bottom:0;
+}
+.swiper-slide {
+    font-size: 18px;
+    height: auto;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.product-list-header{
+    height:60px;
+    display: flex;
+    justify-content: flex-start;
+    align-content: space-between;
+}
+.product-list-header .return-btn{
+    padding-top:12px;
+    flex:1;
+}
+.product-list-header .search-box{
+    flex: 9;
+}
+.product-list-header .shopping-car-area{
+    flex: 1;
+    padding-top: 9px;
+    margin-left: 10px;
+    padding-left:10px;
+    position: relative;
+}
+.product-list-header .shopping-car-icon{
+    font-size: 24px;
+    color: #fff;
+}
+.product-list-header .shopping-car-icon:before{
+    content: '\e95d';
+}
+.product-list{
+    display: flex;
+    flex-wrap: wrap;
+    padding:10px;
+}
+.product-item{
+    flex-basis: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.product{
+    flex: 1;
+    background-color:#fff;
+    padding:5px;
+    margin-bottom:10px;
+    max-width: 50%;
+}
+.product-item .product:nth-child(1){
+    margin-right:10px;
+}
+.product-img{
+    margin-bottom:10px;
+}
+.product-img img{
+    width:100%;
+    height:6rem;
+}
+.product-name{
+    color:#000;
+    font-size:14px;
+    line-height: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    height:20px;
+}
+.product-intro{
+    color:#666;
+    font-size:14px;
+    color: #666;
+    font-size: 14px;
+    line-height: normal;
+    overflow: hidden;
+    width: 100%;
+    height: 60px;
+    margin-bottom:10px;
+}
+.product-area{
+    color:#999;
+    font-size:12px;
+    margin-bottom:15px;
+    line-height: normal;
+}
+.product-bottom{
+    position:relative;
+}
+.current-price{
+    color:#e21c29;
+    font-size:16px;
+    line-height: normal;
+}
+.original-price{
+    color:#999;
+    font-size:14px;
+    line-height: normal;
+}
+.shopping-car{
+    font-family: myfont;
+    background-color: #ffbd83;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: #fff;
+    font-size: 22px;
+}

@@ -1,0 +1,91 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.jiujichina</groupId>
+  <artifactId>jiujichina-jiuji</artifactId>
+  <packaging>war</packaging>
+  <version>1.0.0</version>
+  <name>jiuji</name>
+  <url>http://maven.apache.org</url>
+  
+ <repositories>
+       <repository>
+           <id>nexus</id>
+            <name>Team Nexus Repository</name>
+            <url>http://www.jiujichina.com:8081/nexus/content/groups/public</url>
+       </repository>
+        
+  </repositories>
+   
+  <dependencies>
+ 
+    <dependency>
+	  <groupId>com.jiujichina</groupId>
+	  <artifactId>jiujichina-base</artifactId>
+	  <version>1.0.14</version> 
+	</dependency>
+	 
+
+	 <!-- sso -->
+	<dependency>
+	    <groupId>org.jasig.cas.client</groupId>
+	    <artifactId>cas-client-core</artifactId>
+	    <version>3.2.1</version>
+	</dependency>
+
+	<!-- https://mvnrepository.com/artifact/org.mybatis.caches/mybatis-ehcache -->
+	<dependency>
+	    <groupId>org.mybatis.caches</groupId>
+	    <artifactId>mybatis-ehcache</artifactId>
+	    <version>1.0.2</version>
+	</dependency>
+	
+	 
+	 
+  <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-ehcache -->
+	<dependency>
+	    <groupId>org.hibernate</groupId>
+	    <artifactId>hibernate-ehcache</artifactId>
+	    <version>4.2.8.Final</version>
+	</dependency>
+  
+	
+
+  </dependencies>
+    
+  <build>
+    <finalName>jiuji</finalName>
+    <defaultGoal>compile</defaultGoal>
+    
+  <!--    <plugins>  
+            <plugin>  
+                <groupId>org.apache.maven.plugins</groupId>  
+                <artifactId>maven-resources-plugin</artifactId>  
+                <configuration>  
+                    <overwrite>true</overwrite>  
+                </configuration>  
+            </plugin>  
+            <plugin>  
+                <artifactId>maven-compiler-plugin</artifactId>  
+                <configuration>  
+                    <source>1.5</source>  
+                    <target>1.5</target>  
+                </configuration>  
+            </plugin>  
+        </plugins>   -->
+        
+  </build>
+  
+<!--   <distributionManagement> 
+		<repository>
+			<id>releases</id>
+			<name>Nexus Release Repository</name>
+			<url>http://www.jiujichina.com:8081/nexus/content/repositories/releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>snapshots</id>
+			<name>Nexus Snapshot Repository</name>
+			<url>http://www.jiujichina.com:8081/nexus/content/repositories/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>   -->
+</project>

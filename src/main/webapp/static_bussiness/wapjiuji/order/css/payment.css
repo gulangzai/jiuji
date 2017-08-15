@@ -1,0 +1,51 @@
+.swiper-container {
+    width: 100%;
+    top:44px;
+    bottom:0;
+}
+.swiper-slide {
+    height: auto;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.total{
+    background-color: #fff;
+    padding: 0.3rem 0.5rem;
+    font-size:16px;
+    border-bottom:1px solid #e6e6e6;
+}
+.total p:nth-child(1){
+    float:left;
+}
+.total p:nth-child(2){
+    float:right;
+}
+.option{
+    padding:0.3rem;
+    background-color:#fff;
+    height:2rem;
+    border-bottom:1px solid #e6e6e6;
+}
+.option-img{
+    float: left;
+    width:2rem;
+    height: 2rem;
+    margin-right: 10px;
+}
+.option-name{
+    float: left;
+}
+.option-name p:nth-child(1){
+    font-size: 0.7rem;
+    line-height: normal;
+    margin-bottom: 2px;
+}
+.option-name p:nth-child(2){
+    font-size:0.6rem;
+    line-height: normal;
+    color:#999;
+}
+.right-icon{
+    float:right;
+    line-height:2rem;
+}

@@ -1,0 +1,25 @@
+.swiper-container {
+    width: 100%;
+    top:44px;
+    bottom:0;
+    background-color:#fff;
+}
+.swiper-slide {
+    height: auto;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.notice-word{
+    font-size:16px;
+    text-align: center;
+    margin: 20px 0;
+}
+.btns button{
+    float:left;
+    width:120px;
+    height:35px;
+    line-height: 35px;
+    font-size: 14px;
+    margin:0 20px;
+    padding: 0;
+}

@@ -1,0 +1,73 @@
+label{
+    cursor: none;
+}
+.swiper-container {
+    width: 100%;
+    top:44px;
+    bottom:50px;
+}
+.swiper-slide {
+    height: auto;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.single-address{
+    background-color:#fff;
+    border-top:1px solid #e6e6e6;
+    border-bottom:1px solid #e6e6e6;
+    margin:10px 0;
+    padding-left:0.5rem;
+}
+.consignee-mes{
+    padding:0.5rem 0.5rem 0.5rem 0;
+    border-bottom:1px solid #e6e6e6;
+}
+.consignee-mes p:nth-child(1){
+    font-size:16px;
+    color:#131313;
+}
+.consignee-name{
+    width:32%;
+    display:block;
+    float:left;
+}
+.consignee-address{
+    font-size:16px;
+    color:#7e7e7e;
+}
+.operating{
+    padding-right:0.5rem;
+}
+.operating div:nth-child(1){
+    float:left;
+}
+.operating div:nth-child(1) .circle-icon{
+    vertical-align: middle;
+}
+.operating div:nth-child(1) span{
+    font-size:16px;
+}
+.operating div:nth-child(2){
+    float:right;
+}
+.edit-icon{
+    font-size:20px;
+    vertical-align: middle;
+}
+.delete-icon{
+    font-size:20px;
+    vertical-align: middle;
+}
+.operating label{
+    margin-right:8px;
+}
+.operating label span{
+    font-size:16px;
+}
+.address-management-footer div{
+    font-size:16px;
+    line-height: 50px;
+    color:#fff;
+    text-align: center;
+    width: 100%;
+}

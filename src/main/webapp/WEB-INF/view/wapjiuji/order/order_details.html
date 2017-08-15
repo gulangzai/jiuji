@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="../public/css/neat.css"/>
+    <link rel="stylesheet" href="../public/css/my_common.css"/>
+    <link rel="stylesheet" href="../public/css/swiper.min.css">
+    <link rel="stylesheet" href="css/order_details.css"/>
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function () {
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+                    };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+</head>
+<body>
+    <header>
+        <i class="return-btn"></i>
+        <h1 class="header-title">订单详情</h1>
+    </header>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">    <!--必须包有这层，滚动才会生效-->
+                <div class="order-mes">
+                    <p><span>订单编号：</span><span>12584623654</span></p>
+                    <p><span>下单时间：</span><span>2016-02-18 11:04:23</span></p>
+                </div>
+                <div class="address">
+                    <div class="user-mes clearfix">
+                        <p><i class="person-icon"></i><span>何云</span></p>
+                        <p><i class="mobile-icon"></i><span>18501226791</span></p>
+                    </div>
+                    <div class="specific-address">北京市海淀区上地信息路甲3号科实大厦 A座201</div>
+                </div>
+                <div class="product-list">
+                    <div class="shop">
+                        <div class="shop-about">
+                            <i class="shop-icon"></i>
+                            <span class="shop-name">康恩大药房</span>
+                        </div>
+                    </div>
+                    <div class="goods">
+                        <img src="img/product.jpg" alt="" class="product-img"/>
+                        <div class="r">
+                            <div class="l">
+                                <p class="product-name">
+                                    <span class="short-name">的沙发看电视了放假打算离开房间的思考了几分收到了房贷首付款就是</span>
+                                    <span class="product-size">15克</span>
+                                </p>
+                                <p class="num">×<span>2</span></p>
+                            </div>
+                            <p class="current-price">¥<span>145.00</span></p>
+                        </div>
+                    </div>
+                    <div class="goods">
+                        <img src="img/product.jpg" alt="" class="product-img"/>
+                        <div class="r">
+                            <div class="l">
+                                <p class="product-name">
+                                    <span class="short-name">的沙发看电视了放假打算离开房间的思考了几分收到了房贷首付款就是</span>
+                                    <span class="product-size">15克</span>
+                                </p>
+                                <p class="num">×<span>2</span></p>
+                            </div>
+                            <p class="current-price">¥<span>145.00</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="total">
+                    <p>共<span>1</span>件商品&nbsp;</p>
+                    <p>合计：<span class="balance">¥<span>290</span></span>&nbsp;</p>
+                    <p>(含运费：<span>0.00</span>元)</p>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-scrollbar"></div>
+    </div>
+    <footer class="order-details-footer">
+        <div class="check-logistics-btn">查看物流</div>
+        <div class="confirm-receipt-btn">确认收货</div>
+    </footer>
+    <script src="../public/js/jquery.js"></script>
+    <script src="../public/js/swiper.min.js"></script>
+    <script src="js/order.js"></script>
+</body>
+</html>

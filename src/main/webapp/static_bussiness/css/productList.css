@@ -1,0 +1,120 @@
+body{
+   margin:0 0 0 0;
+   padding:0 0 0 0;  
+   /*background-color:#CEEFCE; */
+}
+ 
+#container{  
+      width:960px; 
+      margin:0 0 0 0;
+      padding:0 0 0 0; 
+      /* border:1px solid yellow;    */
+      text-align:left; 
+      background:#FFFFF0;
+}
+a{
+	color:black;
+	text-decoration:none;
+}
+a:hover{
+	color:blue;
+	text-decoration:underline;
+}
+#title{ 
+	margin-top:10px; 
+	text-align:center; 
+	width:960px; 
+	height:40px;
+	color:black;
+    /*background-image:url("../images/product/connectblack.png"); */
+    background:#FFDEAD;
+    border:1px solid yellow;
+    font-size:16px;
+    color:red;
+    
+}
+.goodtitles{
+	width:960px;
+	height:100px;
+	background:url("../images/product/goodtitle3.jpg") repeat-x;
+	margin-top:0px;
+	border:1px solid red;
+}
+.goodtitles img{
+	margin-left:0px;
+	border:0;
+	width:100px;
+	height:80px;
+	margin-top:10px;
+}
+#pic{
+	width:400px;
+	height:430px;
+	border:1px solid #FF9966;
+	
+}
+
+/* img{
+	width:400px;
+	height:430px;
+	border:0px solid #FF9966;
+} */
+.goodinfobasic{
+	font-size:16px;
+	color:#999999;
+	font-family: Georgia, serif;
+}
+.goodprice{
+	margin-top:-30px;
+	font-size:35px;
+	font-family: sans-serif;
+	color:red;
+	margin-left:100px;
+	font-weight:bold;
+}
+.goodinfoshux{
+	width:400px;
+	height:70px;
+	border:0px solid red;
+	float:left;
+}
+.mess{ 
+	width:400px;
+	height:450px;
+	border:1px solid #FF9966; 
+	margin-left:430px;
+	margin-top:-433px;
+   
+	
+}
+
+.mess div{
+	margin-top:10px;
+	margin-left:10px; 
+}
+.goodinfo{
+	margin-left:0px;
+	width:960px;
+	height:450px;
+	margin-top:20px;
+	border:1px solid #FF9966 ;
+}
+#connect{
+	width:300px;
+	height:100px;
+	background-image:url("../images/product/connectblack.png");
+}
+
+button{
+	margin-left:50px;
+	float:left;
+}
+
+#desc{
+	margin-top:10px;
+	clear:both;
+	width:960px;
+	height:150px; 
+	border:1px solid #FF9966;
+
+}

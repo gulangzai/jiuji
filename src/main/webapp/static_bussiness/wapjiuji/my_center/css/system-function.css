@@ -1,0 +1,44 @@
+.swiper-container {
+    width: 100%;
+    top:44px;
+    bottom:0;
+}
+.swiper-slide {
+    height: auto;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.option{
+    background-color:#fff;
+    border-bottom: 1px solid #e6e6e6;
+    padding:0.5rem;
+    height:1.2rem;
+}
+.option:nth-child(1){
+    border-top: 1px solid #e6e6e6;
+    margin-top:10px;
+}
+.option span{
+    float:left;
+    font-size:16px;
+}
+.option div{
+    float:right;
+}
+.option .right-icon{
+    font-size:16px;
+    float:left;
+    margin-left:10px;
+}
+.quit-btn{
+    width: 15rem;
+    margin: 15px auto;
+    display: block;
+}
+.toggle-on-icon,
+.toggle-off-icon{
+    line-height: normal;
+    vertical-align: top;
+    width: 50px;
+    text-align: right;
+}

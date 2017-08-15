@@ -1,0 +1,241 @@
+.swiper-container {
+    width: 100%;
+    /*height: 100%;*/
+    top:44px;
+    bottom:50px;
+}
+.swiper-slide {
+    height: auto;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.address{
+    background-color:#f9eeef;
+    height:80px;
+    margin-top:5px;
+    padding: 10px 0 10px 10px;
+    color:#666;
+    display: flex;
+}
+.l{
+    flex: 3;
+}
+.user-mes{
+     height:30px;
+     line-height: 30px;
+ }
+.user-mes p:nth-child(1){
+    float:left;
+}
+.user-mes p:nth-child(2){
+    float:right;
+}
+.user-mes span{
+    font-size:18px;
+    vertical-align: middle;
+    margin-left:5px;
+}
+.person-icon{
+    font-family: myfont;
+    font-size:16px;
+    color:#f9b1b5;
+    vertical-align: middle;
+}
+.person-icon:before{
+    content:'\e9cc';
+}
+.mobile-icon{
+    font-family: myfont;
+    font-size:16px;
+    color:#f9b1b5;
+    vertical-align: middle;
+}
+.mobile-icon:before{
+    content:'\e950';
+}
+.specific-address{
+    clear:both;
+    font-size:15px;
+    height: 55px;
+}
+.right-icon{
+    flex:0.5;
+    text-align: center;
+    line-height: 80px;
+}
+.fill-in-address{
+    background-color: #f9eeef;
+    margin-top: 5px;
+    padding: 10px;
+    color: #666;
+    font-size:14px;
+    height:20px;
+    display: none;
+}
+.fill-in-address p{
+    float:left;
+    line-height:20px;
+}
+.fill-in-address .location-icon{
+    font-size:18px;
+    vertical-align: middle;
+}
+.fill-in-address .right-icon{
+    float:right;
+    line-height: normal;
+    font-size:16px;
+    line-height:20px;
+}
+.product-list{
+    margin:10px 0;
+}
+.product{
+    border-bottom:1px solid #e6e6e6;
+    background-color:#fff;
+    padding:0.5rem;
+    flex-basis: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.product:nth-child(1){
+    border-top:1px solid #e6e6e6;
+}
+.product-img{
+    flex:1.1;
+    border-radius: 5px;
+    border: 1px solid #e6e6e6;
+    width: 4rem;
+    height: 4rem;
+    margin-right: 10px;
+}
+.product-mes{
+    flex:3;
+}
+.product-name {
+    color: #666;
+    font-size: 0.7rem;
+    line-height: normal;
+}
+.product-address {
+    font-size: 0.6rem;
+    line-height: normal;
+    color: #8e8e8e;
+    margin: 6px 0;
+}
+.current-price {
+    line-height: normal;
+    color: #ff4b00;
+    font-size: 0.7rem;
+}
+.current-price p:nth-child(1){
+    float:left;
+}
+.current-price p:nth-child(2){
+    float:right;
+    color:#999;
+}
+.no-invoice{
+    border-top: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
+    background-color: #fff;
+    padding: 0.2rem 0.5rem;
+    font-size:16px;
+    height:1.5rem;
+    line-height:1.5rem;
+    margin-bottom:10px;
+}
+.no-invoice span:nth-child(1){
+    float:left;
+}
+.no-invoice p{
+    float:right;
+}
+.no-invoice .right-icon{
+    font-size: 20px;
+    line-height: normal;
+    width: 25px;
+    text-align: center;
+    line-height: 1.5rem;
+}
+.invoice{
+    display: none;
+}
+.invoice-title-area{
+    border-top: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
+    background-color: #fff;
+    padding:0.2rem 0.5rem 0.5rem 0.5rem;
+    font-size:16px;
+    margin-bottom:10px;
+}
+.invoice-title{
+    width:98%;
+    padding-left:2%;
+    border-radius: 3px;
+    height:1.5rem;
+    line-height: 1.5rem;
+    font-size:14px;
+    margin:0 auto;
+    border: 1px solid #D8D8D8;
+}
+.invoice-con{
+    border-top: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
+    background-color: #fff;
+    /*padding:0.2rem 0.5rem 0.5rem 0.5rem;*/
+    font-size:16px;
+    margin-bottom:10px;
+}
+.invoice-con p{
+    border-bottom:1px solid #dcdcdc;
+    padding:0.2rem 0.5rem 0 0.5rem;
+}
+.options{
+    padding:0.2rem 0.5rem 0.5rem 0.5rem;
+}
+.options .circle-icon{
+    vertical-align: middle;
+    margin-right: 10px;
+}
+.options .circle-checked-icon{
+    vertical-align: middle;
+    margin-right: 10px;
+}
+.option-name{
+    vertical-align: middle;
+}
+.total{
+    border-top: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
+    background-color: #fff;
+    padding: 0.5rem;
+    font-size:16px;
+    height: 2.7rem;
+    line-height: 1.8em;
+    margin-bottom:10px;
+}
+.total div{
+    line-height: 1.4rem;
+}
+.p1{
+    float:left;
+}
+.p2{
+    float:right;
+}
+.account{
+    flex: 2;
+    color:#fff;
+    font-size:16px;
+    padding-left: 20px;
+    line-height: 50px;
+}
+.submit-order-btn{
+    flex:1;
+    font-size:16px;
+    line-height: 50px;
+    text-align: center;
+}
+footer{
+    padding: 0;
+}

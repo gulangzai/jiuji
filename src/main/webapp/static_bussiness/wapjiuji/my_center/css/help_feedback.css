@@ -1,0 +1,27 @@
+.swiper-container {
+    width: 100%;
+    top:44px;
+    bottom:0;
+}
+.swiper-slide {
+    height: auto;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.option{
+    background-color:#fff;
+    border-bottom: 1px solid #e6e6e6;
+    padding:0.5rem;
+}
+.option:nth-child(1){
+    border-top: 1px solid #e6e6e6;
+    margin-top:10px;
+}
+.option span{
+    float:left;
+    font-size:16px;
+}
+.option .right-icon{
+    float:right;
+    font-size:16px;
+}

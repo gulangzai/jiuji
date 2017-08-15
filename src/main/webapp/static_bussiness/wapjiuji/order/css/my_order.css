@@ -1,0 +1,118 @@
+.swiper-container {
+    width: 100%;
+    top:44px;
+    bottom:0;
+}
+.swiper-slide {
+    height: auto;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.single{
+    background-color:#fff;
+    margin-bottom:10px;
+}
+.order-list{
+    margin-top:10px;
+}
+.shop{
+    flex-basis: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    padding:0.1rem 0.5rem;
+    border-bottom:1px solid #e6e6e6;
+}
+.shop-about{
+    flex:3;
+}
+.shop-icon{
+    float: left;
+    margin-right: 10px;
+}
+.shop-name{
+    font-size:16px;
+    display: inline-block;
+    float: left;
+}
+.goods{
+    flex-basis: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    position:relative;
+    height:4rem;
+    border-bottom:1px solid #e6e6e6;
+}
+.product-img{
+    border-radius: 5px;
+    border:1px solid #e6e6e6;
+    width:4rem;
+    height:4rem;
+    margin-bottom:10px;
+    flex: 1.1;
+    margin-right:10px;
+}
+.r{
+    flex:3;
+    display: flex;
+}
+.l{
+    position:relative;
+    flex:2.5;
+}
+.product-name{
+    line-height: normal;
+    color:#666;
+    font-size:0.7rem;
+}
+.num{
+    line-height: normal;
+    color:#9F9F9F;
+    font-size:0.6rem;
+    position:absolute;
+    bottom:0;
+}
+.current-price{
+    line-height: normal;
+    color:#ff4b00;
+    font-size:0.7rem;
+    flex: 1.5;
+    text-align: center;
+}
+.total{
+    padding:0.4rem 0.5rem;
+}
+.total p{
+    font-size:0.5rem;
+    float:right;
+}
+.btns{
+    clear:both;
+}
+.primary-btn{
+    font-size: 13px;
+    text-align: center;
+    width: 65px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 3px;
+    margin-left: 5px;
+    margin-top: 5px;
+    float: right;
+    padding:0;
+}
+.state-box{
+    font-size: 13px;
+    text-align: center;
+    width: 65px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 3px;
+    margin-left: 5px;
+    margin-top: 5px;
+    float: right;
+    padding:0;
+    border:1px solid #AEAEAE;
+}

@@ -1,0 +1,35 @@
+.swiper-container {
+    width: 100%;
+    top:44px;
+    bottom:0;
+}
+.swiper-slide {
+    height: auto;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.mes{
+    padding:0.5rem;
+    background-color:#fff;
+    border-bottom: 1px solid #e6e6e6;
+    font-size:16px;
+}
+.mes p{
+    line-height: normal;
+}
+.mes:nth-child(1){
+    border-top: 1px solid #e6e6e6;
+    margin-top:10px;
+}
+.mes-title{
+    float:left;
+}
+.mes-time{
+    float:right;
+    color:#999;
+}
+.mes-con{
+    clear:both;
+    color:#999;
+    margin-top:5px;
+}

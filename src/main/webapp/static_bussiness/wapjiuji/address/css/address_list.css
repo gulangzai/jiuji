@@ -1,0 +1,57 @@
+.swiper-container {
+    width: 100%;
+    top:44px;
+    bottom:0;
+}
+.swiper-slide {
+    height: auto;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.single-address{
+    border-bottom: 1px solid #e6e6e6;
+    display: flex;
+    padding:0 0.5rem;
+    background-color:#fff;
+}
+.single-address:nth-child(1){
+    border-top: 1px solid #e6e6e6;
+    margin-top:10px;
+}
+.circle-checked-icon{
+    flex: 1;
+    margin-top:1.2rem;
+    display: none;
+}
+.consignee-mes{
+    flex: 7;
+    padding:0.5rem 0.5rem 0.5rem 0;
+}
+.consignee-mes p:nth-child(1){
+    font-size:16px;
+    color:#131313;
+}
+.consignee-name{
+    width:32%;
+    display:block;
+    float:left;
+}
+.consignee-address-details{
+    font-size:16px;
+    color:#7e7e7e;
+}
+.edit-icon{
+    flex:1;
+    margin-top:1.2rem;
+    text-align: center;
+}
+.default-address-sign{
+    display: none;
+}
+.address-list-footer div{
+    font-size:16px;
+    line-height: 50px;
+    color:#fff;
+    text-align: center;
+    width: 100%;
+}
