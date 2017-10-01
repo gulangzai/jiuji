@@ -5,7 +5,7 @@
  
   
   <sql id="Base_Column_List" > 
-     F_USER_ID,F_UserName,F_Email,F_Mobile,F_Password,F_Deleted
+     F_USER_ID,F_UserName,F_Email,F_Mobile,F_Password,F_Deleted,F_OPEN_ID
   </sql>
   
   
@@ -23,8 +23,11 @@
 		<if test="F_Mobile !=null and F_Mobile != ''">  
 	     	 AND F_Mobile =  #{F_Mobile,jdbcType=VARCHAR} 
 		</if> 
+		
+		AND F_Deleted = 1
+		
       </where>
-       AND F_Deleted = 1
+        
    </select>
    
   <select id="registerSelectF_UserName" parameterType="pd" resultType="pd">
@@ -69,7 +72,8 @@
       select 
          <include refid="Base_Column_List" />
       from tb_user
-      <where>
+      <where> 
+          1 = 1 
 		<if test="F_UserName !=null and F_UserName != ''">  
 	     	 AND F_UserName =  #{F_UserName,jdbcType=VARCHAR} 
 		</if> 
@@ -81,9 +85,14 @@
 		</if> 
 		<if test="F_Password !=null and F_Password != ''">  
 	     	  AND F_Password =  #{F_Password,jdbcType=VARCHAR}  
-		</if>   
+		</if> 
+		<if test="F_OPEN_ID !=null and F_OPEN_ID != ''">  
+	     	  AND F_OPEN_ID =  #{F_OPEN_ID,jdbcType=VARCHAR}  
+		</if>  
+		 AND F_Deleted = 1
+		  
      </where>
-    AND F_Deleted = 0
+   
    </select>
    
      <select id="selectOnlyone" parameterType="pd" resultType="pd">
@@ -126,11 +135,48 @@
    
    
    <insert id="insert" parameterType="pd" keyProperty="ID"> 
-    insert into tb_user (F_USER_ID, F_UserName,F_Sex,F_Mobile,F_Email, 
-      F_Password, F_Deleted,F_RealPassword,F_Ip)
-      values (#{F_USER_ID,jdbcType=VARCHAR},#{F_UserName,jdbcType=VARCHAR},#{F_Sex,jdbcType=INTEGER},#{F_Mobile,jdbcType=VARCHAR},
-      #{F_Email,jdbcType=VARCHAR},#{F_Password,jdbcType=VARCHAR},#{F_Deleted,jdbcType=INTEGER},#{F_RealPassword,jdbcType=VARCHAR},#{F_Ip,jdbcType=CHAR}) 
+      insert into tb_user  
+      <trim prefix="(" suffix=")" suffixOverrides="," >
+      F_USER_ID, 
+      F_UserName,
+      F_Sex,
+      F_Mobile,
+      <if test="F_QQ != null" >
+         F_QQ,
+      </if>
+      <if test="F_OPEN_ID != null" >
+         F_OPEN_ID,
+      </if>
+      <if test="F_NickName != null" >
+         F_NickName,
+      </if>
+      F_Email, 
+      F_Password, 
+      F_Deleted,
+      F_RealPassword,
+      F_Ip
+      </trim> 
       
+       <trim prefix="values (" suffix=")" suffixOverrides="," >
+      #{F_USER_ID,jdbcType=VARCHAR},
+      #{F_UserName,jdbcType=VARCHAR},
+      #{F_Sex,jdbcType=INTEGER},
+      #{F_Mobile,jdbcType=VARCHAR},
+      <if test="F_QQ != null" >
+           #{F_QQ,jdbcType=VARCHAR},
+      </if>
+      <if test="F_OPEN_ID != null" >
+           #{F_OPEN_ID,jdbcType=VARCHAR},
+      </if>
+       <if test="F_NickName != null" >
+           #{F_NickName,jdbcType=VARCHAR},
+      </if>
+      #{F_Email,jdbcType=VARCHAR},
+      #{F_Password,jdbcType=VARCHAR},
+      #{F_Deleted,jdbcType=INTEGER},
+      #{F_RealPassword,jdbcType=VARCHAR},
+      #{F_Ip,jdbcType=CHAR} 
+       </trim> 
       	<selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="ID">
 	          SELECT LAST_INSERT_ID() AS ID
 	    </selectKey>
@@ -199,13 +245,18 @@
 			set 
 				F_UserName = #{F_UserName},
 				F_Birthday = #{F_Birthday},
-				F_NickName = #{F_NickName},
+				<if test="F_NickName != null" >
+				   F_NickName = #{F_NickName},
+				</if>
 				F_Sex = #{F_Sex},
 				F_Hometown = #{F_Hometown},
 				F_Email = #{F_Email},
 				F_Mobile = #{F_Mobile},
 				F_RealName = #{F_RealName},
-			    F_QQ = #{F_QQ}
+			    F_QQ = #{F_QQ},
+			   <if test="F_OPEN_ID != null" >
+			       F_OPEN_ID = #{F_OPEN_ID}
+			    </if>
 			    where 
 				F_USER_ID = #{F_USER_ID}
 	</update>

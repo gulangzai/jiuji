@@ -9,11 +9,11 @@
 		insert into tb_shouchang (
 							      F_USER_ID,  
 							      F_PRODUCT_ID,  
-					          CREATE_DATE
+					          F_CREATE_DATE
 		) values (
 							       #{F_USER_ID},  
 							       #{F_PRODUCT_ID},  
-					             #{CREATE_DATE}
+					             #{F_CREATE_DATE}
 		)
 		
 		<selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="F_SHOUCHANG_UID">
@@ -31,7 +31,7 @@
 					      (select F_ProductName from tb_product where tb_product.F_PRODUCT_ID = a.F_PRODUCT_ID) as F_ProductName, 
 					      (select F_Price from tb_product where tb_product.F_PRODUCT_ID = a.F_PRODUCT_ID) as F_SinglePrice, 
 					      (select F_Status from tb_product where tb_product.F_PRODUCT_ID = a.F_PRODUCT_ID) as F_STATUS, 
-			             date_format(a.CREATE_DATE,'%Y-%c-%d %h:%i:%s') as CREATE_DATE,
+			             date_format(a.F_CREATE_DATE,'%Y-%c-%d %h:%i:%s') as CREATE_DATE,
 				a.F_SHOUCHANG_UID
 		from 
 				tb_shouchang a where F_USER_ID = #{pd.F_USER_ID,jdbcType=VARCHAR} 
@@ -44,7 +44,7 @@
 	SELECT
 					      tbShouchang.F_USER_ID,  
 					      tbShouchang.F_PRODUCT_ID,  
-			             date_format(tbShouchang.CREATE_DATE,'%Y-%c-%d %h:%i:%s') as CREATE_DATE,
+			             date_format(tbShouchang.F_CREATE_DATE,'%Y-%c-%d %h:%i:%s') as CREATE_DATE,
 				tbShouchang.F_SHOUCHANG_UID,
 	(select PATH From tb_pictures tbpictures where tbpictures.TABLE_UID_VALUE = tbShouchang.F_SHOUCHANG_UID limit 0,1) AS PATH
 FROM

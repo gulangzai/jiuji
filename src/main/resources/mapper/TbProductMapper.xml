@@ -112,9 +112,8 @@ WHERE  F_PRODUCT_ID = #{F_PRODUCT_ID}
 			F_PATH7,
 			F_PATH8
 		from 
-			tb_product tp  where F_Status = 1 AND  F_MAIN = 1  order by F_ProductTime desc  limit 0,6 
-			
-   </select>
+			tb_product tp  where F_Status = 1 AND  F_MAIN = 1  order by F_ProductTime desc  limit 0,10
+	 </select>
    
    <select id="findNewHot" parameterType="pd" resultType="pd" useCache="true">
   	  
@@ -163,7 +162,7 @@ WHERE  F_PRODUCT_ID = #{F_PRODUCT_ID}
 			F_PATH7,
 			F_PATH8
 		from 
-			tb_product tp  where F_Status = 1  and F_IsSpecial=0   AND  F_MAIN = 1   order by F_Degree  desc  limit 0,6 
+			tb_product tp  where F_Status = 1  and F_IsSpecial=0   AND  F_MAIN = 1   order by F_Degree  desc  limit 0,10 
  
 	    
    </select>
@@ -223,6 +222,14 @@ WHERE  F_PRODUCT_ID = #{F_PRODUCT_ID}
 			
    </select>
    
+   
+    <select id="findByClass" parameterType="com.jiuji.cn.business.tbclass.vo.TbClass" resultType="pd">  
+     select 
+            *
+		from 
+			tb_product tp  where F_Status = 1 AND F_MAIN=1  AND F_ClsId = #{FClsId} order by F_ProductTime desc limit 0,5
+			
+   </select>
    
 	<!-- 列表 -->
 	<select id="datalistPage" parameterType="page" resultType="pd">
@@ -348,6 +355,16 @@ WHERE  F_PRODUCT_ID = #{F_PRODUCT_ID}
       select 
          * from TB_PRODUCT where F_PRODUCT_ID=#{F_PRODUCT_ID,jdbcType=VARCHAR} AND F_STATUS = 1 
    </select>
+   
+   <select id="searchProduct" parameterType="com.jiuji.cn.business.tbproduct.modal.TbProduct" resultType="java.util.HashMap" useCache="true">
+         select 
+ (select F_ClsName from tb_class tc where  tc.F_ClsId = a.F_ClsId )AS F_ClsName,
+  a.F_ClsId,
+  a.F_ProductName,
+  a.count
+ from( 
+   select count(*) as count,F_ProductName,F_ClsId from tb_product where  F_ProductName like  CONCAT('%','${FProductName}','%' )  group by F_ClsId LIMIT 0,8)a
+  </select>
    
    
   <select id="queryByType"  parameterType="com.jiuji.cn.model.TProduct" resultType="pd" useCache="true"> 

@@ -121,13 +121,14 @@
         </property>
         <property name="filterChainDefinitions">
             <value> 
+                /fileUploadController/** = anon
                 /page/modules/help/** = anon
                 /homePageCtrl/toLogin.do* = anon
                 /homePageCtrl/toInformation.do = authc
                 /homePageCtrl/toWapInformation.do = authc
                 /tbshopcar/tbShopCarController/wapjiujiList* = anon
                 /tbshopcar/tbShopCarController/** = authc
-                /tbshouchang/tbShouChangController/** =authc
+                /tbshouchang/tbShouChangController/** = authc
                 /tbaddress/tbAddressController/** =authc 
                 /payCtrl/** =authc
                 /login.jsp* = anon

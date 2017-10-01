@@ -11,6 +11,11 @@
         select * from tb_class where F_PClsId = #{F_ClsId,jdbcType=INTEGER} AND  F_Status= 1 order by F_Order desc
      </select>
      
+      <select id="queryByParentClass" parameterType="com.jiuji.cn.business.tbclass.vo.TbClass" resultType="com.jiuji.cn.business.tbclass.vo.TbClass">
+        select F_ClsId as FClsId,F_ClsName as FClsName from tb_class where F_PClsId = #{FClsId,jdbcType=INTEGER} AND  F_Status= 1 order by F_Order desc limit 0,5
+     </select>
+     
+     
 	
 	<!-- 新增-->
 	<insert id="save" parameterType="pd">
