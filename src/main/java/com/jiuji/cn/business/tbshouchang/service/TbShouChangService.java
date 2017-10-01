@@ -6,6 +6,7 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
+import com.jiuji.cn.business.tbshouchang.vo.TbShouChang;
 import com.lanbao.base.Page;
 import com.lanbao.base.PageData;
 
@@ -18,7 +19,7 @@ public interface TbShouChangService {
 	/*
 	* save
 	*/
-	public int save(PageData pd)throws Exception;
+	public int save(TbShouChang pd)throws Exception;
 	
 	/*
 	* delete

@@ -9,7 +9,7 @@ import com.jiuji.cn.business.tbshopcar.dao.TbShopCarDao;
 import com.jiuji.cn.business.tbshopcar.service.TbShopCarService;
 import com.jiuji.cn.business.tbshouchang.dao.TbShouChangDao;
 import com.jiuji.cn.business.tbshouchang.service.TbShouChangService;
-
+import com.jiuji.cn.business.tbshouchang.vo.TbShouChang;
 import com.lanbao.base.PageData; 
 import com.lanbao.base.Page;
 
@@ -22,11 +22,12 @@ public class TbShouChangServiceImpl implements TbShouChangService {
 	
 	/*
 	* save
-	*/
-	public int save(PageData pd)throws Exception{
-		tbShouChangDao.mb_save("TbShouchangMapper.save", pd);
-		int F_SHOPCARDID = (int) pd.get("F_SHOUCHANG_UID");
-		return F_SHOPCARDID;
+	*/ 
+	public int save(TbShouChang tbShouChang)throws Exception{
+		int i = (int) tbShouChangDao.h_save(tbShouChang);
+		//h_save("TbShouchangMapper.save", pd);
+		//int F_SHOPCARDID = (int) pd.get("F_SHOUCHANG_UID");
+		return i;
 	}
 	
 	/*

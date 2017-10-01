@@ -35,6 +35,16 @@ public interface TbUserService{
 			String email)throws Exception;
 
 	PageData getUserByFuserId(String f_user_id) throws Exception;
+
+	ResultAction haveNoAccountUserQQbing(HttpServletRequest request, String username, String mobile, String password,
+			String email, String f_OPEN_ID,String F_NickName,String code)throws Exception;
+
+	ResultAction haveAccountUserQQbing(HttpServletRequest request, String username, String mobile, String password,
+			String email, String f_OPEN_ID,String F_NickName, String code) throws Exception;
+	
+	ResultAction sendCode(String mobile);
+
+	
 	
 
 }

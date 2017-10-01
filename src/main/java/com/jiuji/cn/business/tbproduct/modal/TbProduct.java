@@ -10,6 +10,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.jiuji.cn.business.tbclass.vo.TbClass;
+
 
 /**
  * TbProduct entity. @author MyEclipse Persistence Tools
@@ -51,6 +53,7 @@ public class TbProduct  implements java.io.Serializable {
      private String FLabel;
      private Integer FSaleNum;
      private String FWishItem;
+     private TbClass tbClass;
 
 
     // Constructors
@@ -402,6 +405,18 @@ public class TbProduct  implements java.io.Serializable {
     public void setFWishItem(String FWishItem) {
         this.FWishItem = FWishItem;
     }
+
+    @ManyToOne  
+    @JoinColumn(name="F_ClsId")   
+	public TbClass getTbClass() {
+		return tbClass;
+	}
+
+	public void setTbClass(TbClass tbClass) {
+		this.tbClass = tbClass;
+	}
+
+  
    
 
 

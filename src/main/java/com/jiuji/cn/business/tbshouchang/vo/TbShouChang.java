@@ -1,55 +1,72 @@
 package com.jiuji.cn.business.tbshouchang.vo;
 import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="tb_shouchang",catalog="shop") 
 public class TbShouChang {
 	
-           public String f_shopcardid = null;   
-           public String getF_shopcardid() {
-			return f_shopcardid;
-		   } 
-		   public void setF_shopcardid(String f_shopcardid) {
-			  this.f_shopcardid = f_shopcardid;
-		   } 
-        
-           public String f_user_id = null;   
-           public String getF_user_id() {
-			return f_user_id;
-		   } 
-		   public void setF_user_id(String f_user_id) {
-			  this.f_user_id = f_user_id;
-		   } 
-        
-           public String f_product_id = null;   
-           public String getF_product_id() {
-			return f_product_id;
-		   } 
-		   public void setF_product_id(String f_product_id) {
-			  this.f_product_id = f_product_id;
-		   } 
-        
-           public Date create_date = null;  
-           public Date getCreate_date() {
-			return create_date;
-		   } 
-		   public void setCreate_date(Date create_date) {
-			  this.create_date = create_date;
-		   } 
-        
-           public String f_singleprice = null;   
-           public String getF_singleprice() {
-			return f_singleprice;
-		   } 
-		   public void setF_singleprice(String f_singleprice) {
-			  this.f_singleprice = f_singleprice;
-		   } 
-        
-           public int f_buycount;   
-           public int getF_buycount() {
-			return f_buycount;
-		   } 
-		   public void setF_buycount(int f_buycount) {
-			  this.f_buycount = f_buycount;
-		   } 
-        
-        
+	private Integer FShouchangUid;     
+    
+	private Long FProductId;    
+	
+	private String FSku;
 	 
+	private String FUserId;
+	
+	private Date FCreateDate;
+	
+    @Id 
+    @GeneratedValue
+    @Column(name="F_SHOUCHANG_UID", unique=true, nullable=false)
+    public Integer getFShouchangUid() {
+		return FShouchangUid;
+	}
+
+	public void setFShouchangUid(Integer fShouchangUid) {
+		FShouchangUid = fShouchangUid;
+	}
+
+	@Column(name="F_PRODUCT_ID", length=200) 
+	public Long getFProductId() {
+		return FProductId;
+	}
+
+	public void setFProductId(Long fProductId) {
+		FProductId = fProductId;
+	}
+
+	@Column(name="F_SKU", length=200)
+	public String getFSku() {
+		return FSku;
+	}
+
+	public void setFSku(String fSku) {
+		FSku = fSku;
+	}
+
+	@Column(name="F_USER_ID", length=200)
+	public String getFUserId() {
+		return FUserId;
+	}
+
+	public void setFUserId(String fUserId) {
+		FUserId = fUserId;
+	}
+
+	@Column(name="F_CREATE_DATE")
+	public Date getFCreateDate() {
+		return FCreateDate;
+	}
+
+	public void setFCreateDate(Date fCreateDate) {
+		FCreateDate = fCreateDate;
+	}
+	
+	
 }

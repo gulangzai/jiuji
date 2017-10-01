@@ -47,10 +47,17 @@ public class TbUserDaoImpl<TbUser> extends BaseDaoImpl implements TbUserDao{
 	}
 
 	@Override
-	public List<PageData> select(PageData pd) throws Exception {
+	public List<PageData> registerSelect(PageData pd) throws Exception {
 		// TODO Auto-generated method stub
 		return (List<PageData>) mb_findForList("TbUserMapper.registerSelect", pd);
 	}
+	
+	@Override
+	public List<PageData> select(PageData pd) throws Exception {
+		// TODO Auto-generated method stub
+		return (List<PageData>) mb_findForList("TbUserMapper.select", pd);
+	}
+	
 	
 	@Override
 	public List<PageData> checkUsername(PageData pd) throws Exception {

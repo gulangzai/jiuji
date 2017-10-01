@@ -14,6 +14,6 @@ public interface ProductService {
 
 	List<PageData> queryByClsId(String f_clsId)throws Exception;
 
-	JSONArray searchProduct(String term);
+	JSONArray searchProduct(String term) throws Exception ;
 
 }

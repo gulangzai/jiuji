@@ -30,7 +30,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.jiuji.cn.business.pictures.service.TbPicturesService;
 import com.jiuji.cn.business.tbshopcar.service.TbShopCarService;
 import com.jiuji.cn.business.tbshouchang.service.TbShouChangService;
-
+import com.jiuji.cn.business.tbshouchang.vo.TbShouChang;
 import com.lanbao.base.Page;
 import com.lanbao.base.PageData;
 import com.lanbao.base.ResultAction;
@@ -60,30 +60,16 @@ public class TbShouChangController extends BaseController {
 	 */
 	@RequestMapping(value="/save")
 	@ResponseBody
-	public ResultAction save(HttpSession session) throws Exception{
-		
-		
+	public ResultAction save(HttpSession session,TbShouChang tbShouChang) throws Exception{ 
 		logBefore(logger, "TbShopCarController");
 		ModelAndView mv = this.getModelAndView();
 		PageData pd = new PageData();
 		pd = this.getPageData();   
 	    pd.put("F_USER_ID", session.getAttribute("F_USER_ID").toString());   
 		pd.put("CREATE_DATE",new Date());
-		int F_SHOPCARDID = tbShouChangService.save(pd);
-		
-		HttpServletRequest request = this.getRequest();
-		String[] PICTURES_IDs = request.getParameterValues("PICTURES_ID");
-		if(!"".equals(PICTURES_IDs)&&PICTURES_IDs!=null){
-			for(int i=0;i<PICTURES_IDs.length;i++){
-				//存图片
-				pd.put("PICTURES_ID", PICTURES_IDs[i]);
-				PageData picture = tbPicturesService.findById(pd); 
-				picture.put("TABLE_NAME", "TB_SHOPCAR");			 
-				picture.put("TABLE_UID_VALUE",F_SHOPCARDID);						  
-				tbPicturesService.update(picture);
-			} 
-		}
-		
+		tbShouChang.setFUserId(session.getAttribute("F_USER_ID").toString());
+		tbShouChang.setFCreateDate(new Date());
+		int F_SHOPCARDID = tbShouChangService.save(tbShouChang); 
 	    com.lanbao.base.ResultAction ra = new com.lanbao.base.ResultAction();
 		ra.setIserror(false);
 		return ra;

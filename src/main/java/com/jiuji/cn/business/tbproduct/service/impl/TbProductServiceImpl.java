@@ -9,6 +9,7 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.jiuji.cn.business.tbclass.vo.TbClass;
 import com.jiuji.cn.business.tbproduct.dao.TbProductDao;
 import com.jiuji.cn.business.tbproduct.service.TbProductService;
 import com.jiuji.cn.model.TBPictures;
@@ -123,6 +124,8 @@ public class TbProductServiceImpl implements TbProductService {
 		// TODO Auto-generated method stub
 		return tbProductDao.findNewGood();
 	}
+	
+	
 
 	@Override
 	public List<PageData> findNewSpecial() throws Exception {
@@ -148,6 +151,9 @@ public class TbProductServiceImpl implements TbProductService {
 		return tbProductDao.findBySize(tproduct);
 	}
 
-	
+	public List<PageData> findByClass(TbClass tbClass) throws Exception {
+		// TODO Auto-generated method stub
+		return tbProductDao.findByClass(tbClass);
+	}
 }
 

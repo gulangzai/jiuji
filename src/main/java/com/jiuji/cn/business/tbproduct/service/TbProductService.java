@@ -6,6 +6,7 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
+import com.jiuji.cn.business.tbclass.vo.TbClass;
 import com.jiuji.cn.model.TBPictures;
 import com.jiuji.cn.model.TProduct;
 
@@ -74,6 +75,8 @@ public interface TbProductService {
 	public List<PageData> findByColor(PageData tproduct)throws Exception;
 
 	public List<PageData> findBySize(PageData tproduct)throws Exception;
+
+	public List<PageData>  findByClass(TbClass tClass)throws Exception;
  
 
 	

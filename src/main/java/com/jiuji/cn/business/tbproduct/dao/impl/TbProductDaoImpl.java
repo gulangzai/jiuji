@@ -1,9 +1,11 @@
 package com.jiuji.cn.business.tbproduct.dao.impl;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
+import com.jiuji.cn.business.tbclass.vo.TbClass;
 import com.jiuji.cn.business.tbproduct.dao.TbProductDao;
 import com.jiuji.cn.model.TProduct;
 
@@ -54,6 +56,18 @@ public class TbProductDaoImpl extends BaseDaoImpl implements TbProductDao{
 	public List<PageData> findBySize(PageData tproduct) throws Exception {
 		// TODO Auto-generated method stub
 		return (List<PageData>) mb_findForList("TbProductMapper.findBySize",tproduct);
+	}
+
+	@Override
+	public List<HashMap> searchProduct(TProduct tProduct) throws Exception {
+		// TODO Auto-generated method stub
+		return (List<HashMap>) mb_findForList("TbProductMapper.searchProduct",tProduct);
+	}
+	
+	@Override
+	public List<PageData> findByClass(TbClass tbClass) throws Exception {
+		// TODO Auto-generated method stub
+		return (List<PageData>) mb_findForList("TbProductMapper.findByClass",tbClass);
 	}
 
 }

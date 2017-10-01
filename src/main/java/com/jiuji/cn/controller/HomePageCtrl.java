@@ -1,17 +1,34 @@
 package com.jiuji.cn.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.jiuji.cn.business.tbuser.dao.TbUserDao;
+import com.jiuji.cn.business.tbuser.service.TbUserService;
 import com.jiuji.cn.service.HomePageService;
 
 import com.lanbao.base.CommonController;
+import com.lanbao.base.PageData;
+import com.lanbao.utils.MD5Utils;
+import com.qq.connect.QQConnectException;
+import com.qq.connect.api.OpenID;
+import com.qq.connect.api.qzone.UserInfo;
+import com.qq.connect.javabeans.AccessToken;
+import com.qq.connect.javabeans.qzone.UserInfoBean;
+import com.qq.connect.oauth.Oauth;
+
+import sun.awt.ModalExclude;
 
 @Controller
 @RequestMapping("/homePageCtrl")
@@ -20,6 +37,9 @@ public class HomePageCtrl extends CommonController {
 	@Autowired
 	HomePageService homePageService;
 
+	@Autowired
+	TbUserDao tbUserDao;
+	
 	 
 	
 	@RequestMapping("/page/{modules}/{func}")
@@ -167,6 +187,52 @@ public class HomePageCtrl extends CommonController {
 	public String register() {
 		return "/modules/homepage/newRegister";
 	}
+	
+	
+	
+	@RequestMapping("/toBingUser")
+	public String toBingUser(HttpServletRequest request,Model model,HttpSession session) {
+		try {
+			AccessToken accessTokenObj = (new Oauth()).getAccessTokenByRequest(request);
+		   if(!accessTokenObj.getAccessToken().equals("")){
+			   String accessToken = accessTokenObj.getAccessToken();
+			   OpenID openIDObj = new OpenID(accessToken);
+			   String openID = openIDObj.getUserOpenID();
+			   UserInfo qzoneUserInfo = new UserInfo(accessToken, openID);
+			   UserInfoBean userInfoBean = qzoneUserInfo.getUserInfo();
+			   String nickname = userInfoBean.getNickname();
+			   model.addAttribute("openID",openID);
+			   model.addAttribute("F_NickName",nickname);
+			   PageData queryPd = new PageData();
+			   queryPd.put("F_OPEN_ID", openID);
+			   List<PageData> pds = (List<PageData>) tbUserDao.mb_findForList("TbUserMapper.select", queryPd);
+			   //如果绑定过,直接跳到主页
+			   if(pds.size()==1){
+				   PageData user_result = pds.get(0);
+				   Subject user = SecurityUtils.getSubject();  
+				   String username = user_result.getString("F_UserName");
+				   String newPass =  user_result.getString("F_Password");
+				    UsernamePasswordToken  token = new UsernamePasswordToken(username,newPass); 
+				     user.login(token); 
+				     session.setAttribute("F_USER_ID", user_result.getString("F_USER_ID"));  
+			         session.setAttribute("USERNAME", user_result.getString("F_UserName")); 
+			         
+				    if (user.isAuthenticated()) {   
+			             return  "redirect:/homePageCtrl/toHomePage.do"; //"/modules/homepage/homepage";  
+			        }  
+				    
+			   }
+		   }
+		} catch (QQConnectException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "/modules/homepage/bingUser";
+	}
+	
 	
 	@RequestMapping("/toWapRegister")
 	public String toWapRegister() {

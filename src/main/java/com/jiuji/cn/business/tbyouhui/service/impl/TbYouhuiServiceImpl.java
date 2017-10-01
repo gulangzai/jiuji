@@ -23,8 +23,7 @@ import com.jiuji.cn.business.tbproduct.modal.TbProduct;
 /*import com.jiuji.cn.dao.TSendMessageMapper;*/
 import com.jiuji.cn.business.tbuser.dao.TbUserDao; 
 import com.jiuji.cn.business.tbuser.model.TbUser;
-import com.jiuji.cn.exception.MsmException;
-import com.jiuji.cn.model.TSendMessage; 
+import com.jiuji.cn.exception.MsmException; 
 import com.jiuji.cn.business.tbuser.service.TbUserService;
 import com.jiuji.cn.business.tbyouhui.dao.TbYouhuiDao;
 import com.jiuji.cn.business.tbyouhui.model.TbYouhui;

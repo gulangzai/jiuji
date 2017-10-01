@@ -124,9 +124,14 @@ public class ProductCtrl {
  
 	@RequestMapping("/searchProduct")
 	@ResponseBody
-    public JSONArray testCode(HttpServletRequest request){ 
+    public JSONArray searchProduct(HttpServletRequest request){ 
 		String term = request.getParameter("term"); 
-		JSONArray array = productService.searchProduct(term);
+		JSONArray array = new JSONArray();
+		try {
+			  array = productService.searchProduct(term);
+		} catch (Exception e) {
+			// TODO: handle exception
+		} 
 		return array;
 	}
 }

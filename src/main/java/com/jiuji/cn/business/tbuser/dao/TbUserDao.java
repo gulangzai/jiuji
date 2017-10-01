@@ -20,4 +20,7 @@ public interface TbUserDao extends BaseDao {
 	List<PageData> checkEmail(PageData pd) throws Exception;
 	
 	List<PageData> checkMobile(PageData pd) throws Exception;
+
+
+	List<PageData> registerSelect(PageData pd) throws Exception;
 }

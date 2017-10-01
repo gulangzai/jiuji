@@ -4,22 +4,26 @@ import java.io.UnsupportedEncodingException;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
+import java.util.Map;
+import java.util.HashMap;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.hibernate.Query;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
+import com.jiuji.cn.business.tbsendmessage.dao.TbSendMessageDao;
+import com.jiuji.cn.business.tbsendmessage.service.TbSendMessageService;
+import com.jiuji.cn.business.tbsendmessage.vo.TbSendMessage;
 /*import com.jiuji.cn.dao.TSendMessageMapper;*/
 import com.jiuji.cn.business.tbuser.dao.TbUserDao; 
 import com.jiuji.cn.business.tbuser.model.TbUser;
-import com.jiuji.cn.exception.MsmException;
-import com.jiuji.cn.model.TSendMessage; 
+import com.jiuji.cn.exception.MsmException; 
 import com.jiuji.cn.business.tbuser.service.TbUserService;
 
 import com.lanbao.base.PageData;
@@ -41,6 +45,12 @@ public class TbUserServiceImpl implements TbUserService {
 	
 	@Autowired
 	public TbUserDao tbUserDao;
+	
+	@Autowired
+	public TbSendMessageDao tbSendMessageDao;
+	
+	@Autowired
+	public TbSendMessageService tbSendMessageService;
 	
 	
 	@Override
@@ -187,7 +197,7 @@ public class TbUserServiceImpl implements TbUserService {
 			if(tusers!=null&&tusers.size()>0){
 				ra.setMessage("EXIST");
 			}else{
-				TSendMessage tsendMessage = new TSendMessage(mobile,checkCode);
+				TbSendMessage tsendMessage = new TbSendMessage(mobile,checkCode);
 				//tsendMessage = tsendMessageMapper.selectOnlyone(tsendMessage);
 				if(tsendMessage!=null){
 					tuser = new TbUser(mobile,password);
@@ -251,6 +261,97 @@ public class TbUserServiceImpl implements TbUserService {
 		}
 	     return ra; 
 	}
+	
+	/**
+	 *  有账号时,QQ接口 绑定
+	 * @throws Exception 
+	 */
+	@Override
+	public ResultAction haveAccountUserQQbing(HttpServletRequest request,String username,String mobile, String password,String email,String F_OPEN_ID,String F_NickName,String code) throws Exception {
+		// TODO Auto-generated method stub
+		System.out.println(mobile+"---"+password);
+		   ResultAction ra = new ResultAction(); 
+			TbUser tuser = new TbUser();  
+			tuser.setFMobile(mobile);
+			PageData pd = new PageData();
+			pd.put("F_Mobile", mobile);  
+			List<PageData> tusers = tbUserDao.select(pd);
+			if(tusers!=null&&tusers.size()>0){
+				//查询发送code表
+				HashMap map = new HashMap();
+				map.put("F_Mobile", mobile);
+				map.put("F_Checkcode", code);
+				List<TbSendMessage> tbSendMessages = tbSendMessageDao.h_find("from TbSendMessage where F_Mobile=:F_Mobile and F_Checkcode = :F_Checkcode", map);
+				if(tbSendMessages.size()!=0){  
+					PageData bingQQUser = tusers.get(0); 
+					bingQQUser.put("F_OPEN_ID", F_OPEN_ID);
+					bingQQUser.put("F_NickName", F_NickName);
+					tbUserDao.mb_save("TbUserMapper.update",bingQQUser);
+					ra.setMessage("SUCCESS");  
+				}else{
+					ra.setMessage("ERRORCODE");
+				} 
+			}else{
+				ra.setMessage("NOEXIST");
+			}  
+	     return ra; 
+	}
+	
+	
+	/**
+	 * 无账号时,QQ接口 绑定
+	 */
+	@Override
+	public ResultAction haveNoAccountUserQQbing(HttpServletRequest request,String username,String mobile, String password,String email,String F_OPEN_ID,String F_NickName,String code)throws Exception {
+		// TODO Auto-generated method stub
+		System.out.println(mobile+"---"+password);
+		ResultAction ra = new ResultAction();
+		try{ 
+			String real_password = password;
+			password = MD5Utils.createMD5(password);	
+			TbUser tuser = new TbUser();  
+			tuser.setFMobile(mobile);
+			PageData pd = new PageData();
+			pd.put("F_Mobile", mobile);
+			pd.put("F_Email", email);
+			pd.put("F_Password", password);
+			pd.put("F_UserName", username);
+			pd.put("F_OPEN_ID", F_OPEN_ID);
+			List<PageData> tusers = tbUserDao.select(pd);
+			if(tusers!=null&&tusers.size()>0){
+				ra.setMessage("EXIST");
+			}else{ 
+				HashMap map = new HashMap();
+				map.put("F_Mobile", mobile);
+				map.put("F_Checkcode", code);
+				List<TbSendMessage> tbSendMessages = tbSendMessageDao.h_find("from TbSendMessage where F_Mobile=:F_Mobile and F_Checkcode = :F_Checkcode", map);
+				if(tbSendMessages.size()!=0){  
+				tuser = new TbUser(mobile,password);
+				tuser.setFUserId(StringUtil.getKey());
+				tuser.setFUserName(username); 
+				tuser.setFDeleted(1);
+				tuser.setFPassword(password);
+				tuser.setFEmail(email);
+				System.out.println(tuser);
+				pd.put("F_USER_ID", StringUtil.getKey());
+				pd.put("F_Deleted", "1");
+				pd.put("F_Sex", 2);
+				pd.put("F_RealPassword", real_password);
+				pd.put("F_Ip", request.getRemoteHost());
+				pd.put("F_NickName", F_NickName);
+				tbUserDao.mb_save("TbUserMapper.insert",pd);
+				ra.setMessage("SUCCESS"); 
+				}else{
+					ra.setMessage("ERRORCODE");
+				}
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+			ra.setMessage("FAIL");
+		}
+	     return ra; 
+	}
+	
 	
 	/**
 	 * check 用户
@@ -331,7 +432,7 @@ public class TbUserServiceImpl implements TbUserService {
 	public ResultAction testCode(String mobile){
 		ResultAction ra = new ResultAction();
 		String checkcode = IDGenertor.randomCode(); 
-		TSendMessage tsendMessage = new TSendMessage();
+		TbSendMessage tsendMessage = new TbSendMessage();
 		tsendMessage.setFMobile(mobile); 
 		/*try {
 			List<TSendMessage> tsendMessages = tsendMessageMapper.select(tsendMessage);
@@ -355,6 +456,55 @@ public class TbUserServiceImpl implements TbUserService {
 		return ra;
 	}
 
+	/**
+	 * 发送验证码
+	 * @param mobile
+	 * @return
+	 */
+	@Override
+	public ResultAction sendCode(String mobile){
+		ResultAction ra = new ResultAction();
+		String checkcode = IDGenertor.randomCode(); 
+		TbSendMessage tbsendMessage = new TbSendMessage();
+		tbsendMessage.setFMobile(mobile); 
+	    Map map = new HashMap();
+	    map.put("FMobile", mobile);
+		try {
+			//List<TSendMessage> tsendMessages = tsendMessageMapper.select(tsendMessage);
+			List<TbSendMessage> tbSendMessages = tbSendMessageDao.h_find("from TbSendMessage where  F_Mobile=:FMobile", map);
+			tbsendMessage.setFCheckcode(checkcode);
+			if(tbSendMessages.size()>=1){
+				tbsendMessage = tbSendMessages.get(0);
+				tbsendMessage.setFCheckcode(checkcode);
+				Map map_para = new HashMap();
+				map_para.put("F_Checkcode", checkcode);
+				map_para.put("F_Mobile", mobile);
+				Query query=tbSendMessageDao.h_createSQLQuery("update tb_sendmessage set F_Checkcode=:F_Checkcode where F_Mobile=:F_Mobile",map_para);
+				query.executeUpdate(); 
+				
+				
+			}else{ 
+				tbSendMessageDao.h_save(tbsendMessage);
+			}
+			try {
+				SendMsg_webchinese.sendMessage(mobile,checkcode);
+			} catch (com.lanbao.exception.MsmException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} 
+			ra.setMessage("SEND");
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			ra.setMessage("SENDERROR");
+		//} catch (MsmException e) {
+			// TODO Auto-generated catch block
+			//e.printStackTrace();
+			ra.setMessage("SENDERROR");
+		}
+		return ra;
+	}
+	
 
 
 

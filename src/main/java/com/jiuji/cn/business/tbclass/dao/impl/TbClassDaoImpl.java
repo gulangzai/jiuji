@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import com.jiuji.cn.business.tbcarousel.dao.TbCarouselDao;
 import com.jiuji.cn.business.tbclass.dao.TbClassDao;
+import com.jiuji.cn.business.tbclass.vo.TbClass;
 import com.jiuji.cn.business.tborder.dao.TbOrderDao;
 import com.jiuji.cn.model.TClass;
 
@@ -32,6 +33,12 @@ public class TbClassDaoImpl extends  BaseDaoImpl implements TbClassDao{
 		// TODO Auto-generated method stub 
 		return (List<PageData>) mb_findForList("TbClassMapper.queryAllson",tClass);
 	}
+	@Override
+	public List<TbClass> queryByParentClass(TbClass tClass) throws Exception {
+		// TODO Auto-generated method stub 
+		return (List<TbClass>) mb_findForList("TbClassMapper.queryByParentClass",tClass);
+	}
+	
  
 
 }

@@ -33,6 +33,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.jiuji.cn.business.tbuser.dao.TbUserDao;
 import com.jiuji.cn.business.tbuser.service.TbUserService;
 
 import com.lanbao.base.ResultAction;
@@ -48,6 +49,9 @@ public class UserCtrl extends BaseController {
 	
 	@Autowired
 	TbUserService userService;
+	
+	@Autowired
+	TbUserDao tbUserDao;
 	
 	Cookie cookieName = null;
 	Cookie cookiePass = null;
@@ -245,6 +249,66 @@ public class UserCtrl extends BaseController {
 		return ra;
 	}
 	
+	/**
+	 * 有账号时,QQ接口 绑定
+	 */
+	@RequestMapping("/haveAccountUserQQbing")
+	@ResponseBody
+	public ResultAction haveAccountUserQQbing(HttpSession session,HttpServletRequest request,String username,String mobile,String password,String email,String F_OPEN_ID,String F_NickName,String code){
+		ResultAction ra = new ResultAction();
+		try { 
+			ra = userService.haveAccountUserQQbing(request,username,mobile,password,email,F_OPEN_ID,F_NickName,code);
+			UsernamePasswordToken token  = null;
+			if("SUCCESS".equals(ra.getMessage())){
+				
+				PageData pd = new PageData();
+				pd.put("F_Mobile", mobile);  
+				List<PageData> tusers = tbUserDao.select(pd);
+			    if(tusers.size()>0){
+			    	PageData tbuser = tusers.get(0);
+			    	String ausername = tbuser.getString("F_UserName");
+			    	String anewPass = tbuser.getString("F_Password");
+			    	Subject user = SecurityUtils.getSubject();  
+					token = new UsernamePasswordToken(ausername,anewPass);
+					token.setRememberMe(true); 
+					 user.login(token);
+					 String userID = (String) user.getPrincipal();  
+			         session.setAttribute("F_USER_ID", tbuser.getString("F_USER_ID"));  
+			         session.setAttribute("USERNAME", tbuser.getString("F_UserName"));  
+			    }
+				
+			} 
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			ra.setMessage("FAIL");
+		}
+		return ra;
+	}
+	 
+	
+	/**
+	 * 无账号时,QQ接口 绑定
+	 */
+	@RequestMapping("/haveNoAccountUserQQbing")
+	@ResponseBody
+	public ResultAction haveNoAccountUserQQbing(HttpSession session,HttpServletRequest request,String username,String mobile,String password,String email,String F_OPEN_ID,String F_NickName,String code) throws Exception{
+		ResultAction ra = userService.haveNoAccountUserQQbing(request,username,mobile,password,email,F_OPEN_ID,F_NickName,code);
+		UsernamePasswordToken token  = null;
+		if("SUCCESS".equals(ra.getMessage())){
+			Subject user = SecurityUtils.getSubject(); 
+			String newPass = MD5Utils.createMD5(password);
+			token = new UsernamePasswordToken(username,newPass);
+			token.setRememberMe(true); 
+			 user.login(token);
+			 String userID = (String) user.getPrincipal();  
+	         session.setAttribute("F_USER_ID", userID);  
+	         session.setAttribute("USERNAME", username);  
+		}
+		return ra;
+	}
+	
+	
 	@RequestMapping("/checkUsername")
 	@ResponseBody
 	public void checkUsername(HttpSession session,HttpServletRequest request,HttpServletResponse response,String username,String mobile,String password,String email) throws Exception{
@@ -280,6 +344,32 @@ public class UserCtrl extends BaseController {
 		//out.print(object.toString());
 		out.println(!ra.getIserror());
 	}
+	
+
+	@RequestMapping("/haveAccountCheckMobile")
+	@ResponseBody
+	public void haveAccountCheckMobile(HttpSession session,HttpServletRequest request,HttpServletResponse response,String username,String mobile,String password,String email) throws Exception{
+		response.setCharacterEncoding("GBK");
+		response.setContentType("application/x-json");
+		PrintWriter out = response.getWriter();
+		ResultAction ra = userService.checkMobile(request,username,mobile,password,email); 
+		net.sf.json.JSONObject object = net.sf.json.JSONObject.fromObject(ra);
+		//out.print(object.toString());
+		out.println(ra.getIserror());
+	}
+	
+	
+	
+	   /**
+     * 发送验证码
+     * @param mobile
+     * @return
+     */
+    @RequestMapping(value="/sendCode")
+    @ResponseBody
+    public ResultAction sendCode(String mobile){
+    	return userService.sendCode(mobile);
+    }
 	
 	
 	
