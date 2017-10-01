@@ -16,14 +16,19 @@
 //String rootFile = request.getScheme()+"://"+request.getServerName()+":8088/file";
 String rootFileApp = request.getScheme()+"://"+request.getServerName()+":8088/app"; 
 String rootFile = "https://www.jiujichina.com/fileSystem";
+String F_USER_ID = "";
+if(session.getAttribute("F_USER_ID")!=null){
+	   F_USER_ID = session.getAttribute("F_USER_ID").toString();
+}
 
 %>
 
-<link rel="stylesheet" href="${ctxStatic}/plugin/bootstrap/bootstrap-3.3.0/css/bootstrap.css" type="text/css" /> <link rel="stylesheet" href="${ctxStaticB}/css/goods.css" type="text/css" />
-<link rel="stylesheet" href="${ctxStaticB}/css/main.css" type="text/css" />
-<link rel="stylesheet" href="${ctxStaticB}/css/homepage/base.css" type="text/css" />
-<link rel="stylesheet" href="${ctxStaticB}/css/head.css" type="text/css" />
-<link rel="stylesheet" href="${ctxStaticB}/css/productList.css" type="text/css" />
+<link rel="stylesheet" href="${ctxStatic}/plugin/bootstrap/bootstrap-3.3.0/css/bootstrap.css" type="text/css" /> 
+    <link rel="stylesheet" href="${ctxStaticB}/module/product/css/goods.css" type="text/css" />
+<link rel="stylesheet" href="${ctxStaticB}/module/main/css/main.css" type="text/css" />
+<link rel="stylesheet" href="${ctxStaticB}/module/homepage/css/base.css" type="text/css" />
+<link rel="stylesheet" href="${ctxStaticB}/module/head/css/head.css" type="text/css" />
+<link rel="stylesheet" href="${ctxStaticB}/mudule/product/css/productList.css" type="text/css" />
 <link rel="stylesheet" href="${ctxStatic}/plugin/jqueryui/jquery-ui-1.12.1.custom/jquery-ui.css"> 
 
 <script src="${ctxStatic}/plugin/jquery/jquery-1.11.3/jquery-1.11.3.min.js"></script>
@@ -31,9 +36,10 @@ String rootFile = "https://www.jiujichina.com/fileSystem";
 <script src="${ctxStatic}/plugin/jqueryui/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
 
 
-<script src="${ctxStaticB}/js/header.js" type="text/javascript"></script>
+<script src="${ctxStaticB}/module/head/js/header.js" type="text/javascript"></script>
 <script type="text/javascript">
 var ctx ='${ctx}';
+var F_USER_ID ="<%=F_USER_ID%>";
 /* $(document).ready(function(){ 
 	$('.tabs').respTabs({
 		responsive : false
@@ -50,7 +56,7 @@ var ctx ='${ctx}';
                  var index = $('#search-bd li.selected').index();
                  $('#search-hd .pholder').eq(index).show().siblings('.pholder').hide(0);
              }
-         })  */
+         })  */ 
      }) 
      
       	function  showImg(x){ 
@@ -72,6 +78,8 @@ var ctx ='${ctx}';
 	             } 
              }, 100); 
 		} 
+
+		
 		
     </script>
 </head> 
@@ -86,7 +94,7 @@ var ctx ='${ctx}';
 		  <div class="row"> 
 		  
 		              <div class="col-md-2">
-		                <a href="${ctx}/homePageCtrl/toHomePage.do"><img src="${ctxStaticB}/images/homepage/logo2.png" width="145" alt="" /></a>
+		                <a href="${ctx}/homePageCtrl/toHomePage.do"><img src="${ctxStaticB}/module/homepage/images/logo2.png" width="145" alt="" /></a>
 						</div>
 						<div class="col-md-10">
 		                       <div class="search-form" style="margin:10px auto">
@@ -126,10 +134,14 @@ var ctx ='${ctx}';
                       <div class="col-xs-12 col-md-12 col-sm-12" style="height: 25px;margin-top:5px;padding:0px;"> 
                     
                              <div class="col-xs-4 col-md-4 col-sm-4"><span style="color:red;font-size:20px;"> ¥:${projectPictureResult.tproduct.F_PRICE}</span></div> 
-	                         <div class="col-xs-8 col-md-8 col-sm-8" style="text-align:right;padding-right:0px;">
-	                             <div class="col-xs-6 col-md-5 col-sm-5 btn btn-default btn-md"   onclick="window.open('http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url='+encodeURIComponent('${ctx}/productCtrl.toSingleProduct?f_ProductId=${projectPictureResult.tproduct.F_PRODUCT_ID}')+
-	                          '&title=校园网购平台,一切为了学生服务! &desc=我在校园通上卖${projectPictureResult.tproduct.F_ProductName}, ${projectPictureResult.tproduct.F_PRODUCTDESC} ,有人想要吗&pics='+encodeURIComponent('<%=rootFile%>/${projectPictureResult.tbPictures[0].PATH}')+'&style=203&width=98&height=22')">分享</div>                                        
-	                             <div class="col-xs-5 col-md-5 col-sm-5  btn btn-default btn-md" style="margin-left:15px;" onclick="zan(this)">赞</div>
+	                         
+	                         <div class="col-xs-8 col-md-8 col-sm-8">
+	                            
+	                             <div id="share" style="" class="col-xs-5 col-md-5 col-sm-5 btn btn-default btn-md">   
+	                             <%-- onclick="window.open('http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url='+encodeURIComponent(${ctx}/productCtrl.toSingleProduct?f_ProductId=${projectPictureResult.tproduct.F_PRODUCT_ID})&title=啾唧在线电子商品平台,给你提供更多潮牌选择! &desc=${projectPictureResult.tproduct.F_ProductName}${projectPictureResult.tproduct.F_PRODUCTDESC}&pics='+encodeURIComponent(${projectPictureResult.tproduct.F_PATH})&style=203&width=98&height=22')">分享</div>  --%>                                       
+	                                                                                                       分享</div> 
+	                             <!-- <div class="col-xs-5 col-md-5 col-sm-5  btn btn-default btn-md" style="margin-left:15px;" onclick="zan(this)">赞</div> -->
+	                             <div class="col-xs-5  col-sm-5 col-md-5  btn btn-default btn-md love" style="margin-left:15px;float:right" onclick="love(this)"  data-product-id="${projectPictureResult.tproduct.F_PRODUCT_ID}" data-product-sku="${projectPictureResult.tproduct.F_SKU}">收藏</div>
 	                         </div>
                        </div> 
                  </div> 
@@ -297,7 +309,12 @@ $(function(){
 	      	} 
 	      }); 
 	      
+	      $("#share").click(function(){ 
+	    	  window.open("http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=encodeURIComponent(${ctx}/productCtrl.toSingleProduct?f_ProductId=${projectPictureResult.tproduct.F_PRODUCT_ID})&title=啾唧在线电子商品平台,给你提供更多潮牌选择! &desc=${projectPictureResult.tproduct.F_ProductName}${projectPictureResult.tproduct.F_PRODUCTDESC}&pics=encodeURIComponent(${projectPictureResult.tproduct.F_PATH})&style=203&width=98&height=22");
+	      });
+  
 });
 </script>
 
+<script src="${ctxStaticB}/module/product/js/projectList.js" type="text/javascript"></script>
 </html>

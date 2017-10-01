@@ -83,7 +83,8 @@ input[type="text"], input[type="password"] {
 							<span></span>
 					</div>
 					<div class="form-group" style="height:50px;">
-						<i class="fa fa-lock fa-lg"></i> <input
+						<i class="fa fa-lock fa-lg"></i> 
+						<input
 							class="form-control required" type="password" placeholder="请输入密码" id="register_password" name="password" />
 					    <span></span>
 					</div>
@@ -95,7 +96,8 @@ input[type="text"], input[type="password"] {
 							<span></span>
 					</div>
 					<div class="form-group" style="height:50px;">
-						<i class="fa fa-mobile fa-lg"></i> <input
+						<i class="fa fa-mobile fa-lg"></i> 
+						<input
 							class="form-control phone required" type="text" placeholder="请输入手机号"
 							name="mobile" />
 							<span></span>
@@ -118,7 +120,7 @@ input[type="text"], input[type="password"] {
 			</form>
 		</div>
 	</div>
-	<script type="text/javascript" src="${ctxStaticB}/js/register/main.js"></script>
+	<script type="text/javascript" src="${ctxStaticB}/module/register/js/main.js"></script>
 	<script>
 	$("#back_btn").click(function(){
 		history.go(-1);

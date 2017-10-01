@@ -175,6 +175,41 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
       <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
   </listener>
   
+  <servlet>
+        <servlet-name>login</servlet-name>
+        <servlet-class>com.qq.connect.demo.IndexServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>login</servlet-name>
+        <!-- 业界标准 用.do后缀来表示 controler -->
+        <url-pattern>/qqLogin.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>afterlogin</servlet-name>
+        <servlet-class>com.qq.connect.demo.AfterLoginRedirectServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>afterlogin</servlet-name>
+        <!-- 业界标准 用.do后缀来表示 controler -->
+        <url-pattern>/afterlogin.do</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>shuoshuo</servlet-name>
+        <servlet-class>com.qq.connect.demo.ShuoShuoServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>shuoshuo</servlet-name>
+        <url-pattern>/shuoshuo.do</url-pattern>
+    </servlet-mapping>
+  
+  
+  
   <!-- Spring MVC servlet  -->
   <servlet>
       <servlet-name>spring</servlet-name>

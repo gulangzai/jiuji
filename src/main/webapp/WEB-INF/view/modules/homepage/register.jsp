@@ -11,7 +11,7 @@
     <meta name="description" content="啾唧网 方便快捷，物美价廉，更快送达，诚信服务" /> 
     <meta name="keywords" content="用户登录" />
 <title>啾唧-用户注册</title>
-<link rel="stylesheet" type="text/css" href="${ctxStatic}/css/base.css">
+<link rel="stylesheet" href="${ctxStaticB}/module/homepage/css/base.css" type="text/css" />
 <link rel="stylesheet" href="${ctxStatic}/css/register.css"/>
 </head>
  <script type="text/javascript">

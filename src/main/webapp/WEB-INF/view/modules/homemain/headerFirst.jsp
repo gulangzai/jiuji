@@ -5,9 +5,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width" />
 
-<link rel="stylesheet" href="${ctxStaticB}/css/head.css" type="text/css" />
-<link rel="stylesheet" href="${ctxStaticB}/css/homepage/base.css" type="text/css" />
-<link rel="shortcut icon" href="${ctxStaticB}/images/logo.ico" type="image/x-icon" /> 
+<link rel="stylesheet" href="${ctxStaticB}/module/head/css/head.css" type="text/css" />
+<link rel="stylesheet" href="${ctxStaticB}/module/homepage/css/base.css" type="text/css" />
+<link rel="shortcut icon" href="${ctxStaticB}/module/main/image/logo.ico" type="image/x-icon" /> 
 <% 
 String rootFileApp = request.getScheme()+"://"+request.getServerName()+":8088/app";  
 String rootFile = "https://www.jiujichina.com/fileSystem";
@@ -29,17 +29,18 @@ String appSystem = "https://www.jiujichina.com/appSystem";
             <ul class="nav navbar-nav">  
                 <c:choose>
                 <c:when test="${F_USER_ID==''||empty F_USER_ID}">
-                <li class="active"><a href="${ctx}/homePageCtrl/toLogin.do" target="_self">请登录</a></li>
+                 <li class="active"><a href="${ctx}/homePageCtrl/toLogin.do" target="_self">请登录</a></li>
+                 <li><a href="${ctx}/homePageCtrl/toRegister.do" target="_self">免费注册</a></li>  
                 </c:when>  
                 <c:otherwise>
                      <li><a href="javascript:void(0)">${USERNAME}</a></li>
 				     <li><a href="${ctx}/userCtrl/logout.do" target="_self">登出</a></li>
 				</c:otherwise>
 				</c:choose> 
-                <li><a href="${ctx}/homePageCtrl/toRegister.do" target="_self">免费注册</a></li>  
+               
                 <li><a href="${ctx}/homePageCtrl/toInformation.do">个人中心</a></li> 
                 <li><a id="shopCart" href="${ctx}/tbshopcar/tbShopCarController/list.do" target="_blank">购物车</a></li> 	
-                <li><a href="javascript:alert('功能暂未开放')"  onMouseOut="hideImg()"  onmouseover="showImg(this)">网站导航</a></li> 
+               <!--  <li><a href="javascript:alert('功能暂未开放')"  onMouseOut="hideImg()"  onmouseover="showImg(this)">网站导航</a></li>  -->
                 <li><a rel="erweima" href="<%=appSystem%>/H54B3F430_0802221451.apk">手机下载</a></li> 		 
            </ul> 
         </div>  

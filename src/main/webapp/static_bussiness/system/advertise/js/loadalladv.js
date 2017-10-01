@@ -377,6 +377,12 @@ function showFullScreenAdv(A) {
 }
 
 (function() {
+	if($.cookie("isClose") != 'yes'){
+		  $.cookie("isClose",'yes',{ expires:1/2}); 
+	}else{
+		return;  
+	}
+	
     var U = [{
         advRotateMs: 30000,
         advPlace: "adv_forum_home_full",

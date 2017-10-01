@@ -27,10 +27,24 @@
     
      <div class="per-infor"><h2>个人资料</h2></div>
      
-     <div class="infor-head row">
+     <!--头像上传-->
+	<div class="row rowbox" style="padding-top:20px;margin:10px;">
+		<form enctype="multipart/form-data;charset=utf-8" method="post" id="filePic" style="display:none">
+			<input type="file" id="file" name="file">
+		</form>
+		<!--头像展示-->
+		<div class="infor-head row">
+			<div class="col-sm-2">当前头像：</div>
+			<div class="showPic col-xs-8 col-sm-8">
+				 <img src="${ctxStaticB}/module/person/images/touxiang.jpg" width="100px" height="100px" alt="头像" title="头像" />
+			</div>
+		</div>
+	</div>
+				
+    <%--  <div class="infor-head row">
      <div class="col-sm-3">当前头像：</div>
-     <div class="col-sm-9" style="margin-left:12%"><img src="${ctxStaticB}/images/touxiang.jpg" alt="头像" title="头像" /></div>
-     </div>
+     <div class="col-sm-9" style="margin-left:12%"><img src="${ctxStaticB}/module/person/images/touxiang.jpg" alt="头像" title="头像" /></div>
+     </div> --%>
      
      <div class="form">
       <form action="" method="post" id="userForm">
@@ -181,6 +195,8 @@
 
 <script>
 
+var rand = "";
+
 $(document).ready(function() {
     $('#userForm').bootstrapValidator({
     	message: '存在无效信息',
@@ -209,6 +225,15 @@ $(document).ready(function() {
              }
         }
     });
+
+    // 头像上传
+    $(".showPic").on("click", function () {
+        $("#file").trigger("click");
+    });
+    $("#file").change(function () {
+        uploadPic(rand, "TB_USER", "F_USER_UID", "11111")
+    })
+    
 });
 
 function init(){
@@ -235,28 +260,102 @@ function init(){
 				    	 $("#F_Sex2").attr("checked",true);
 				     }
 				     $("#F_Hometown").val(data.F_Hometown);
+				     checkPic(data.F_USER_ID, "11111");
+				     rand = data.F_USER_ID;
 				 } 
 					
 		   }  
 	});
 }
 
+//头像上传
+function uploadPic(rand, target_table, target_col, file_type) {
+    // 将随机数赋值给隐藏的表单
+    $("#sendinputtarget").val(rand);
+    // 获取上传的文件
+    var files = document.getElementById("file");
+    // console.log(files.files)
+    // 禁止其他文件
+    var chosejpg = ".jpg";
+    var chosejpgD = ".JPG";
+    var chosepng = ".png";
+    var chosepngD = ".PNG";
+    var chosebnp = ".bmp";
+    var chosebnpD = ".BMP";
+    var chosegif = ".gif";
+    var chosegifD = ".GIF";
+    // 循环便利文件列表判断文件类型
+    for (var i = 0; i < files.files.length; i++) {
+        if (
+            files.files[i].name.indexOf(chosejpg) == -1 &&
+            files.files[i].name.indexOf(chosepng) == -1 &&
+            files.files[i].name.indexOf(chosebnp) == -1 &&
+            files.files[i].name.indexOf(chosegif) == -1 &&
+            files.files[i].name.indexOf(chosejpgD) == -1 &&
+            files.files[i].name.indexOf(chosepngD) == -1 &&
+            files.files[i].name.indexOf(chosebnpD) == -1 &&
+            files.files[i].name.indexOf(chosegifD) == -1
+        ) {
+            alert("请选择图片类型文件");
+            // console.log(files.value)
+            files.value = "";
+            // console.log(files.value)
+            return false
+        }
+    };
+    var form = document.getElementById("filePic");
+    var oData = new FormData(form);
+    var oReq = new XMLHttpRequest();
+    oReq.open("POST", ctx + "/fileUploadController/springUpload.do?target_table=" + target_table + "&target_col=" + target_col + "&file_type=" + file_type + "&target_uid=" + rand, true)
+    console.info(oData);
+    oReq.send(oData);
+    oReq.onreadystatechange = function () {
+        if (oReq.status == 200 && oReq.readyState == 4) {
+            //InformationPrompt([], 'alert-success', '上传成功', 'alert-success', '上传成功');
+            files.value = "";
+            checkPic(rand, file_type)
+        } else if (oReq.status !== 200 && oReq.readyState !== 4) {
+            //InformationPrompt([], 'alert-success', '上传失败，请检查网络', 'alert-success', '上传失败，请检查网络');
+        } else {
+        }
+    };
+}
+
+
+//头像查询
+function checkPic(rand, file_type) {
+    $.ajax({
+        method: "GET",
+        url: ctx + "/fileUploadController/queryFileByTargetUid.do?targetUid=" + rand + "&file_type=" + file_type
+    }).success(function (data) {
+        console.info(data);
+        if(data!=undefined){
+        	 var responseFile = JSON.parse(data).data; 
+             // 循环遍历数据创建数组
+             console.log(responseFile)
+             if(responseFile!=undefined){
+            	 if (responseFile.length != 0) {
+                     $(".showPic>img").attr("src", responseFile[0].url);
+                 }
+             } 
+        } 
+    })
+}
+
+
 init();
 
 function save(){
 	
-	 var $form = $("#userForm");
-
+	 var $form = $("#userForm"); 
      var data = $form.data('bootstrapValidator');
      if (data) {
      // 修复记忆的组件不验证
-        data.validate();
-
+        data.validate(); 
         if (!data.isValid()) {
             return false;
         }
-     }
-	    
+     } 
  	 $.ajax({
  		url: "${ctx}/userCtrl/updateUser.do",
 		cache : false,

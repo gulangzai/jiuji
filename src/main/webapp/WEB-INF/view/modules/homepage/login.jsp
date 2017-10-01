@@ -52,8 +52,9 @@
         
 }
 </style>
-<link rel="stylesheet" type="text/css" href="${ctxStaticB}/css/base.css">
-<link rel="stylesheet" href="${ctxStaticB}/css/login/login.css"/> 
+
+<link rel="stylesheet" type="text/css" href="${ctxStaticB}/module/homepage/css/base.css">
+<link rel="stylesheet" href="${ctxStaticB}/module/login/css/login.css"/> 
 <script src="${ctxStatic}/plugin/jquery/jquery-1.11.3/jquery-1.11.3.min.js"></script>
 <script src="${ctxStaticB}/assets/sys_resources/plugins/jquery-validation/jquery-validation-1.11.1/jquery.validate.js"> </script><!---新添加--->
 <script src="${ctxStaticB}/assets/sys_resources/js/jquery.validate.message_cn.js"></script><!---新添加--->
@@ -81,11 +82,18 @@ function IsPC()
 
 redirectPage(); 
 </script>
+
+<style>
+ #loginForm a:hover{
+   text-decoration:none; 
+ }
+</style>
+
 </head>
 
 <body>
 <div class="container">  
- <iframe  src="${ctx}/homePageCtrl/toHeader.do" height="81" width="100%" scrolling="no" style="border:0px solid red"></iframe>
+ <iframe  src="${ctx}/homePageCtrl/toHeader.do" height="75px;" width="100%" scrolling="no" style="border:0px solid red"></iframe>
  <div id="main">
 <div class="content">
 <!--<div class="content-img"><img src="image/content.jpg"  alt=""/></div>-->
@@ -114,13 +122,19 @@ redirectPage();
                <label> <input id="check" type="checkbox"  name="checkbox" 	 onChange="change()"/>记住我</label>
               <input type="hidden" name="checkboxmark" value="${cookie.checkboxmark.value}">
               <!-- <a href="javascript:alert('功能暂未开放')">忘记密码</a> --></p> 
-         <span class="button-login" id="submit">登&nbsp;录</span>  
+             
+              <span class="button-login" id="submit">登&nbsp;录</span>   
+               <br>
+               <span>你也可以使用以下帐号登录</span>
+               <br>
+               <br>
+              <a href="${ctx}/qqLogin.do"><img src="${ctxStaticB}/module/login/image/QQlogin.png"/></a>
          </form>
     </div> 
 </div>
 </div> 
 
-  <iframe src="${ctx}/homePageCtrl/toFooter.do" height="120px" width="100%"  scrolling="no" style="border:0px solid red"></iframe>  
+  <iframe src="${ctx}/homePageCtrl/toFooter.do" height="85px" width="100%"  scrolling="no" style="border:0px solid red"></iframe>  
   
  </div> 
  
@@ -157,6 +171,18 @@ redirectPage();
     	}
     	console.info(loginForm.checkboxmark.value);
     }
+
+
+ 
+     function toLogin()
+     {
+       //以下为按钮点击事件的逻辑。注意这里要重新打开窗口
+       //否则后面跳转到QQ登录，授权页面时会直接缩小当前浏览器的窗口，而不是打开新窗口
+       var A=window.open("oauth/index.php","TencentLogin", 
+       "width=450,height=320,menubar=0,scrollbars=1,
+       resizable=1,status=1,titlebar=0,toolbar=0,location=1");
+     }  
+    
   </script>
-  <script src="${ctxStaticB}/js/login/login.js"></script>
+  <script src="${ctxStaticB}/module/login/js/login.js"></script>
 </html>

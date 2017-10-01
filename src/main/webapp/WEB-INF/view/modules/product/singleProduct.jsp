@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width" />
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<link rel="shortcut icon" href="${ctxStaticB}/images/logo.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="${ctxStaticB}/module/main/images/logo.ico" type="image/x-icon" />
 
   <meta name="description" content="啾唧网 方便快捷，物美价廉，更快送达，诚信服务" />
   <meta name="keywords" content="啾唧商品页" />
@@ -19,18 +19,19 @@ String rootFileApp = request.getScheme()+"://"+request.getServerName()+":8088/ap
 
 %>
 
-<link rel="stylesheet" href="${ctxStatic}/plugin/bootstrap/bootstrap-3.3.0/css/bootstrap.css" type="text/css" /> <link rel="stylesheet" href="${ctxStaticB}/css/goods.css" type="text/css" />
-<link rel="stylesheet" href="${ctxStaticB}/css/main.css" type="text/css" />
-<link rel="stylesheet" href="${ctxStaticB}/css/homepage/base.css" type="text/css" />
-<link rel="stylesheet" href="${ctxStaticB}/css/head.css" type="text/css" />
+<link rel="stylesheet" href="${ctxStatic}/plugin/bootstrap/bootstrap-3.3.0/css/bootstrap.css" type="text/css" />
+<link rel="stylesheet" href="${ctxStaticB}/module/product/css/goods.css" type="text/css" />
+<link rel="stylesheet" href="${ctxStaticB}/module/main/css/main.css" type="text/css" />
+<link rel="stylesheet" href="${ctxStaticB}/module/homepage/css/base.css" type="text/css" />
+<link rel="stylesheet" href="${ctxStaticB}/module/head/css/head.css" type="text/css" />
 <link rel="stylesheet" href="${ctxStatic}/plugin/jqueryui/jquery-ui-1.12.1.custom/jquery-ui.css"> 
-<link rel="stylesheet" href="${ctxStaticB}/css/goods.css" type="text/css" /> 
+<link rel="stylesheet" href="${ctxStaticB}/module/product/css/goods.css" type="text/css" />
 
 <script src="${ctxStatic}/plugin/jquery/jquery-1.11.3/jquery-1.11.3.min.js"></script>
 <script src="${ctxStatic}/plugin/bootstrap/bootstrap-3.3.0/js/bootstrap.js"></script>
 <script src="${ctxStatic}/plugin/jqueryui/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
 <script src="${ctxStatic}/plugin/js/browser.js" type="text/javascript"></script>
-<script type="text/javascript" src="${ctxStaticB}/js/responsive.tabs.js"></script>
+<script type="text/javascript" src="${ctxStatic}/plugin/js/responsive.tabs.js"></script>
 <script src="${ctxStaticB}/js_system/product/jquery.fly.min.js"></script>
 
 
@@ -192,7 +193,7 @@ var ctx ='${ctx}';
 		  <div class="row"> 
 		  
 		              <div class="col-md-2">
-		                <a href="${ctx}/homePageCtrl/toHomePage.do"><img src="${ctxStaticB}/images/homepage/logo2.png" width="145" alt="" /></a>
+		                <a href="${ctx}/homePageCtrl/toHomePage.do"><img src="${ctxStaticB}/module/homepage/images/logo2.png" width="145" alt="" /></a>
 						</div>
 						<div class="col-md-10">
 		                       <div class="search-form" style="margin:10px auto">
@@ -404,17 +405,13 @@ var ctx ='${ctx}';
 </div><!-- /.modal -->  
  
 
-<script src="${ctxStaticB}/js/header.js" type="text/javascript"></script>  
+<script src="${ctxStaticB}/module/head/js/header.js" type="text/javascript"></script>  
  
 
 <!--preview end-->
 <script type="text/javascript">
 var F_ClsId;
-$(function(){
-    
-	    
-	     
-	    
+$(function(){ 
 	     
 	    $( "#autocomplete" ).autocomplete({
 	        source: "${ctx}/productCtrl/searchProduct.do", 

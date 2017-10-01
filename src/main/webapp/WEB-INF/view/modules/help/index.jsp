@@ -12,9 +12,9 @@
 
 <link rel="stylesheet" href="${ctxStatic}/plugin/bootstrap/bootstrap-3.3.0/css/bootstrap.css" type="text/css" /> 
 <link rel="shortcut icon" href="${ctxStaticB}/images/logo.ico" type="image/x-icon" /> 
-<link rel="stylesheet" href="${ctxStaticB}/css/head.css" type="text/css" />
-<link rel="stylesheet" href="${ctxStaticB}/css/homepage/base.css" type="text/css" />
-<link rel="stylesheet" href="${ctxStaticB}/css/main.css" type="text/css" />
+<link rel="stylesheet" href="${ctxStaticB}/module/head/css/head.css" type="text/css" />
+<link rel="stylesheet" href="${ctxStaticB}/module/homepage/css/base.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="${ctxStaticB}/module/main/css/main.css"/> 
 <link rel="stylesheet" href="${ctxStatic}/plugin/jqueryui/jquery-ui-1.12.1.custom/jquery-ui.css">  
 
 <script src="${ctxStatic}/plugin/jquery/jquery-1.11.3/jquery-1.11.3.min.js"></script>

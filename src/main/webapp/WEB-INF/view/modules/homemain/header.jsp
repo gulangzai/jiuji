@@ -2,8 +2,8 @@
 <%@ include file="/WEB-INF/view/commons/taglib.jsp"%>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width" />
-<link rel="stylesheet" href="${ctxStaticB}/css/head.css" type="text/css" />
-<link rel="stylesheet" href="${ctxStaticB}/css/homepage/base.css" type="text/css" /> 
+<link rel="stylesheet" href="${ctxStaticB}/module/head/css/head.css" type="text/css" />
+<link rel="stylesheet" href="${ctxStaticB}/module/homepage/css/base.css" type="text/css" /> 
 
 <jsp:include page="/WEB-INF/view/modules/homemain/headerThree.jsp"/> 
 

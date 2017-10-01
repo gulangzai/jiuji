@@ -1,7 +1,7 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%> 
 <%@ include file="/WEB-INF/view/commons/taglib.jsp"%>
-<link rel="stylesheet" href="${ctxStaticB}/css/head.css" type="text/css" />
-<link rel="stylesheet" href="${ctxStaticB}/css/homepage/base.css" type="text/css" /> 
+<link rel="stylesheet" href="${ctxStaticB}/module/head/css/head.css" type="text/css" />
+<link rel="stylesheet" href="${ctxStaticB}/module/homepage/css/base.css" type="text/css" /> 
 <jsp:include page="/WEB-INF/view/modules/homemain/headerFirst.jsp"/>
 
 <!--

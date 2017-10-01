@@ -3,10 +3,10 @@
 <%@ include file="taglib.jsp" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
-<link rel="stylesheet" type="text/css" href="${ctxStaticB}/css/base.css">
+<link rel="stylesheet" type="text/css" href="${ctxStaticB}/module/homepage/css/base.css">
 <div class="top">
 	<div class="top-content">
-		<div class="logo"><a href="${ctx}/homePageCtrl/toHomePage.do" target="_parent"><img src="${ctxStaticB}/images/homepage/logo2.png" width="145px" height="70px" alt="" /></a>
+		<div class="logo"><a href="${ctx}/homePageCtrl/toHomePage.do" target="_parent"><img src="${ctxStaticB}/module/homepage/images/logo2.png" width="145px" height="70px" alt="" /></a>
 		</div>
 	</div>
 </div>   

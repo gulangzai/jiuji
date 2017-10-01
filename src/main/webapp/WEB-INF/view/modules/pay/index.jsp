@@ -17,10 +17,11 @@
 <head>
     <meta charset="UTF-8">
     <title>啾唧购物车</title>
-    <link rel="stylesheet" href="${ctxStaticB}/css/head.css" type="text/css" />
-    <link rel="stylesheet" href="${ctxStaticB}/css/homepage/base.css" type="text/css" />
+    <link rel="stylesheet" href="${ctxStaticB}/module/head/css/head.css" type="text/css" />
+    <link rel="stylesheet" href="${ctxStaticB}/module/homepage/css/base.css" type="text/css" />
 
-    <link rel="stylesheet" href="${ctxStatic}/plugin/bootstrap/bootstrap-3.3.0/css/bootstrap.css" type="text/css" /> <link rel="stylesheet" href="${ctxStaticB}/css/goods.css" type="text/css" />
+    <link rel="stylesheet" href="${ctxStatic}/plugin/bootstrap/bootstrap-3.3.0/css/bootstrap.css" type="text/css" /> 
+    <link rel="stylesheet" href="${ctxStaticB}/module/product/css/goods.css" type="text/css" />
     <script src="${ctxStatic}/plugin/jquery/jquery-1.11.3/jquery-1.11.3.min.js"></script>
     <script src="${ctxStatic}/plugin/bootstrap/bootstrap-3.3.0/js/bootstrap.js"></script>
     
@@ -60,7 +61,7 @@
         <div class="container" style="width:1080px;color: black;font-size: 24px;line-height: 34px;text-align:center">
             <div class="row">
                 <div class="col-sm-2"><a href="https://www.alipay.com/" class="logo">
-                    <img src="${ctxStaticB}/images/homepage/logo2.png" height="30px"></a>
+                    <img src="${ctxStaticB}/module/homepage/images/logo2.png" height="30px"></a>
                  </div>  
             </div> 	
        </div>
