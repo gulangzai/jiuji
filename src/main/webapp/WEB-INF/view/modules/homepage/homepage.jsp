@@ -78,7 +78,7 @@ String appSystem = "https://www.jiujichina.com/appSystem";
         <div class="advertisement">
         	<h4>最新公告</h4>
             <div class="notice_new">
-            	<p><a href="#">【优选】金秋聚会，买一送一</a></p>
+            	<p><a href="${ctx}/homePageCtrl/notice/toIndex.do">【优选】金秋聚会，买一送一</a></p>
                 <p><a href="#">【优选】中秋嘉年华，好礼钜惠</a></p>
                 <p><a href="#">【优选】冰点破纪录，低价不猫腻</a></p>
                 <p><a href="#">【优选】开学季，“纸”想“净、净”学习</a></p>

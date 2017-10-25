@@ -243,10 +243,8 @@ function del(Id){
 	});
 }
 
-function operate(Id,status){ 
-		 
-			var url = "${ctx}/tborder/tbOrderController/operate.do?F_ORDER_UID="+Id+"&tm="+new Date().getTime();
-			 
+function operate(Id,status){  
+			var url = "${ctx}/tborder/tbOrderController/operate.do?F_ORDER_UID="+Id+"&tm="+new Date().getTime(); 
 		 	$.ajax({
 				url : url,
 				cache : false,

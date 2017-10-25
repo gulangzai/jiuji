@@ -13,6 +13,7 @@
 		<typeAlias type="com.lanbao.base.PageData" alias="pd"/>
 		<!-- 分页 -->
 		<typeAlias type="com.lanbao.base.Page" alias="Page"/>
+		<typeAlias type="com.lanbao.base.JqGridPage" alias="JPage"/> 
 	</typeAliases>
 	
 	<plugins>

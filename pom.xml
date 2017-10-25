@@ -135,7 +135,7 @@
 					 <compilerArgument>-XDignore.symbol.file</compilerArgument>
                 </configuration>  
             </plugin>  
-        </plugins>   
+  </plugins>   
         
   </build>
   

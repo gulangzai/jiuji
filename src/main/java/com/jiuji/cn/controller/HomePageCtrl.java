@@ -174,6 +174,25 @@ public class HomePageCtrl extends CommonController {
 	
 	
 	
+	/**
+	 * 平台公告
+	 * @return
+	 */
+	@RequestMapping("/notice/toIndex")
+	public String toNoticeIndex() {
+		return "/modules/notice/index";
+	}
+	
+	@RequestMapping("/notice/toPtgg")
+	public String toPtgg() {
+		return "/modules/notice/ptgg";
+	}
+	
+	@RequestMapping("/notice/toHygg")
+	public String toHygg() {
+		return "/modules/notice/hygg";
+	}
+	
 	
 	
 	
