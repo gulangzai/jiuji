@@ -97,6 +97,8 @@ public class UserCtrl extends BaseController {
 			 PageData userBean = userService.getUserByFuserId(userId);
 	         session.setAttribute("F_USER_ID", userId);  
 	         session.setAttribute("USERNAME", userBean.getString("F_UserName")); 
+	         //ckeditor和ckfinder
+	         session.setAttribute("CKFinder_UserRole", "admin");
 	           
 	         if (user.isAuthenticated()) {   
 	             return  "redirect:/homePageCtrl/toHomePage.do"; //"/modules/homepage/homepage";  
