@@ -144,10 +144,13 @@ public class TbNoticeController extends BaseController {
 	 */
 	@RequestMapping(value="/dataList")
 	@ResponseBody
-	public JqGridPage dataList(JqGridPage page){
+	public JqGridPage dataList(JqGridPage page,String noticeType){
 		logBefore(logger, "tbNoticeController");   
 		List<PageData>	varList  = null;	
 		try{  
+			if(noticeType!=null){
+			 page.getPd().put("F_NOTICE_TYPE", noticeType);
+			}
 			varList = tbNoticeService.list(page);	 
 			page.setData(varList);  
 		} catch(Exception e){

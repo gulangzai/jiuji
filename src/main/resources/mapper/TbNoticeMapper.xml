@@ -44,14 +44,15 @@
 					      a.F_UPDATE_DATE,  
 					      a.F_UPDATE_USER,  
 					      a.F_SEE_NUM,
-			             date_format(a.F_CREATE_DATE,'%Y-%c-%d %h:%i:%s') as F_CREATE_DATE,
+			             date_format(a.F_CREATE_DATE,'%Y-%c-%d %h:%i') as F_CREATE_DATE,
 				a.F_NOTICE_UID
 		from 
-				tb_notice a
-				<if test = 'search'>
-				   where 
-				   F_NOTICE_TITLE 
-				   like  CONCAT(CONCAT('%', #{keyword, jdbcType=VARCHAR}),'%') 
+				tb_notice a  where 1=1   
+				<if test = 'search'> 
+				    AND  F_NOTICE_TITLE  like  CONCAT(CONCAT('%', #{keyword, jdbcType=VARCHAR}),'%') 
+				</if> 
+				<if test="pd.F_NOTICE_TYPE!=null and pd.F_NOTICE_TYPE!=''" >
+				    AND   F_NOTICE_TYPE  =  #{pd.F_NOTICE_TYPE,jdbcType=VARCHAR} 
 				</if>
 	</select>
 	

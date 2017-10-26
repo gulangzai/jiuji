@@ -10,3 +10,7 @@
 <c:set var="ctxStaticB" value="${pageContext.request.contextPath}/static_bussiness"/>
 <c:set var="module" value="${pageContext.request.contextPath}/static_bussiness/module"/>
 <link rel="shortcut icon" href="${ctxStaticB}/module/main/image/logo.ico" type="image/x-icon" />
+
+<script>
+   var ctx = "${pageContext.request.contextPath}";
+</script>

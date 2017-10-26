@@ -43,90 +43,34 @@
 							<li><a href="${ctx}">首页</a></li>
 
 
-							<li><a href="${ctx}/homePageCtrl/help/toIndex.do">帮助中心</a></li>
-							<li class="active">新手帮助</li>
+							<li><a href="${ctx}/homePageCtrl/help/toIndex.do">公告中心</a></li>
+							<li class="active">会员公告</li>
 
 						</ol>
 					</div>
 				</div>
 
-				<div class="row">
+				 
+				 <div class="row">
 					<div class="col-xs-12">
-						<strong>新手帮助</strong>
-						<hr>
-					</div>
+					 
+					 	<table  id="jqGrid" class="table table-striped table-bordered table-hover imagetable" >
+							  <tr>  
+							   </tr> 
+							   
+							   <tbody  id="tbody">
+							       
+							   </tbody> 
+					    </table> 
+					    <ul id="jqGridPager"></ul> 
+	    
+					 
+					 
+                    </div>
 				</div>
-				<div class="row">
-					<div class="col-xs-12">
-
-
-						<p class="p0" style="text-align: justify;">1、登陆</p>
-						<p class="p0" style="text-align: justify;">
-							可以点击顶上角的登陆链接,转到登陆页面.如果没有账号则需要注册.或者使用第三方信任登陆.</p>
-						<p class="p0" style="text-align: justify;">
-							<img
-								src="${ctxStaticB}/images/help/loginShow.png"
-								width="553" height="258" alt="">&nbsp;
-						</p>
-						<p class="p0" style="text-align: justify;">&nbsp;</p>
-						<p class="p0" style="text-align: justify;">
-							2<span>、用户注册页面如下.</span>
-						</p>
-						<p class="p0" style="text-align: justify;">
-							<img
-								src="${ctxStaticB}/images/help/registerShow.png"
-								width="554" height="367" alt="">&nbsp;
-						</p> 
-						<p class="p0" style="text-align: justify;">3、查找商品</p>
-						<p class="p0" style="text-align: justify;">
-							您可以将鼠标移动到左侧的吸附菜单上,选择您想要购买的商品类目.或在收索栏里收索商品</p>
-						<p class="p0" style="text-align: justify;">
-							<img
-								src="${ctxStaticB}/images/help/searchShow.png"
-								width="554" height="376" alt="">&nbsp;
-						</p>
-						<p class="p0" style="text-align: justify;">&nbsp;</p> 
-						<p class="p0" style="text-align: justify;">&nbsp;</p>
-						<p class="p0" style="text-align: justify;">
-							4<span>、咨询卖家（店小二）.同样的,如果您在购买的过程中对商品有任何的疑问,
-						</p>
-						<p class="p0" style="text-align: justify;">
-							您也可以咨询卖家,点击QQ图标将弹出卖家的</span><span>QQ</span><span>临时会话框，您可以方便的和卖家进行沟通。</span>
-						</p>
-						
-						<p class="p0" style="text-align: justify;">
-							<img
-								src="${ctxStaticB}/images/help/helpShow.png"
-								width="554" height="360" alt="">&nbsp;
-						</p>
-						<p class="p0" style="text-align: justify;">&nbsp;</p>
-						<p class="p0" style="text-align: justify;">
-							5<span>、购物车操作.您可以在提交订单前对购物车中的商品进行任何的增减,收藏操作,或者删除某个商品.确认无误后点击提交订单按钮.</span>
-						</p>
-						<p class="p0" style="text-align: justify;">&nbsp;</p>
-						<p class="p0" style="text-align: justify;">
-							<img
-								src="${ctxStaticB}/images/help/shopCarShow.png"
-								width="554" height="280" alt="">&nbsp;
-						</p>
-						<p class="p0" style="text-align: justify;">&nbsp;</p> 
-						<p class="p0" style="text-align: justify;">
-							6<span>、确认订单页面,点击提交订单则系统会跳转到支付宝网关进行安全支付.同时在此页面也能输入您的附加要求,</span>
-						</p>
-						<p class="p0" style="text-align: justify;">
-							 卖家在处理您的订单时候会和您进行确认.</span>
-						</p>
-						<p class="p0" style="text-align: justify;">&nbsp;</p>
-						<p class="p0" style="text-align: justify;">
-							<img
-								src="${ctxStaticB}/images/help/zhifubaoShow.png"
-								width="554" height="386" alt="">&nbsp;
-						</p>
-						<p class="p0" style="text-align: justify;">&nbsp;</p>
-						<p class="p0" style="text-align: justify;">&nbsp;</p>
-						<p class="p0" style="text-align: justify;">&nbsp;</p>
-					</div>
-				</div>
+				
+				
+				 
 			</div>
 
 		</div>
@@ -138,6 +82,154 @@
  
  
 </body>
+
+<script>
+
+var carId = 1;
+
+function init(currentPage){
+	$.ajax({
+		url: "${ctx}/tbnotice/tbNoticeController/dataList.do",
+		datatype: 'json',
+		page:currentPage,
+		data:{"page":currentPage,"noticeType":"HYGG"},
+		type: "Post", 
+		success: function (data) {
+			console.info(data);
+			var data = eval("("+data+")");
+			//console.info(data.data);
+			 
+			if(data!=null){ 
+				
+				$("#tbody").empty();
+				
+				$.each(data.data, function (index, item) { //遍历返回的json
+		  
+					var f_status = "";
+					if(item.F_NOTICE_TYPE=='PTGG'){
+						f_status = "[平台公告]";
+					}else if(item.F_NOTICE_TYPE=='HYGG'){
+						f_status="[会员公告]";
+					}else{
+						f_status="[其他公告]"; 
+					}
+					
+					var html ='<tr>';  
+					html+='<td   style="text-align:center">'+f_status+'</td>'; 
+					html+="<td   style='text-align:left'><a href='${ctx}/homePageCtrl/page/notice/tb_notice_detail.do?F_NOTICE_UID="+item.F_NOTICE_UID+"'>"+item.F_NOTICE_TITLE+"</a></td>";    
+	                html+='<td   style="text-align:center">浏览量:'+item.F_SEE_NUM+'</td>';  
+				    html +='<td  style="text-align:center">'+item.F_CREATE_DATE+'</td>'; 
+				 
+					
+					html+='</tr>'; 
+			      
+				    $("#tbody").append(html);
+				});
+			    
+				
+				var pageCount =   data.total;   //取到pageCount的值(把返回数据转成object类型)
+				var currentPage = data.page; //得到urrentPage
+				
+				if(currentPage!=0){ 
+					
+					 var options = {
+				    		   bootstrapMajorVersion: 3, //版本
+				    	       currentPage:currentPage,
+				    	       totalPages:pageCount,
+				    	       alignment:"left",
+				    	       size:"normal", 
+				    	       itemTexts:function(type,page,current){
+				    	    	   console.info(page);
+				    	    	   switch(type){
+					    	    	   case "first": return "首页";
+					    	    	   case "prev":  return "上一页";
+					    	    	   case "next":  return "下一页";
+					    	    	   case "last":  return "末页";
+					    	    	   case "page":  return page;
+				    	    	   }
+				    	       },
+				    	       onPageClicked:function(event,originalEvent,type,page){
+				    	    	   
+				    	    	   console.info("page"+page);
+				    	    	   $.ajax({
+				    	    		   url: "${ctx}/tbnotice/tbNoticeController/dataList.do",
+				    	    		   type:"Post",
+				    	    		   data:{"page":page,"noticeType":"HYGG"},
+				    	    		   success:function(data){	
+				    	    			    if(data!=null){
+				    	    				   var data = eval("("+data+")");
+				    	    				   
+				    	    				    $("#tbody").empty();  
+			    								
+				    	    				  	$.each(data.data,function(index,item){ 
+				    	    				  		var f_status = "";
+				    	    						if(item.F_NOTICE_TYPE=='PTGG'){
+				    	    							f_status = "[平台公告]";
+				    	    						}else if(item.F_NOTICE_TYPE=='HYGG'){
+				    	    							f_status="[会员公告]";
+				    	    						}else{
+				    	    							f_status="[其他公告]"; 
+				    	    						}
+				    	    						
+				    	    				  		var html ='<tr>';  
+				    	    						html+='<td   style="text-align:center">'+f_status+'</td>'; 
+				    	    						html+="<td   style='text-align:left'><a href='${ctx}/homePageCtrl/page/notice/tb_notice_detail.do?F_NOTICE_UID="+item.F_NOTICE_UID+"'>"+item.F_NOTICE_TITLE+"</a></td>";    
+				    	    		                html+='<td   style="text-align:center">浏览量:'+item.F_SEE_NUM+'</td>';  
+				    	    					    html +='<td  style="text-align:center">'+item.F_CREATE_DATE+'</td>'; 
+				    	    					  
+				    	    						html+='</tr>'; 
+				    	    						
+				    						        $("#tbody").append(html);
+				    	    				  	}); 
+			    								
+				    	    			   } 
+				    	    		   }
+				    	    	   });
+				    	       }
+				    	    };
+					
+				    $("#jqGridPager").bootstrapPaginator(options); 
+				}
+			   
+			    
+			    
+			}
+		}
+	});
+}
+
+init(1);
+
+
+//del
+function del(Id){
+	bootbox.confirm("确定要删除吗?", function(result) {
+		if(result) {
+			 
+			var url = "${ctx}/tborder/tbOrderController/delete.do?F_ORDER_UID="+Id+"&tm="+new Date().getTime();
+			 
+		 	$.ajax({
+				url : url,
+				cache : false,
+				async :	false,
+				dataType : "json",  
+				type : 'post',
+				success : function(response) { 
+					 if(!response.iserror){
+						xAlert("信息提示","删除成功",1);   
+					    var pageNum = $('#jqGridPager').bootstrapPaginator("getPages");
+					    init(pageNum); 
+					 } 
+				}
+			});  
+			
+		}
+	});
+}
+
+</script>
+
+
 </html>
 
 

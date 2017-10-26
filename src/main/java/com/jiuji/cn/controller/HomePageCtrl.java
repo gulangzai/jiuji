@@ -45,7 +45,7 @@ public class HomePageCtrl extends CommonController {
 	@RequestMapping("/page/{modules}/{func}")
 	public String toMain1(@PathVariable String modules,@PathVariable String func) {
 		System.out.println("modules"+modules+"func:"+func);
-		return "/"+modules+"/"+func; 
+		return "/modules/"+modules+"/"+func; 
 	    //return "redirect:/"+modules+"/"+func; 	 
 	}
 	

@@ -57,7 +57,7 @@
 						<ol class="breadcrumb">
 							<li><a href="${ctx}">首页</a></li>
  
-							<li><a href="${ctx}/homePageCtrl/notice/index.do">公告中心</a></li>
+							<li><a href="${ctx}/homePageCtrl/notice/toIndex.do">公告中心</a></li>
 							<li class="active">公告中心</li>
 
 						</ol>
@@ -124,7 +124,7 @@ function init(currentPage){
 					
 					var html ='<tr>';  
 					html+='<td   style="text-align:center">'+f_status+'</td>'; 
-					html+='<td   style="text-align:center">'+item.F_NOTICE_TITLE+'</td>';  
+					html+="<td   style='text-align:left'><a href='${ctx}/homePageCtrl/page/notice/tb_notice_detail.do?F_NOTICE_UID="+item.F_NOTICE_UID+"'>"+item.F_NOTICE_TITLE+"</a></td>";  
 	                html+='<td   style="text-align:center">浏览量:'+item.F_SEE_NUM+'</td>';  
 				    html +='<td  style="text-align:center">'+item.F_CREATE_DATE+'</td>'; 
 				 
@@ -181,7 +181,7 @@ function init(currentPage){
 				    	    						
 				    	    				  		var html ='<tr>';  
 				    	    						html+='<td   style="text-align:center">'+f_status+'</td>'; 
-				    	    						html+='<td   style="text-align:center">'+item.F_NOTICE_TITLE+'</td>';  
+				    	    						html+="<td   style='text-align:left'><a href='${ctx}/homePageCtrl/page/notice/tb_notice_detail.do?F_NOTICE_UID="+item.F_NOTICE_UID+"'>"+item.F_NOTICE_TITLE+"</a></td>";    
 				    	    		                html+='<td   style="text-align:center">浏览量:'+item.F_SEE_NUM+'</td>';  
 				    	    					    html +='<td  style="text-align:center">'+item.F_CREATE_DATE+'</td>'; 
 				    	    					  
