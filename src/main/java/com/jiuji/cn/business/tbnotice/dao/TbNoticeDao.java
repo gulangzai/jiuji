@@ -1,12 +1,12 @@
 package com.jiuji.cn.business.tbnotice.dao;
 
-import com.lanbao.base.PageData;
+import java.util.List;
 
+import com.jiuji.cn.business.tbnotice.vo.TbNotice;
 import com.lanbao.dao.BaseDao;
-import com.lanbao.mybatis.MyBatisBaseDao;
 
 public interface TbNoticeDao extends BaseDao{
 
-	
+	public List<TbNotice> findNewNotice();
 
 }

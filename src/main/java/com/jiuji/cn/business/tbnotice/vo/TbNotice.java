@@ -27,6 +27,8 @@ public class TbNotice implements java.io.Serializable {
 	private Integer FNoticeLevel;
 	private Date FUpdateDate;
 	private Integer FUpdateUser;
+	
+	private String FNoticeTypeLabel;
 
 	// Constructors
 
@@ -131,5 +133,19 @@ public class TbNotice implements java.io.Serializable {
 	public void setFUpdateUser(Integer FUpdateUser) {
 		this.FUpdateUser = FUpdateUser;
 	}
+	
+	@Column(name = "F_NOTICE_TYPE_LABEL")
+	public String getFNoticeTypeLabel() {
+		return this.FNoticeTypeLabel;
+	}
+
+	public void setFNoticeTypeLabel(String FNoticeTypeLabel) {
+		this.FNoticeTypeLabel = FNoticeTypeLabel;
+	}
+	
+	
+	
+	
+	
 
 }

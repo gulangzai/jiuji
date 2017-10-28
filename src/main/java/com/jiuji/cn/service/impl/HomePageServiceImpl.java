@@ -14,6 +14,8 @@ import com.jiuji.cn.business.tbclass.dao.TbClassDao;
 import com.jiuji.cn.business.tbclass.vo.TbClass;
 import com.jiuji.cn.business.tbhot.service.TbHotService;
 import com.jiuji.cn.business.tbhot.vo.TbHot;
+import com.jiuji.cn.business.tbnotice.dao.TbNoticeDao;
+import com.jiuji.cn.business.tbnotice.vo.TbNotice;
 import com.jiuji.cn.business.tbproduct.dao.TbProductDao;
 import com.jiuji.cn.business.tbproduct.modal.TbProduct;
 import com.jiuji.cn.business.tbproduct.service.TbProductService;
@@ -57,6 +59,9 @@ public class HomePageServiceImpl implements HomePageService {
 	
 	@Autowired
 	TbSpecialDao tbSpecialDao;
+	
+	@Autowired
+	TbNoticeDao tbNoticeDao;
 	
 	
 	@Transactional(propagation=Propagation.REQUIRED)
@@ -156,16 +161,7 @@ public class HomePageServiceImpl implements HomePageService {
 			
 			
 			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
+			 
 			
 			Long end1 = System.currentTimeMillis();
 			
@@ -181,6 +177,9 @@ public class HomePageServiceImpl implements HomePageService {
 			List<TbProduct> tproductSpecials = tbSpecialService.findNewSpecial();
 			Long end4 = System.currentTimeMillis();
 			
+			//获取最新的7条
+			List<TbNotice> tbNotices = tbNoticeDao.findNewNotice();
+			
 			
 			System.out.println("查询类型用时"+(end1-start));
 			System.out.println("查询最新用时"+(end2-start));
@@ -188,6 +187,7 @@ public class HomePageServiceImpl implements HomePageService {
 			System.out.println("查询特卖用时"+(end4-start));
 			
 			
+			model.addAttribute("tbNotices", tbNotices);
 			model.addAttribute("tproducts",tproducts);
 			model.addAttribute("tproductHots",tproductHots);
 			model.addAttribute("tproductSpecials",tproductSpecials);
