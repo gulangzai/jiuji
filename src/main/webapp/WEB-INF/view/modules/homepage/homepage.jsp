@@ -33,6 +33,12 @@
 String rootFileApp = request.getScheme()+"://"+request.getServerName()+":8088/app";  
 String rootFile = "https://www.jiujichina.com/fileSystem";
 String appSystem = "https://www.jiujichina.com/appSystem";
+
+String F_USER_ID = null;
+if(session.getAttribute("F_USER_ID")!=null){
+	   F_USER_ID = session.getAttribute("F_USER_ID").toString();
+}
+
 %>
 
 <body>
@@ -45,9 +51,20 @@ String appSystem = "https://www.jiujichina.com/appSystem";
 	<section class="seck">
     	
         <div class="register_login">
-        	<em>您好，</em>
-            <a href="${ctx}/homePageCtrl/toLogin.do" target="_self">会员登录</a>
-            <a href="${ctx}/homePageCtrl/toRegister.do" target="_self">快速注册</a>
+        
+               <c:choose>
+                <c:when test="${F_USER_ID==''||empty F_USER_ID}">
+                
+                 <a href="${ctx}/homePageCtrl/toLogin.do" target="_self">会员登录</a>
+                  <a href="${ctx}/homePageCtrl/toRegister.do" target="_self">快速注册</a> 
+                </c:when>  
+                <c:otherwise>
+                     <em>您好，</em>
+                     <a href="javascript:void(0)">${USERNAME}</a></li>
+				     <a href="${ctx}/userCtrl/logout.do" target="_self">登出</a> 
+				</c:otherwise>
+				</c:choose> 
+				 
         </div>
         <div class="vip_center">
         	<a href="${ctx}/homePageCtrl/toInformation.do">会员中心</a>
@@ -78,13 +95,17 @@ String appSystem = "https://www.jiujichina.com/appSystem";
         <div class="advertisement">
         	<h4>最新公告</h4>
             <div class="notice_new">
-            	<p><a href="${ctx}/homePageCtrl/notice/toIndex.do">【优选】金秋聚会，买一送一</a></p>
+                      <c:forEach var="tbNotice" items="${tbNotices}" varStatus="status">
+                             <p><a href="${ctx}/homePageCtrl/page/notice/tb_notice_detail.do?F_NOTICE_UID=${tbNotice.FNoticeUid}">【${tbNotice.FNoticeTypeLabel}】${tbNotice.FNoticeTitle}</a></p>
+					  </c:forEach>   
+					    
+            	<%-- <p><a href="${ctx}/homePageCtrl/notice/toIndex.do">【优选】金秋聚会，买一送一</a></p>
                 <p><a href="#">【优选】中秋嘉年华，好礼钜惠</a></p>
                 <p><a href="#">【优选】冰点破纪录，低价不猫腻</a></p>
                 <p><a href="#">【优选】开学季，“纸”想“净、净”学习</a></p>
                 <p><a href="#">【优选】金秋聚会，买一送一</a></p>
                 <p><a href="#">【优选】中秋嘉年华，好礼钜惠</a></p>
-                <p><a href="#">【优选】开学季，“纸”想“净、净”学习</a></p>
+                <p><a href="#">【优选】开学季，“纸”想“净、净”学习</a></p> --%>
             </div>
             <a href="#">
             	<div class="notice_img">
