@@ -335,7 +335,7 @@ var ctx ='${ctx}';
 				      <div class="col-xs-2 col-sm-2" style="padding: 5px;width: fit-content;">颜色</div>
 				      <div class="col-xs-10 col-sm-10 col-md-10" style="padding: 0px;line-height: 16px;">
 					       <c:forEach var="tbColor" items="${tbColors}">
-						       <div class="col-sm-6" style="width: fit-content;"><div labelAttr="color" class="off" attrFProductUid='color${tbSize.F_PRODUCT_ID}' style="padding: 5px 5px;width: fit-content;cursor: pointer"   onMouseDown='choose(this)' onMouseOut="attrMouseOut(this)" onMouseOver="attrMouseOver(this)">${tbColor.F_COLOR}</div></div>
+						       <div class="col-sm-6" style="width: fit-content;padding-right: 0;"><div labelAttr="color" class="off" attrFProductUid='color${tbSize.F_PRODUCT_ID}' style="padding: 5px 5px;margin:3px 0px;width: fit-content;cursor: pointer"   onMouseDown='choose(this)' onMouseOut="attrMouseOut(this)" onMouseOver="attrMouseOver(this)">${tbColor.F_COLOR}</div></div>
 						   </c:forEach> 
                      </div>
                   </div>
@@ -346,7 +346,9 @@ var ctx ='${ctx}';
 				      <div class="col-xs-2 col-sm-2" style="padding: 5px;width: fit-content;">尺寸</div>
 				      <div class="col-xs-10 col-sm-10 col-md-10" style="padding: 0px;line-height: 16px;">
 					       <c:forEach var="tbSize" items="${tbSizes}">
-						       <div class="col-sm-6" style="width: fit-content;"><div labelAttr="size" class="off" attrFProductUid='size${tbSize.F_PRODUCT_ID}' style="padding: 5px 5px;width: fit-content;cursor: pointer"  onMouseDown='choose(this)' onMouseOut="attrMouseOut(this)" onMouseOver="attrMouseOver(this)">${tbSize.F_SIZE}</div></div>
+						       <div class="col-sm-6" style="width: fit-content;padding-right: 0;">
+						                <div labelAttr="size" class="off" attrFProductUid='size${tbSize.F_PRODUCT_ID}' style="padding: 5px 5px;margin:3px 0px;width: fit-content;cursor: pointer"  onMouseDown='choose(this)' onMouseOut="attrMouseOut(this)" onMouseOver="attrMouseOver(this)">${tbSize.F_SIZE}</div>
+						                </div>
 						   </c:forEach> 
                      </div>
                   </div>
@@ -354,8 +356,12 @@ var ctx ='${ctx}';
 				  
 				     
                      
-                    <div style="margin:5px 0;padding:5px;display:block;font-size:16px;color:#A5A5A5">数量:<span>&nbsp<input type="number" min=1 step=1 max=${singleProduct.F_Number}  maxlength="10" style="width: 50px;" value="1" id="F_BuyCount"></span>件(库存${singleProduct.F_Number}件)</div>
-                   
+                    <div class="row" style="margin: 10px 0;padding: 0px;display: block; font-size: 14px;color: #A5A5A5;">
+                        <div class="col-xs-2 col-sm-2" style="padding: 5px;width: fit-content;">数量</div>  
+                        <div class="col-xs-10 col-sm-10 col-md-10" style="padding: 0px;line-height: 16px;">                                                          
+                            <div class="col-sm-6" style="width: fit-content;padding-right: 0;"><span><input type="number" min=1 step=1 max=${singleProduct.F_Number}  maxlength="10" style="width: 50px;" value="1" id="F_BuyCount"></span>件(库存${singleProduct.F_Number}件)</div>
+                        </div>
+                    </div>
 				</div>
 			</div>
 		
