@@ -563,12 +563,12 @@ if(session.getAttribute("F_USER_ID")!=null){
 	<ul>
 	  <c:forEach var="tbproduct" items="${shoushi.products}" varStatus="status">  
 	      <li>
-        	<a href="#"><img src="${tbproduct.F_PATH}" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
+        	<a href="${ctx}/tbProductController/toSingleProduct.do?f_parentSku=${tbproduct.F_PARENT_SKU}" target="_blank" title="${tbproduct.F_PRODUCTNAME}"><img src="${tbproduct.F_PATH}" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
         	<light1>
             	<img src="${tbproduct.F_PATH}">
             </light1>
             <span>￥${tbproduct.F_Price}</span>
-            <a href="#"><p>${tbproduct.F_ProductName} </p></a>
+            <a href="${ctx}/tbProductController/toSingleProduct.do?f_parentSku=${tbproduct.F_PARENT_SKU}" target="_blank" title="${tbproduct.F_PRODUCTNAME}"><p>${tbproduct.F_ProductName} </p></a>
            	<em>
             	<a href="#">收藏</a>
                 <a href="javascript:void(0)" class="add_scar">加入购物车</a>
@@ -584,12 +584,12 @@ if(session.getAttribute("F_USER_ID")!=null){
 		<ul>
 		  <c:forEach var="tbproduct" items="${shoushi.products}" varStatus="status">  
 		      <li>
-	        	<a href="#"><img src="${tbproduct.F_PATH}" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
+	        	<a href="${ctx}/tbProductController/toSingleProduct.do?f_parentSku=${tbproduct.F_PARENT_SKU}" target="_blank" title="${tbproduct.F_PRODUCTNAME}"><img src="${tbproduct.F_PATH}" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
 	        	<light1>
 	            	<img src="${tbproduct.F_PATH}">
 	            </light1>
 	            <span>￥${tbproduct.F_Price}</span>
-	            <a href="#"><p>${tbproduct.F_ProductName} </p></a>
+	            <a href="${ctx}/tbProductController/toSingleProduct.do?f_parentSku=${tbproduct.F_PARENT_SKU}" target="_blank" title="${tbproduct.F_PRODUCTNAME}"><p>${tbproduct.F_ProductName} </p></a>
 	           	<em>
 	            	<a href="#">收藏</a>
 	                <a href="javascript:void(0)" class="add_scar">加入购物车</a>
@@ -642,12 +642,12 @@ if(session.getAttribute("F_USER_ID")!=null){
 	<ul>
 	  <c:forEach var="tbproduct" items="${xinquaihao.products}" varStatus="status">  
 	      <li>
-        	<a href="#"><img src="${tbproduct.F_PATH}" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
+        	<a href="${ctx}/tbProductController/toSingleProduct.do?f_parentSku=${tbproduct.F_PARENT_SKU}" target="_blank" title="${tbproduct.F_PRODUCTNAME}"><img src="${tbproduct.F_PATH}" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
         	<light1>
             	<img src="${tbproduct.F_PATH}">
             </light1>
             <span>￥${tbproduct.F_Price}</span>
-            <a href="#"><p>${tbproduct.F_ProductName} </p></a>
+            <a href="${ctx}/tbProductController/toSingleProduct.do?f_parentSku=${tbproduct.F_PARENT_SKU}" target="_blank" title="${tbproduct.F_PRODUCTNAME}"><p>${tbproduct.F_ProductName} </p></a>
            	<em>
             	<a href="#">收藏</a>
                 <a href="javascript:void(0)" class="add_scar">加入购物车</a>
@@ -663,12 +663,12 @@ if(session.getAttribute("F_USER_ID")!=null){
 		<ul>
 		  <c:forEach var="tbproduct" items="${xinquaihao.products}" varStatus="status">  
 		      <li>
-	        	<a href="#"><img src="${tbproduct.F_PATH}" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
+	        	<a href="${ctx}/tbProductController/toSingleProduct.do?f_parentSku=${tbproduct.F_PARENT_SKU}" target="_blank" title="${tbproduct.F_PRODUCTNAME}"><img src="${tbproduct.F_PATH}" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
 	        	<light1>
 	            	<img src="${tbproduct.F_PATH}">
 	            </light1>
 	            <span>￥${tbproduct.F_Price}</span>
-	            <a href="#"><p>${tbproduct.F_ProductName} </p></a>
+	            <a href="${ctx}/tbProductController/toSingleProduct.do?f_parentSku=${tbproduct.F_PARENT_SKU}" target="_blank" title="${tbproduct.F_PRODUCTNAME}"><p>${tbproduct.F_ProductName} </p></a>
 	           	<em>
 	            	<a href="#">收藏</a>
 	                <a href="javascript:void(0)" class="add_scar">加入购物车</a>
@@ -726,12 +726,12 @@ if(session.getAttribute("F_USER_ID")!=null){
 	<ul>
 	  <c:forEach var="tbproduct" items="${jinping.products}" varStatus="status">  
 	      <li>
-        	<a href="#"><img src="${tbproduct.F_PATH}" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
+        	<a href="${ctx}/tbProductController/toSingleProduct.do?f_parentSku=${tbproduct.F_PARENT_SKU}" target="_blank" title="${tbproduct.F_PRODUCTNAME}"><img src="${tbproduct.F_PATH}" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
         	<light1>
             	<img src="${tbproduct.F_PATH}">
             </light1>
             <span>￥${tbproduct.F_Price}</span>
-            <a href="#"><p>${tbproduct.F_ProductName} </p></a>
+            <a href="${ctx}/tbProductController/toSingleProduct.do?f_parentSku=${tbproduct.F_PARENT_SKU}" target="_blank" title="${tbproduct.F_PRODUCTNAME}"><p>${tbproduct.F_ProductName} </p></a>
            	<em>
             	<a href="#">收藏</a>
                 <a href="javascript:void(0)" class="add_scar">加入购物车</a>
@@ -747,12 +747,12 @@ if(session.getAttribute("F_USER_ID")!=null){
 		<ul>
 		  <c:forEach var="tbproduct" items="${jinping.products}" varStatus="status">  
 		      <li>
-	        	<a href="#"><img src="${tbproduct.F_PATH}" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
+	        	<a href="${ctx}/tbProductController/toSingleProduct.do?f_parentSku=${tbproduct.F_PARENT_SKU}" target="_blank" title="${tbproduct.F_PRODUCTNAME}"><img src="${tbproduct.F_PATH}" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
 	        	<light1>
 	            	<img src="${tbproduct.F_PATH}">
 	            </light1>
 	            <span>￥${tbproduct.F_Price}</span>
-	            <a href="#"><p>${tbproduct.F_ProductName} </p></a>
+	            <a href="${ctx}/tbProductController/toSingleProduct.do?f_parentSku=${tbproduct.F_PARENT_SKU}" target="_blank" title="${tbproduct.F_PRODUCTNAME}"><p>${tbproduct.F_ProductName} </p></a>
 	           	<em>
 	            	<a href="#">收藏</a>
 	                <a href="javascript:void(0)" class="add_scar">加入购物车</a>
@@ -806,12 +806,12 @@ if(session.getAttribute("F_USER_ID")!=null){
 	<ul>
 	  <c:forEach var="tbproduct" items="${caoxiexinshang.products}" varStatus="status">  
 	      <li>
-        	<a href="#"><img src="${tbproduct.F_PATH}" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
+        	<a href="${ctx}/tbProductController/toSingleProduct.do?f_parentSku=${tbproduct.F_PARENT_SKU}" target="_blank" title="${tbproduct.F_PRODUCTNAME}"><img src="${tbproduct.F_PATH}" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
         	<light1>
             	<img src="${tbproduct.F_PATH}">
             </light1>
             <span>￥${tbproduct.F_Price}</span>
-            <a href="#"><p>${tbproduct.F_ProductName} </p></a>
+            <a href="${ctx}/tbProductController/toSingleProduct.do?f_parentSku=${tbproduct.F_PARENT_SKU}" target="_blank" title="${tbproduct.F_PRODUCTNAME}"><p>${tbproduct.F_ProductName} </p></a>
            	<em>
             	<a href="#">收藏</a>
                 <a href="javascript:void(0)" class="add_scar">加入购物车</a>
@@ -827,12 +827,12 @@ if(session.getAttribute("F_USER_ID")!=null){
 		<ul>
 		  <c:forEach var="tbproduct" items="${caoxiexinshang.products}" varStatus="status">  
 		      <li>
-	        	<a href="#"><img src="${tbproduct.F_PATH}" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
+	        	<a href="${ctx}/tbProductController/toSingleProduct.do?f_parentSku=${tbproduct.F_PARENT_SKU}" target="_blank" title="${tbproduct.F_PRODUCTNAME}"><img src="${tbproduct.F_PATH}" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
 	        	<light1>
 	            	<img src="${tbproduct.F_PATH}">
 	            </light1>
 	            <span>￥${tbproduct.F_Price}</span>
-	            <a href="#"><p>${tbproduct.F_ProductName} </p></a>
+	            <a href="${ctx}/tbProductController/toSingleProduct.do?f_parentSku=${tbproduct.F_PARENT_SKU}" target="_blank" title="${tbproduct.F_PRODUCTNAME}"><p>${tbproduct.F_ProductName} </p></a>
 	           	<em>
 	            	<a href="#">收藏</a>
 	                <a href="javascript:void(0)" class="add_scar">加入购物车</a>
@@ -882,12 +882,12 @@ if(session.getAttribute("F_USER_ID")!=null){
 	<ul>
 	  <c:forEach var="tbproduct" items="${huazhuangmeirong.products}" varStatus="status">  
 	      <li>
-        	<a href="#"><img src="${tbproduct.F_PATH}" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
+        	<a href="${ctx}/tbProductController/toSingleProduct.do?f_parentSku=${tbproduct.F_PARENT_SKU}" target="_blank" title="${tbproduct.F_PRODUCTNAME}"><img src="${tbproduct.F_PATH}" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
         	<light1>
             	<img src="${tbproduct.F_PATH}">
             </light1>
             <span>￥${tbproduct.F_Price}</span>
-            <a href="#"><p>${tbproduct.F_ProductName} </p></a>
+            <a href="${ctx}/tbProductController/toSingleProduct.do?f_parentSku=${tbproduct.F_PARENT_SKU}" target="_blank" title="${tbproduct.F_PRODUCTNAME}"><p>${tbproduct.F_ProductName} </p></a>
            	<em>
             	<a href="#">收藏</a>
                 <a href="javascript:void(0)" class="add_scar">加入购物车</a>
@@ -903,12 +903,12 @@ if(session.getAttribute("F_USER_ID")!=null){
 		<ul>
 		  <c:forEach var="tbproduct" items="${huazhuangmeirong.products}" varStatus="status">  
 		      <li>
-	        	<a href="#"><img src="${tbproduct.F_PATH}" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
+	        	<a href="${ctx}/tbProductController/toSingleProduct.do?f_parentSku=${tbproduct.F_PARENT_SKU}" target="_blank" title="${tbproduct.F_PRODUCTNAME}"><img src="${tbproduct.F_PATH}" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
 	        	<light1>
 	            	<img src="${tbproduct.F_PATH}">
 	            </light1>
 	            <span>￥${tbproduct.F_Price}</span>
-	            <a href="#"><p>${tbproduct.F_ProductName} </p></a>
+	            <a href="${ctx}/tbProductController/toSingleProduct.do?f_parentSku=${tbproduct.F_PARENT_SKU}" target="_blank" title="${tbproduct.F_PRODUCTNAME}"><p>${tbproduct.F_ProductName} </p></a>
 	           	<em>
 	            	<a href="#">收藏</a>
 	                <a href="javascript:void(0)" class="add_scar">加入购物车</a>
@@ -958,12 +958,12 @@ if(session.getAttribute("F_USER_ID")!=null){
 	<ul>
 	  <c:forEach var="tbproduct" items="${shishangxuanku.products}" varStatus="status">  
 	      <li>
-        	<a href="#"><img src="${tbproduct.F_PATH}" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
+        	<a href="${ctx}/tbProductController/toSingleProduct.do?f_parentSku=${tbproduct.F_PARENT_SKU}" target="_blank" title="${tbproduct.F_PRODUCTNAME}"><img src="${tbproduct.F_PATH}" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
         	<light1>
             	<img src="${tbproduct.F_PATH}">
             </light1>
             <span>￥${tbproduct.F_Price}</span>
-            <a href="#"><p>${tbproduct.F_ProductName} </p></a>
+            <a href="${ctx}/tbProductController/toSingleProduct.do?f_parentSku=${tbproduct.F_PARENT_SKU}" target="_blank" title="${tbproduct.F_PRODUCTNAME}"><p>${tbproduct.F_ProductName} </p></a>
            	<em>
             	<a href="#">收藏</a>
                 <a href="javascript:void(0)" class="add_scar">加入购物车</a>
@@ -979,12 +979,12 @@ if(session.getAttribute("F_USER_ID")!=null){
 		<ul>
 		  <c:forEach var="tbproduct" items="${shishangxuanku.products}" varStatus="status">  
 		      <li>
-	        	<a href="#"><img src="${tbproduct.F_PATH}" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
+	        	<a href="${ctx}/tbProductController/toSingleProduct.do?f_parentSku=${tbproduct.F_PARENT_SKU}" target="_blank" title="${tbproduct.F_PRODUCTNAME}"><img src="${tbproduct.F_PATH}" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
 	        	<light1>
 	            	<img src="${tbproduct.F_PATH}">
 	            </light1>
 	            <span>￥${tbproduct.F_Price}</span>
-	            <a href="#"><p>${tbproduct.F_ProductName} </p></a>
+	            <a href="${ctx}/tbProductController/toSingleProduct.do?f_parentSku=${tbproduct.F_PARENT_SKU}" target="_blank" title="${tbproduct.F_PRODUCTNAME}"><p>${tbproduct.F_ProductName} </p></a>
 	           	<em>
 	            	<a href="#">收藏</a>
 	                <a href="javascript:void(0)" class="add_scar">加入购物车</a>
@@ -1354,9 +1354,8 @@ if(session.getAttribute("F_USER_ID")!=null){
 	    	  <c:forEach var="tproduct" items="${tproducts}" varStatus="status"> 
 				 <c:if test="${(status.index+1)%5==1}"> 
 				    <li> 
-				 </c:if>	
-				 
-			    <a href="${ctx}/tbProductController/toSingleProduct.do?f_parentSku=${tproduct.F_PARENT_SKU}">
+				 </c:if>	 
+			    <a href="${ctx}/tbProductController/toSingleProduct.do?f_parentSku=${tproduct.F_PARENT_SKU}" target="_blank">
 	            	<b><img src="${tproduct.F_PATH}" style=" margin:0 auto; display:block; width:220px; height:220px"></b>
 	                <span>${tproduct.F_PRICE}RMB</span>
 	                <p>${tproduct.F_PRODUCTNAME} </p>
@@ -1388,7 +1387,7 @@ if(session.getAttribute("F_USER_ID")!=null){
 				    <li> 
 				 </c:if>	
 				 
-			    <a href="${ctx}/tbProductController/toSingleProduct.do?f_parentSku=${tproductSpecial.FParentSku}">
+			    <a href="${ctx}/tbProductController/toSingleProduct.do?f_parentSku=${tproductSpecial.FParentSku}"  target="_blank">
 	            	<b><img src="${tproductSpecial.FPath}" style=" margin:0 auto; display:block; width:220px; height:220px"></b>
 	                <span>${tproductSpecial.FPrice}RMB</span>
 	                <p>${tproductSpecial.FProductName} </p>
@@ -1431,7 +1430,7 @@ if(session.getAttribute("F_USER_ID")!=null){
 				    <li>
 				 </c:if>	
 				 
-			    <a href="${ctx}/tbProductController/toSingleProduct.do?f_parentSku=${tproductHot.FParentSku}">
+			    <a href="${ctx}/tbProductController/toSingleProduct.do?f_parentSku=${tproductHot.FParentSku}"  target="_blank">
 	            	<b><img src="${tproductHot.FPath}" style=" margin:0 auto; display:block; width:220px; height:220px"></b>
 	                <span>${tproductHot.FPrice}RMB</span>
 	                <p>${tproductHot.FProductName} </p>
