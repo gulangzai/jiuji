@@ -16,6 +16,8 @@ import com.jiuji.cn.business.tbhot.service.TbHotService;
 import com.jiuji.cn.business.tbhot.vo.TbHot;
 import com.jiuji.cn.business.tbnotice.dao.TbNoticeDao;
 import com.jiuji.cn.business.tbnotice.vo.TbNotice;
+import com.jiuji.cn.business.tborder.dao.TbOrderDao;
+import com.jiuji.cn.business.tborder.vo.TbOrder;
 import com.jiuji.cn.business.tbproduct.dao.TbProductDao;
 import com.jiuji.cn.business.tbproduct.modal.TbProduct;
 import com.jiuji.cn.business.tbproduct.service.TbProductService;
@@ -26,7 +28,7 @@ import com.jiuji.cn.model.TClass;
 import com.jiuji.cn.model.TProduct;
 import com.jiuji.cn.model.TProductDto;
 import com.jiuji.cn.service.HomePageService;
-
+import com.lanbao.base.Page;
 import com.lanbao.base.PageData;
 
 import net.sf.json.JSONArray;
@@ -63,10 +65,14 @@ public class HomePageServiceImpl implements HomePageService {
 	@Autowired
 	TbNoticeDao tbNoticeDao;
 	
+	@Autowired
+	TbOrderDao tbOrderDao;
+	
 	
 	@Transactional(propagation=Propagation.REQUIRED)
 	@Override
 	public void queryInfomation(Model model, HttpSession session) {
+		String F_USER_ID = (String) session.getAttribute("F_USER_ID");
 		// TODO Auto-generated method stub
 		//轮播图片
 		try {
@@ -180,13 +186,25 @@ public class HomePageServiceImpl implements HomePageService {
 			//获取最新的7条
 			List<TbNotice> tbNotices = tbNoticeDao.findNewNotice();
 			
+			//获取我的订单
+			 int myOrderNum	 = 0;
+			if(F_USER_ID!=null){
+				Page page = new Page();
+				PageData pd = new PageData();
+				pd.put("F_Status", "-1");
+				pd.put("F_USER_ID", F_USER_ID);
+				page.setPd(pd);
+				List<PageData>  tbOrders  =  (List<PageData>) tbOrderDao.mb_findForList("TbOrderMapper.datalistPage", page);
+				myOrderNum = tbOrders.size();
+			}
+			
 			
 			System.out.println("查询类型用时"+(end1-start));
 			System.out.println("查询最新用时"+(end2-start));
 			System.out.println("查询热门用时"+(end3-start));
 			System.out.println("查询特卖用时"+(end4-start));
 			
-			
+			model.addAttribute("myOrderNum", myOrderNum==0?"0":myOrderNum);
 			model.addAttribute("tbNotices", tbNotices);
 			model.addAttribute("tproducts",tproducts);
 			model.addAttribute("tproductHots",tproductHots);

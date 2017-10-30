@@ -65,9 +65,7 @@ public class TbShopCarController extends BaseController {
 	 */
 	@RequestMapping(value="/save")
 	@ResponseBody
-	public ResultAction save(HttpSession session) throws Exception{
-		
-		
+	public ResultAction save(HttpSession session) throws Exception{ 
 		logBefore(logger, "TbShopCarController");
 		ModelAndView mv = this.getModelAndView();
 		PageData pd = new PageData();

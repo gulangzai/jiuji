@@ -301,7 +301,8 @@ public class HomePageCtrl extends CommonController {
 	}
 
 	@RequestMapping("/toInformation")
-	public String toInformation(Model model, HttpSession session, HttpServletRequest request) {
+	public String toInformation(Model model, HttpSession session, HttpServletRequest request) { 
+	    model.addAttribute("para", request.getParameter("para"));
 		return "/modules/person/information";
 	}
 	

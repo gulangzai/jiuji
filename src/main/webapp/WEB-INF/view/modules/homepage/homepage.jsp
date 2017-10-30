@@ -53,8 +53,7 @@ if(session.getAttribute("F_USER_ID")!=null){
         <div class="register_login">
         
                <c:choose>
-                <c:when test="${F_USER_ID==''||empty F_USER_ID}">
-                
+                <c:when test="${F_USER_ID==''||empty F_USER_ID}"> 
                  <a href="${ctx}/homePageCtrl/toLogin.do" target="_self">会员登录</a>
                   <a href="${ctx}/homePageCtrl/toRegister.do" target="_self">快速注册</a> 
                 </c:when>  
@@ -284,16 +283,7 @@ if(session.getAttribute("F_USER_ID")!=null){
             <span>价值288元</span>
             <a href="#">查看福包</a>
             <em>200人已购买</em>
-        </li>
-        <li>
-        	<light>
-            	<img src="${ctxStaticB}/module/homepage/images/saoguang1.png">
-            </light>
-        	<a href="liebiao_page.html"><img src="${ctxStaticB}/module/homepage/images/2.jpg"></a> 
-            <span>价值288元</span>
-            <a href="#">查看福包</a>
-            <em>200人已购买</em>
-        </li>
+        </li> 
     </ul>
 </div> --%>
 <!--应季商品-->
@@ -325,32 +315,7 @@ if(session.getAttribute("F_USER_ID")!=null){
 			</em>
             
         </li>
-        <li>
-        	
-        	<a href="Blessingpackage.html"><img src="${ctxStaticB}/module/homepage/images/56da66aeN557ae881.jpg" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
-            <light1>
-            	<img src="${ctxStaticB}/module/homepage/images/saoguang.png">
-            </light1>
-            <span>￥59</span>
-            <a href="Blessingpackage.html"><p>罗技 G402 有线光电发光游戏鼠标宏笔记本电脑电竞CF专用LOL </p></a>
-           	<em>
-            	<a href="#">收藏</a>
-                <a href="javascript:void(0)" class="add_scar">加入购物车</a>
-            </em>
-        </li>
-        <li>
-        	
-        	<a href="Blessingpackage.html"><img src="${ctxStaticB}/module/homepage/images/56da66aeN557ae881.jpg" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
-            <light1>
-            	<img src="${ctxStaticB}/module/homepage/images/saoguang.png">
-            </light1>
-            <span>￥59</span>
-            <a href="Blessingpackage.html"><p>罗技 G402 有线光电发光游戏鼠标宏笔记本电脑电竞CF专用LOL </p></a>
-           	<em>
-            	<a href="#">收藏</a>
-                <a href="javascript:void(0)" class="add_scar">加入购物车</a>
-            </em>
-        </li>
+        
     </ul>
 </div>
  <div class="currency f-1-lt02" style="display:none">
@@ -367,33 +332,8 @@ if(session.getAttribute("F_USER_ID")!=null){
             	<a href="#">收藏</a>
                 <a href="javascript:void(0)" class="add_scar">加入购物车</a>
             </em>
-        </li> 
-        <li>
-        	<a href="#"><img src="${ctxStaticB}/module/homepage/images/574521dcN025c8825.jpg" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
-        	<light1>
-            	<img src="${ctxStaticB}/module/homepage/images/saoguang.png">
-            </light1>
-        	
-            <span>￥59</span>
-            <a href="#"><p>罗技 G402 有线光电发光游戏鼠标宏笔记本电脑电竞CF专用LOL </p></a>
-           	<em>
-            	<a href="#">收藏</a>
-                <a href="javascript:void(0)" class="add_scar">加入购物车</a>
-            </em>
-        </li>
-        <li>
-        	<a href="#"><img src="${ctxStaticB}/module/homepage/images/574521dcN025c8825.jpg" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
-        	<light1>
-            	<img src="${ctxStaticB}/module/homepage/images/saoguang.png">
-            </light1>
-        	
-            <span>￥59</span>
-            <a href="#"><p>罗技 G402 有线光电发光游戏鼠标宏笔记本电脑电竞CF专用LOL </p></a>
-           	<em>
-            	<a href="#">收藏</a>
-                <a href="javascript:void(0)" class="add_scar">加入购物车</a>
-            </em>
-        </li>
+        </li>  
+        
     </ul>
 </div>
  <div class="currency f-1-lt03" style="display:none">
@@ -409,71 +349,15 @@ if(session.getAttribute("F_USER_ID")!=null){
             	<a href="#">收藏</a>
                 <a href="javascript:void(0)" class="add_scar">加入购物车</a>
             </em>
-        </li>
-        <li>
-        	<a href="#"><img src="${ctxStaticB}/module/homepage/images/571a4db9Neaf4826c.jpg" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
-        	<light1>
-            	<img src="${ctxStaticB}/module/homepage/images/saoguang.png">
-            </light1>
-            <span>￥59</span>
-            <a href="#"><p>罗技 G402 有线光电发光游戏鼠标宏笔记本电脑电竞CF专用LOL </p></a>
-           	<em>
-            	<a href="#">收藏</a>
-                <a href="javascript:void(0)" class="add_scar">加入购物车</a>
-            </em>
-        </li>
-        <li>
-        	<a href="#"><img src="${ctxStaticB}/module/homepage/images/571a4db9Neaf4826c.jpg" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
-        	<light1>
-            	<img src="${ctxStaticB}/module/homepage/images/saoguang.png">
-            </light1>
-            <span>￥59</span>
-            <a href="#"><p>罗技 G402 有线光电发光游戏鼠标宏笔记本电脑电竞CF专用LOL </p></a>
-           	<em>
-            	<a href="#">收藏</a>
-                <a href="javascript:void(0)" class="add_scar">加入购物车</a>
-            </em>
-        </li>
-        <li>
-        	<a href="#"><img src="${ctxStaticB}/module/homepage/images/571a4db9Neaf4826c.jpg" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
-        	<light1>
-            	<img src="${ctxStaticB}/module/homepage/images/saoguang.png">
-            </light1>
-            <span>￥59</span>
-            <a href="#"><p>罗技 G402 有线光电发光游戏鼠标宏笔记本电脑电竞CF专用LOL </p></a>
-           	<em>
-            	<a href="#">收藏</a>
-                <a href="javascript:void(0)" class="add_scar">加入购物车</a>
-            </em>
-        </li>
-        <li>
-        	<a href="#"><img src="${ctxStaticB}/module/homepage/images/571a4db9Neaf4826c.jpg" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
-        	<light1>
-            	<img src="${ctxStaticB}/module/homepage/images/saoguang.png">
-            </light1>
-            <span>￥59</span>
-            <a href="#"><p>罗技 G402 有线光电发光游戏鼠标宏笔记本电脑电竞CF专用LOL </p></a>
-           	<em>
-            	<a href="#">收藏</a>
-                <a href="javascript:void(0)" class="add_scar">加入购物车</a>
-            </em>
-        </li>
+        </li> 
+         
+       
     </ul>
 </div>
  <div class="currency f-1-lt04" style="display:none">
 	<ul>
-    	<li>
-        	<a href="#"><img src="${ctxStaticB}/module/homepage/images/578c8bedNd80ce7f6.jpg" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
-        	<light1>
-            	<img src="${ctxStaticB}/module/homepage/images/saoguang.png">
-            </light1>
-            <span>￥59</span>
-            <a href="#"><p>罗技 G402 有线光电发光游戏鼠标宏笔记本电脑电竞CF专用LOL </p></a>
-           	<em>
-            	<a href="#">收藏</a>
-                <a href="javascript:void(0)" class="add_scar">加入购物车</a>
-            </em>
-        </li>
+    	 
+         
         <li>
         	<a href="#"><img src="${ctxStaticB}/module/homepage/images/578c8bedNd80ce7f6.jpg" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
         	<light1>
@@ -486,42 +370,7 @@ if(session.getAttribute("F_USER_ID")!=null){
                 <a href="javascript:void(0)" class="add_scar">加入购物车</a>
             </em>
         </li>
-        <li>
-        	<a href="#"><img src="${ctxStaticB}/module/homepage/images/578c8bedNd80ce7f6.jpg" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
-        	<light1>
-            	<img src="${ctxStaticB}/module/homepage/images/saoguang.png">
-            </light1>
-            <span>￥59</span>
-            <a href="#"><p>罗技 G402 有线光电发光游戏鼠标宏笔记本电脑电竞CF专用LOL </p></a>
-           	<em>
-            	<a href="#">收藏</a>
-                <a href="javascript:void(0)" class="add_scar">加入购物车</a>
-            </em>
-        </li>
-        <li>
-        	<a href="#"><img src="${ctxStaticB}/module/homepage/images/578c8bedNd80ce7f6.jpg" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
-        	<light1>
-            	<img src="${ctxStaticB}/module/homepage/images/saoguang.png">
-            </light1>
-            <span>￥59</span>
-            <a href="#"><p>罗技 G402 有线光电发光游戏鼠标宏笔记本电脑电竞CF专用LOL </p></a>
-           	<em>
-            	<a href="#">收藏</a>
-                <a href="javascript:void(0)" class="add_scar">加入购物车</a>
-            </em>
-        </li>
-        <li>
-        	<a href="#"><img src="${ctxStaticB}/module/homepage/images/578c8bedNd80ce7f6.jpg" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
-        	<light1>
-            	<img src="${ctxStaticB}/module/homepage/images/saoguang.png">
-            </light1>
-            <span>￥59</span>
-            <a href="#"><p>罗技 G402 有线光电发光游戏鼠标宏笔记本电脑电竞CF专用LOL </p></a>
-           	<em>
-            	<a href="#">收藏</a>
-                <a href="javascript:void(0)" class="add_scar">加入购物车</a>
-            </em>
-        </li>
+       
     </ul>
 </div>
 </div> --%>
@@ -569,10 +418,14 @@ if(session.getAttribute("F_USER_ID")!=null){
             </light1>
             <span>￥${tbproduct.F_Price}</span>
             <a href="${ctx}/tbProductController/toSingleProduct.do?f_parentSku=${tbproduct.F_PARENT_SKU}" target="_blank" title="${tbproduct.F_PRODUCTNAME}"><p>${tbproduct.F_ProductName} </p></a>
-           	<em>
-            	<a href="#">收藏</a>
-                <a href="javascript:void(0)" class="add_scar">加入购物车</a>
-            </em>
+            
+             <c:if  test="${F_USER_ID!=''&&!empty F_USER_ID}">
+              	<em>
+                <a href="javascript:tbshouchang.add(${tbproduct.F_PRODUCT_ID})">收藏</a>
+                <a href="javascript:tbshopcar.add('${tbproduct.F_SKU}','${tbproduct.F_PRODUCT_ID}','${tbproduct.F_Price}','${tbproduct.F_Express}');" class="add_scar">加入购物车</a>
+             </em>
+           </c:if> 
+            
         </li>
         </c:forEach>  
     </ul>
@@ -590,10 +443,12 @@ if(session.getAttribute("F_USER_ID")!=null){
 	            </light1>
 	            <span>￥${tbproduct.F_Price}</span>
 	            <a href="${ctx}/tbProductController/toSingleProduct.do?f_parentSku=${tbproduct.F_PARENT_SKU}" target="_blank" title="${tbproduct.F_PRODUCTNAME}"><p>${tbproduct.F_ProductName} </p></a>
-	           	<em>
-	            	<a href="#">收藏</a>
-	                <a href="javascript:void(0)" class="add_scar">加入购物车</a>
-	            </em>
+	           	 <c:if  test="${F_USER_ID!=''&&!empty F_USER_ID}">
+	              	<em>
+	                <a href="javascript:tbshouchang.add(${tbproduct.F_PRODUCT_ID})">收藏</a>
+	                <a href="javascript:tbshopcar.add('${tbproduct.F_SKU}','${tbproduct.F_PRODUCT_ID}','${tbproduct.F_Price}','${tbproduct.F_Express}');" class="add_scar">加入购物车</a>
+	             </em>
+           </c:if> 
 	        </li>
 	        </c:forEach>  
 	    </ul>
@@ -648,10 +503,12 @@ if(session.getAttribute("F_USER_ID")!=null){
             </light1>
             <span>￥${tbproduct.F_Price}</span>
             <a href="${ctx}/tbProductController/toSingleProduct.do?f_parentSku=${tbproduct.F_PARENT_SKU}" target="_blank" title="${tbproduct.F_PRODUCTNAME}"><p>${tbproduct.F_ProductName} </p></a>
-           	<em>
-            	<a href="#">收藏</a>
-                <a href="javascript:void(0)" class="add_scar">加入购物车</a>
-            </em>
+           	 <c:if  test="${F_USER_ID!=''&&!empty F_USER_ID}">
+              	<em>
+                <a href="javascript:tbshouchang.add(${tbproduct.F_PRODUCT_ID})">收藏</a>
+                <a href="javascript:tbshopcar.add('${tbproduct.F_SKU}','${tbproduct.F_PRODUCT_ID}','${tbproduct.F_Price}','${tbproduct.F_Express}');" class="add_scar">加入购物车</a>
+             </em>
+           </c:if> 
         </li>
         </c:forEach>  
     </ul>
@@ -669,10 +526,12 @@ if(session.getAttribute("F_USER_ID")!=null){
 	            </light1>
 	            <span>￥${tbproduct.F_Price}</span>
 	            <a href="${ctx}/tbProductController/toSingleProduct.do?f_parentSku=${tbproduct.F_PARENT_SKU}" target="_blank" title="${tbproduct.F_PRODUCTNAME}"><p>${tbproduct.F_ProductName} </p></a>
-	           	<em>
-	            	<a href="#">收藏</a>
-	                <a href="javascript:void(0)" class="add_scar">加入购物车</a>
-	            </em>
+	           	 <c:if  test="${F_USER_ID!=''&&!empty F_USER_ID}">
+	              	<em>
+	                <a href="javascript:tbshouchang.add(${tbproduct.F_PRODUCT_ID})">收藏</a>
+	                <a href="javascript:tbshopcar.add('${tbproduct.F_SKU}','${tbproduct.F_PRODUCT_ID}','${tbproduct.F_Price}','${tbproduct.F_Express}');" class="add_scar">加入购物车</a>
+	             </em>
+	           </c:if> 
 	        </li>
 	        </c:forEach>  
 	    </ul>
@@ -732,10 +591,12 @@ if(session.getAttribute("F_USER_ID")!=null){
             </light1>
             <span>￥${tbproduct.F_Price}</span>
             <a href="${ctx}/tbProductController/toSingleProduct.do?f_parentSku=${tbproduct.F_PARENT_SKU}" target="_blank" title="${tbproduct.F_PRODUCTNAME}"><p>${tbproduct.F_ProductName} </p></a>
-           	<em>
-            	<a href="#">收藏</a>
-                <a href="javascript:void(0)" class="add_scar">加入购物车</a>
-            </em>
+           	 <c:if  test="${F_USER_ID!=''&&!empty F_USER_ID}">
+	              	<em>
+	                <a href="javascript:tbshouchang.add(${tbproduct.F_PRODUCT_ID})">收藏</a>
+	                <a href="javascript:tbshopcar.add('${tbproduct.F_SKU}','${tbproduct.F_PRODUCT_ID}','${tbproduct.F_Price}','${tbproduct.F_Express}');" class="add_scar">加入购物车</a>
+	             </em>
+	           </c:if> 
         </li>
         </c:forEach>  
     </ul>
@@ -753,10 +614,12 @@ if(session.getAttribute("F_USER_ID")!=null){
 	            </light1>
 	            <span>￥${tbproduct.F_Price}</span>
 	            <a href="${ctx}/tbProductController/toSingleProduct.do?f_parentSku=${tbproduct.F_PARENT_SKU}" target="_blank" title="${tbproduct.F_PRODUCTNAME}"><p>${tbproduct.F_ProductName} </p></a>
-	           	<em>
-	            	<a href="#">收藏</a>
-	                <a href="javascript:void(0)" class="add_scar">加入购物车</a>
-	            </em>
+	            <c:if  test="${F_USER_ID!=''&&!empty F_USER_ID}">
+	              	<em>
+	                <a href="javascript:tbshouchang.add(${tbproduct.F_PRODUCT_ID})">收藏</a>
+	                <a href="javascript:tbshopcar.add('${tbproduct.F_SKU}','${tbproduct.F_PRODUCT_ID}','${tbproduct.F_Price}','${tbproduct.F_Express}');" class="add_scar">加入购物车</a>
+	             </em>
+	           </c:if> 
 	        </li>
 	        </c:forEach>  
 	    </ul>
@@ -812,10 +675,12 @@ if(session.getAttribute("F_USER_ID")!=null){
             </light1>
             <span>￥${tbproduct.F_Price}</span>
             <a href="${ctx}/tbProductController/toSingleProduct.do?f_parentSku=${tbproduct.F_PARENT_SKU}" target="_blank" title="${tbproduct.F_PRODUCTNAME}"><p>${tbproduct.F_ProductName} </p></a>
-           	<em>
-            	<a href="#">收藏</a>
-                <a href="javascript:void(0)" class="add_scar">加入购物车</a>
-            </em>
+            <c:if  test="${F_USER_ID!=''&&!empty F_USER_ID}">
+	              <em>
+	                <a href="javascript:tbshouchang.add(${tbproduct.F_PRODUCT_ID})">收藏</a>
+	                <a href="javascript:tbshopcar.add('${tbproduct.F_SKU}','${tbproduct.F_PRODUCT_ID}','${tbproduct.F_Price}','${tbproduct.F_Express}');" class="add_scar">加入购物车</a>
+	             </em>
+	        </c:if> 
         </li>
         </c:forEach>  
     </ul>
@@ -833,10 +698,12 @@ if(session.getAttribute("F_USER_ID")!=null){
 	            </light1>
 	            <span>￥${tbproduct.F_Price}</span>
 	            <a href="${ctx}/tbProductController/toSingleProduct.do?f_parentSku=${tbproduct.F_PARENT_SKU}" target="_blank" title="${tbproduct.F_PRODUCTNAME}"><p>${tbproduct.F_ProductName} </p></a>
-	           	<em>
-	            	<a href="#">收藏</a>
-	                <a href="javascript:void(0)" class="add_scar">加入购物车</a>
-	            </em>
+	            <c:if  test="${F_USER_ID!=''&&!empty F_USER_ID}">
+	              <em>
+	                <a href="javascript:tbshouchang.add(${tbproduct.F_PRODUCT_ID})">收藏</a>
+	                <a href="javascript:tbshopcar.add('${tbproduct.F_SKU}','${tbproduct.F_PRODUCT_ID}','${tbproduct.F_Price}','${tbproduct.F_Express}');" class="add_scar">加入购物车</a>
+	             </em>
+	           </c:if> 
 	        </li>
 	        </c:forEach>  
 	    </ul>
@@ -888,10 +755,12 @@ if(session.getAttribute("F_USER_ID")!=null){
             </light1>
             <span>￥${tbproduct.F_Price}</span>
             <a href="${ctx}/tbProductController/toSingleProduct.do?f_parentSku=${tbproduct.F_PARENT_SKU}" target="_blank" title="${tbproduct.F_PRODUCTNAME}"><p>${tbproduct.F_ProductName} </p></a>
-           	<em>
-            	<a href="#">收藏</a>
-                <a href="javascript:void(0)" class="add_scar">加入购物车</a>
-            </em>
+           	 <c:if  test="${F_USER_ID!=''&&!empty F_USER_ID}">
+	             <em>
+	                <a href="javascript:tbshouchang.add(${tbproduct.F_PRODUCT_ID})">收藏</a>
+	                <a href="javascript:tbshopcar.add('${tbproduct.F_SKU}','${tbproduct.F_PRODUCT_ID}','${tbproduct.F_Price}','${tbproduct.F_Express}');" class="add_scar">加入购物车</a>
+	             </em>
+	         </c:if> 
         </li>
         </c:forEach>  
     </ul>
@@ -909,10 +778,12 @@ if(session.getAttribute("F_USER_ID")!=null){
 	            </light1>
 	            <span>￥${tbproduct.F_Price}</span>
 	            <a href="${ctx}/tbProductController/toSingleProduct.do?f_parentSku=${tbproduct.F_PARENT_SKU}" target="_blank" title="${tbproduct.F_PRODUCTNAME}"><p>${tbproduct.F_ProductName} </p></a>
-	           	<em>
-	            	<a href="#">收藏</a>
-	                <a href="javascript:void(0)" class="add_scar">加入购物车</a>
-	            </em>
+	            <c:if  test="${F_USER_ID!=''&&!empty F_USER_ID}">
+	              	<em>
+		                <a href="javascript:tbshouchang.add(${tbproduct.F_PRODUCT_ID})">收藏</a>
+		                <a href="javascript:tbshopcar.add('${tbproduct.F_SKU}','${tbproduct.F_PRODUCT_ID}','${tbproduct.F_Price}','${tbproduct.F_Express}');" class="add_scar">加入购物车</a>
+	                </em>
+	           </c:if> 
 	        </li>
 	        </c:forEach>  
 	    </ul>
@@ -964,10 +835,12 @@ if(session.getAttribute("F_USER_ID")!=null){
             </light1>
             <span>￥${tbproduct.F_Price}</span>
             <a href="${ctx}/tbProductController/toSingleProduct.do?f_parentSku=${tbproduct.F_PARENT_SKU}" target="_blank" title="${tbproduct.F_PRODUCTNAME}"><p>${tbproduct.F_ProductName} </p></a>
-           	<em>
-            	<a href="#">收藏</a>
-                <a href="javascript:void(0)" class="add_scar">加入购物车</a>
-            </em>
+            <c:if  test="${F_USER_ID!=''&&!empty F_USER_ID}">
+	              <em>
+	                <a href="javascript:tbshouchang.add(${tbproduct.F_PRODUCT_ID})">收藏</a>
+	                <a href="javascript:tbshopcar.add('${tbproduct.F_SKU}','${tbproduct.F_PRODUCT_ID}','${tbproduct.F_Price}','${tbproduct.F_Express}');" class="add_scar">加入购物车</a>
+	             </em>
+	       </c:if> 
         </li>
         </c:forEach>  
     </ul>
@@ -985,10 +858,12 @@ if(session.getAttribute("F_USER_ID")!=null){
 	            </light1>
 	            <span>￥${tbproduct.F_Price}</span>
 	            <a href="${ctx}/tbProductController/toSingleProduct.do?f_parentSku=${tbproduct.F_PARENT_SKU}" target="_blank" title="${tbproduct.F_PRODUCTNAME}"><p>${tbproduct.F_ProductName} </p></a>
-	           	<em>
-	            	<a href="#">收藏</a>
-	                <a href="javascript:void(0)" class="add_scar">加入购物车</a>
-	            </em>
+	           	 <c:if  test="${F_USER_ID!=''&&!empty F_USER_ID}">
+	              	<em>
+	                <a href="javascript:tbshouchang.add(${tbproduct.F_PRODUCT_ID})">收藏</a>
+	                <a href="javascript:tbshopcar.add('${tbproduct.F_SKU}','${tbproduct.F_PRODUCT_ID}','${tbproduct.F_Price}','${tbproduct.F_Express}');" class="add_scar">加入购物车</a>
+	             </em>
+	           </c:if> 
 	        </li>
 	        </c:forEach>  
 	    </ul>
@@ -1019,31 +894,7 @@ if(session.getAttribute("F_USER_ID")!=null){
 </span>
 <div>
  <div class="currency f-5-lt01">
-	<ul>
-    	<li>
-        	<a href="#"><img src="${ctxStaticB}/module/homepage/images/578f96e3Ne953ac32.jpg" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
-        	<light1>
-            	<img src="${ctxStaticB}/module/homepage/images/saoguang.png">
-            </light1>
-            <span>￥59</span>
-            <a href="#"><p>罗技 G402 有线光电发光游戏鼠标宏笔记本电脑电竞CF专用LOL </p></a>
-           	<em>
-            	<a href="#">收藏</a>
-                <a href="javascript:void(0)" class="add_scar">加入购物车</a>
-            </em>
-        </li>
-        <li>
-        	<a href="#"><img src="${ctxStaticB}/module/homepage/images/578f96e3Ne953ac32.jpg" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
-        	<light1>
-            	<img src="images/saoguang.png">
-            </light1>
-            <span>￥59</span>
-            <a href="#"><p>罗技 G402 有线光电发光游戏鼠标宏笔记本电脑电竞CF专用LOL </p></a>
-           	<em>
-            	<a href="#">收藏</a>
-                <a href="javascript:void(0)" class="add_scar">加入购物车</a>
-            </em>
-        </li>
+	<ul> 
         <li>
         	<a href="#"><img src="${ctxStaticB}/module/homepage/images/578f96e3Ne953ac32.jpg" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
         	<light1>
@@ -1056,82 +907,12 @@ if(session.getAttribute("F_USER_ID")!=null){
                 <a href="javascript:void(0)" class="add_scar">加入购物车</a>
             </em>
         </li>
-        <li>
-        	<a href="#"><img src="${ctxStaticB}/module/homepage/images/578f96e3Ne953ac32.jpg" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
-        	<light1>
-            	<img src="${ctxStaticB}/module/homepage/images/saoguang.png">
-            </light1>
-            <span>￥59</span>
-            <a href="#"><p>罗技 G402 有线光电发光游戏鼠标宏笔记本电脑电竞CF专用LOL </p></a>
-           	<em>
-            	<a href="#">收藏</a>
-                <a href="javascript:void(0)" class="add_scar">加入购物车</a>
-            </em>
-        </li>
-        <li>
-        	<a href="#"><img src="${ctxStaticB}/module/homepage/images/578f96e3Ne953ac32.jpg" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
-        	<light1>
-            	<img src="${ctxStaticB}/module/homepage/images/saoguang.png">
-            </light1>
-            <span>￥59</span>
-            <a href="#"><p>罗技 G402 有线光电发光游戏鼠标宏笔记本电脑电竞CF专用LOL </p></a>
-           	<em>
-            	<a href="#">收藏</a>
-                <a href="javascript:void(0)" class="add_scar">加入购物车</a>
-            </em>
-        </li>
+       
     </ul>
 </div>
  <div class="currency f-5-lt02" style="display:none">
 	<ul>
-    	<li>
-        	<a href="#"><img src="${ctxStaticB}/module/homepage/images/rBEhU1Kvv8gIAAAAAAcDR5hr6hkAAG4SwPB6yAABwNf577.jpg" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
-        	<light1>
-            	<img src="images/saoguang.png">
-            </light1>
-            <span>￥59</span>
-            <a href="#"><p>罗技 G402 有线光电发光游戏鼠标宏笔记本电脑电竞CF专用LOL </p></a>
-           	<em>
-            	<a href="#">收藏</a>
-                <a href="javascript:void(0)" class="add_scar">加入购物车</a>
-            </em>
-        </li>
-        <li>
-        	<a href="#"><img src="${ctxStaticB}/module/homepage/images/rBEhU1Kvv8gIAAAAAAcDR5hr6hkAAG4SwPB6yAABwNf577.jpg" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
-        	<light1>
-            	<img src="${ctxStaticB}/module/homepage/images/saoguang.png">
-            </light1>
-            <span>￥59</span>
-            <a href="#"><p>罗技 G402 有线光电发光游戏鼠标宏笔记本电脑电竞CF专用LOL </p></a>
-           	<em>
-            	<a href="#">收藏</a>
-                <a href="javascript:void(0)" class="add_scar">加入购物车</a>
-            </em>
-        </li>
-        <li>
-        	<a href="#"><img src="${ctxStaticB}/module/homepage/images/rBEhU1Kvv8gIAAAAAAcDR5hr6hkAAG4SwPB6yAABwNf577.jpg" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
-        	<light1>
-            	<img src="${ctxStaticB}/module/homepage/images/saoguang.png">
-            </light1>
-            <span>￥59</span>
-            <a href="#"><p>罗技 G402 有线光电发光游戏鼠标宏笔记本电脑电竞CF专用LOL </p></a>
-           	<em>
-            	<a href="#">收藏</a>
-                <a href="javascript:void(0)" class="add_scar">加入购物车</a>
-            </em>
-        </li>
-        <li>
-        	<a href="#"><img src="${ctxStaticB}/module/homepage/images/rBEhU1Kvv8gIAAAAAAcDR5hr6hkAAG4SwPB6yAABwNf577.jpg" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
-        	<light1>
-            	<img src="${ctxStaticB}/module/homepage/images/saoguang.png">
-            </light1>
-            <span>￥59</span>
-            <a href="#"><p>罗技 G402 有线光电发光游戏鼠标宏笔记本电脑电竞CF专用LOL </p></a>
-           	<em>
-            	<a href="#">收藏</a>
-                <a href="javascript:void(0)" class="add_scar">加入购物车</a>
-            </em>
-        </li>
+     
         <li>
         	<a href="#"><img src="${ctxStaticB}/module/homepage/images/rBEhU1Kvv8gIAAAAAAcDR5hr6hkAAG4SwPB6yAABwNf577.jpg" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
         	<light1>
@@ -1148,18 +929,7 @@ if(session.getAttribute("F_USER_ID")!=null){
 </div>
  <div class="currency f-5-lt03" style="display:none">
 	<ul>
-    	<li>
-        	<a href="#"><img src="${ctxStaticB}/module/homepage/images/5688f53dN144e3333.jpg" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
-        	<light1>
-            	<img src="${ctxStaticB}/module/homepage/images/saoguang.png">
-            </light1>
-            <span>￥59</span>
-            <a href="#"><p>罗技 G402 有线光电发光游戏鼠标宏笔记本电脑电竞CF专用LOL </p></a>
-           	<em>
-            	<a href="#">收藏</a>
-                <a href="javascript:void(0)" class="add_scar">加入购物车</a>
-            </em>
-        </li>
+    	 
         <li>
         	<a href="#"><img src="${ctxStaticB}/module/homepage/images/5688f53dN144e3333.jpg" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
         	<light1>
@@ -1171,59 +941,12 @@ if(session.getAttribute("F_USER_ID")!=null){
             	<a href="#">收藏</a>
                 <a href="javascript:void(0)" class="add_scar">加入购物车</a>
             </em>
-        </li>
-        <li>
-        	<a href="#"><img src="${ctxStaticB}/module/homepage/images/5688f53dN144e3333.jpg" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
-        	<light1>
-            	<img src="${ctxStaticB}/module/homepage/images/saoguang.png">
-            </light1>
-            <span>￥59</span>
-            <a href="#"><p>罗技 G402 有线光电发光游戏鼠标宏笔记本电脑电竞CF专用LOL </p></a>
-           	<em>
-            	<a href="#">收藏</a>
-                <a href="javascript:void(0)" class="add_scar">加入购物车</a>
-            </em>
-        </li>
-        <li>
-        	<a href="#"><img src="${ctxStaticB}/module/homepage/images/5688f53dN144e3333.jpg" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
-        	<light1>
-            	<img src="${ctxStaticB}/module/homepage/images/saoguang.png">
-            </light1>
-            <span>￥59</span>
-            <a href="#"><p>罗技 G402 有线光电发光游戏鼠标宏笔记本电脑电竞CF专用LOL </p></a>
-           	<em>
-            	<a href="#">收藏</a>
-                <a href="javascript:void(0)" class="add_scar">加入购物车</a>
-            </em>
-        </li>
-        <li>
-        	<a href="#"><img src="${ctxStaticB}/module/homepage/images/5688f53dN144e3333.jpg" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
-        	<light1>
-            	<img src="${ctxStaticB}/module/homepage/images/saoguang.png">
-            </light1>
-            <span>￥59</span>
-            <a href="#"><p>罗技 G402 有线光电发光游戏鼠标宏笔记本电脑电竞CF专用LOL </p></a>
-           	<em>
-            	<a href="#">收藏</a>
-                <a href="javascript:void(0)" class="add_scar">加入购物车</a>
-            </em>
-        </li>
+        </li> 
     </ul>
 </div>
  <div class="currency f-5-lt04" style="display:none">
-	<ul>
-    	<li>
-        	<a href="#"><img src="${ctxStaticB}/module/homepage/images/56e3bdf0N6b0aa4a7.jpg" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
-        	<light1>
-            	<img src="${ctxStaticB}/module/homepage/images/saoguang.png">
-            </light1>
-            <span>￥59</span>
-            <a href="#"><p>罗技 G402 有线光电发光游戏鼠标宏笔记本电脑电竞CF专用LOL </p></a>
-           	<em>
-            	<a href="#">收藏</a>
-                <a href="javascript:void(0)" class="add_scar">加入购物车</a>
-            </em>
-        </li>
+	<ul> 
+        
         <li>
         	<a href="#"><img src="${ctxStaticB}/module/homepage/images/56e3bdf0N6b0aa4a7.jpg" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
         	<light1>
@@ -1236,58 +959,12 @@ if(session.getAttribute("F_USER_ID")!=null){
                 <a href="javascript:void(0)" class="add_scar">加入购物车</a>
             </em>
         </li>
-        <li>
-        	<a href="#"><img src="${ctxStaticB}/module/homepage/images/56e3bdf0N6b0aa4a7.jpg" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
-        	<light1>
-            	<img src="${ctxStaticB}/module/homepage/images/saoguang.png">
-            </light1>
-            <span>￥59</span>
-            <a href="#"><p>罗技 G402 有线光电发光游戏鼠标宏笔记本电脑电竞CF专用LOL </p></a>
-           	<em>
-            	<a href="#">收藏</a>
-                <a href="javascript:void(0)" class="add_scar">加入购物车</a>
-            </em>
-        </li>
-        <li>
-        	<a href="#"><img src="${ctxStaticB}/module/homepage/images/56e3bdf0N6b0aa4a7.jpg" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
-        	<light1>
-            	<img src="${ctxStaticB}/module/homepage/images/saoguang.png">
-            </light1>
-            <span>￥59</span>
-            <a href="#"><p>罗技 G402 有线光电发光游戏鼠标宏笔记本电脑电竞CF专用LOL </p></a>
-           	<em>
-            	<a href="#">收藏</a>
-                <a href="javascript:void(0)" class="add_scar">加入购物车</a>
-            </em>
-        </li>
-        <li>
-        	<a href="#"><img src="${ctxStaticB}/module/homepage/images/56e3bdf0N6b0aa4a7.jpg" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
-        	<light1>
-            	<img src="${ctxStaticB}/module/homepage/images/saoguang.png">
-            </light1>
-            <span>￥59</span>
-            <a href="#"><p>罗技 G402 有线光电发光游戏鼠标宏笔记本电脑电竞CF专用LOL </p></a>
-           	<em>
-            	<a href="#">收藏</a>
-                <a href="javascript:void(0)" class="add_scar">加入购物车</a>
-            </em>
-        </li>
+       
     </ul>
 </div>
  <div class="currency f-5-lt05" style="display:none">
 	<ul>
-    	<li>
-        	<a href="#"><img src="${ctxStaticB}/module/homepage/images/577f624eN2e3465e5.jpg" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
-        	<light1>
-            	<img src="${ctxStaticB}/module/homepage/images/saoguang.png">
-            </light1>
-            <span>￥59</span>
-            <a href="#"><p>罗技 G402 有线光电发光游戏鼠标宏笔记本电脑电竞CF专用LOL </p></a>
-           	<em>
-            	<a href="#">收藏</a>
-                <a href="javascript:void(0)" class="add_scar">加入购物车</a>
-            </em>
-        </li>
+    	 
         <li>
         	<a href="#"><img src="${ctxStaticB}/module/homepage/images/577f624eN2e3465e5.jpg" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
         	<light1>
@@ -1300,42 +977,8 @@ if(session.getAttribute("F_USER_ID")!=null){
                 <a href="javascript:void(0)" class="add_scar">加入购物车</a>
             </em>
         </li>
-        <li>
-        	<a href="#"><img src="${ctxStaticB}/module/homepage/images/577f624eN2e3465e5.jpg" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
-        	<light1>
-            	<img src="${ctxStaticB}/module/homepage/images/saoguang.png">
-            </light1>
-            <span>￥59</span>
-            <a href="#"><p>罗技 G402 有线光电发光游戏鼠标宏笔记本电脑电竞CF专用LOL </p></a>
-           	<em>
-            	<a href="#">收藏</a>
-                <a href="javascript:void(0)" class="add_scar">加入购物车</a>
-            </em>
-        </li>
-        <li>
-        	<a href="#"><img src="${ctxStaticB}/module/homepage/images/577f624eN2e3465e5.jpg" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
-        	<light1>
-            	<img src="${ctxStaticB}/module/homepage/images/saoguang.png">
-            </light1>
-            <span>￥59</span>
-            <a href="#"><p>罗技 G402 有线光电发光游戏鼠标宏笔记本电脑电竞CF专用LOL </p></a>
-           	<em>
-            	<a href="#">收藏</a>
-                <a href="javascript:void(0)" class="add_scar">加入购物车</a>
-            </em>
-        </li>
-        <li>
-        	<a href="#"><img src="${ctxStaticB}/module/homepage/images/577f624eN2e3465e5.jpg" style=" margin:0 auto; display:block; width:220px; height:220px"></a>
-        	<light1>
-            	<img src="${ctxStaticB}/module/homepage/images/saoguang.png">
-            </light1>
-            <span>￥59</span>
-            <a href="#"><p>罗技 G402 有线光电发光游戏鼠标宏笔记本电脑电竞CF专用LOL </p></a>
-           	<em>
-            	<a href="#">收藏</a>
-                <a href="javascript:void(0)" class="add_scar">加入购物车</a>
-            </em>
-        </li>
+       
+      
     </ul>
 </div>
 </div>  --%>
@@ -1513,7 +1156,7 @@ if(session.getAttribute("F_USER_ID")!=null){
         	<div>
             	<h5>联系我们</h5>
                 <p><img src="${ctxStaticB}/module/homepage/images/dian.png" width="40" height="40" style=" float:left"><em style=" float:left; line-height:40px; color:#eb4e01; font-size:20px">&nbsp;&nbsp;&nbsp;150-2127-4597</em></p>
-                <p><img src="${ctxStaticB}/module/homepage/images/wx.png" width="40" height="40" style=" float:left"><em style=" float:left; line-height:40px; color:#eb4e01; font-size:20px">&nbsp;&nbsp;&nbsp;<a href="#" style="color:#eb4e01">在线客服</a></em></p>
+                <p><img src="${ctxStaticB}/module/homepage/images/wx.png" width="40" height="40" style=" float:left"><em style=" float:left; line-height:40px; color:#eb4e01; font-size:20px">&nbsp;&nbsp;&nbsp;<a href="http://wpa.qq.com/msgrd?v=3&uin=1871710810&site=qq&menu=yes" target="_blank" style="color:#eb4e01">在线客服</a></em></p>
             </div>
         </div>
     </section>
@@ -1521,7 +1164,7 @@ if(session.getAttribute("F_USER_ID")!=null){
 
 <div class="foots">
 	<div class="foots_in"> 
-        <em>©2000-2016  啾唧在线电子商务有限公司   版权所有 皖ICP备16007801号</em>
+        <em>©2000-2017  啾唧在线电子商务有限公司   版权所有 皖ICP备16007801号</em>
     </div>
 </div>
  
@@ -1530,17 +1173,85 @@ if(session.getAttribute("F_USER_ID")!=null){
 
 <!--侧边栏-->
 <div class="toolbar">
-   <a href="###" class="toolbar-item toolbar-item-weixin" style=" position:relative">
-   <em style=" position:absolute; display:block; line-height:20px; font-size:12px; color:#f00; top:-20px; left:0">(0)</em>
+   <a href="${ctx}/homePageCtrl/toInformation.do?para=myOrder" target="_blank" class="toolbar-item toolbar-item-weixin" style=" position:relative">
+      <em style=" position:absolute; display:block; line-height:20px; font-size:12px; color:#f00; top:-20px; left:0">(${myOrderNum})</em>
    <!--<span class="toolbar-layer"></span>-->
    </a>
-   <a href="###" class="toolbar-item toolbar-item-feedback"></a>
+   <a href="http://wpa.qq.com/msgrd?v=3&uin=1871710810&site=qq&menu=yes" target="_blank" class="toolbar-item toolbar-item-feedback"></a>
+   <!-- 
    <a href="###" class="toolbar-item toolbar-item-app">
        <span class="toolbar-layer"></span>
-   </a>
+   </a> -->
    <a href="javascript:scroll(0,0)" id="top" class="toolbar-item toolbar-item-top"></a>
 </div>
 <!--购物车fly插件-->
 </body>
+
+<script>
+var F_USER_ID = "<%=F_USER_ID%>";
+var tbshopcar = (function(){
+	var add = function(F_SKU,F_PRODUCT_ID,F_Price,F_Express){
+		if(F_USER_ID=='null'||F_USER_ID.length<=0){
+			alert('请登录后加入购物车');
+			return;
+		} 
+		$.ajax({
+			url:'${ctx}/tbshopcar/tbShopCarController/save.do',
+			type:"POST",
+			async: true,
+			data:{
+				"F_SKU":F_SKU, 
+				"F_PRODUCT_ID":F_PRODUCT_ID,
+				"F_SinglePrice":F_Price,
+				"F_NUMBER":1,
+				"F_Express":F_Express
+				},
+			success:function(data){
+				console.info(data);
+				if(!data.iserror){
+					//alert("添加购物车成功"); 
+				}else{
+					//alert("添加购物车失败");
+				} 
+			}
+		}); 
+	};
+	 return{ 
+	  	 add:add
+	 }; 
+})(); 
+
+
+var tbshouchang = (function(){
+	  var del = function(F_SHOUCHANG_UID){
+  		 $.ajax({
+  		    	url:'${ctx}/tbshouchang/tbShouChangController/delete.do',
+  		    	type:"POST",
+  		    	data:{"F_SHOUCHANG_UID":F_SHOUCHANG_UID},
+  		    	success:function(data){
+  		    		 alert("取消收藏成功");
+  		    	}
+  		}); 
+  	};
+  	var add = function(F_PRODUCT_ID){ 
+  		if(F_USER_ID=='null'||F_USER_ID.length<=0){
+			alert('请登录后进行收藏');
+			return;
+		} 
+  	    $.ajax({
+	    	url:'${ctx}/tbshouchang/tbShouChangController/save.do',
+	    	type:"POST",
+	    	data:{"F_PRODUCT_ID":F_PRODUCT_ID},
+	    	success:function(data){
+	    		alert("收藏成功");
+	    	}
+	    }); 
+   };
+   return{
+  		del:del,
+  		add:add
+  }; 
+})(); 
+</script>
 </html>
 		       

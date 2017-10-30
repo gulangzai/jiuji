@@ -60,11 +60,12 @@ public class TbShouChangController extends BaseController {
 	 */
 	@RequestMapping(value="/save")
 	@ResponseBody
-	public ResultAction save(HttpSession session,TbShouChang tbShouChang) throws Exception{ 
+	public ResultAction save(HttpSession session,TbShouChang tbShouChang,String F_PRODUCT_ID) throws Exception{ 
 		logBefore(logger, "TbShopCarController");
 		ModelAndView mv = this.getModelAndView();
 		PageData pd = new PageData();
 		pd = this.getPageData();   
+		pd.put("F_PRODUCT_ID", F_PRODUCT_ID);
 	    pd.put("F_USER_ID", session.getAttribute("F_USER_ID").toString());   
 		pd.put("CREATE_DATE",new Date());
 		tbShouChang.setFUserId(session.getAttribute("F_USER_ID").toString());

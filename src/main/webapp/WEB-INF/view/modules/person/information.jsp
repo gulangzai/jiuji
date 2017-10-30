@@ -233,7 +233,12 @@ function toMenuContent(id){
 	}
 }
 
-toMenuContent($('#personal'));
+if("${para}"=='myOrder'){
+	toMenuContent($('#myOrder'));
+}else{
+	toMenuContent($('#personal'));
+}
+
 
 </script>
 </body>
