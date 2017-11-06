@@ -165,9 +165,22 @@
 					 <compilerArgument>-XDignore.symbol.file</compilerArgument>
                 </configuration>  
             </plugin>  
-  </plugins>   
+   </plugins>   
+   <outputDirectory>src\main\webapp\WEB-INF\classes</outputDirectory> 
   
-  
+    <!--resource filter-->
+	 <resources>    
+	    
+	    <resource>
+	        <directory>src/main/resources</directory>
+	        <filtering>true</filtering> 
+	    </resource>
+	    <resource>
+	         <directory>src/main/test</directory>
+	         <filtering>false</filtering>
+	    </resource> 
+	</resources> 
+		
   <pluginManagement>
            <plugins>  
 	            <plugin>  

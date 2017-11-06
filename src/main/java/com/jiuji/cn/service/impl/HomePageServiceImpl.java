@@ -1,5 +1,6 @@
 package com.jiuji.cn.service.impl;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
+import org.springframework.web.servlet.support.RequestContext;
 
 import com.jiuji.cn.business.tbcarousel.dao.TbCarouselDao;
 import com.jiuji.cn.business.tbclass.dao.TbClassDao;
@@ -71,7 +73,7 @@ public class HomePageServiceImpl implements HomePageService {
 	
 	@Transactional(propagation=Propagation.REQUIRED)
 	@Override
-	public void queryInfomation(Model model, HttpSession session) {
+	public void queryInfomation(Model model, HttpSession session,HttpServletRequest req) {
 		String F_USER_ID = (String) session.getAttribute("F_USER_ID");
 		// TODO Auto-generated method stub
 		//轮播图片
@@ -209,6 +211,9 @@ public class HomePageServiceImpl implements HomePageService {
 			model.addAttribute("tproducts",tproducts);
 			model.addAttribute("tproductHots",tproductHots);
 			model.addAttribute("tproductSpecials",tproductSpecials);
+			
+			RequestContext rc = new RequestContext(req);
+			//model.addAttribute("welcome", rc.getMessage);
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

@@ -106,9 +106,9 @@ var F_USER_ID ="<%=F_USER_ID%>";
 									</div>
 									<div id="search-hd" class="search-hd" style="height: 40px">
 										<div class="search-bg" style="height: 32px;margin-left: 2px;">
-										<input type="text" id="autocomplete" class="search-input" style="height: 34px;" placeholder="生鲜水果半价抢疯"/>  
+										<input type="text" id="autocomplete" class="search-input" style="height: 34px;" placeholder="搜索厂牌潮品..."/>  
 									     </div>
-										<button id="submit" class="btn-search" value="搜索">搜索</button>
+										<button id="submit" class="btn-search" value="搜索">搜索厂牌潮品...</button>
 									</div> 
 									 <div id="selction-ajax"></div> 
 								</div> 

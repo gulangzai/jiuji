@@ -16,7 +16,22 @@
     http://www.springframework.org/schema/util/spring-util-3.0.xsd">
     
   
-   
+     <!-- 扫描 -->
+    <context:component-scan base-package="cn.lanbao.com"/> 
+    <context:component-scan base-package="com.jiuji.cn"/> 
+    
+ 
+    
+    
+   <!-- 国际化资源配置,资源文件绑定器-->
+    <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <!-- 国际化资源文件配置,指定properties文件存放位置 -->
+        <property name="basename" value="classpath:configure/messages/messages" />
+        <!-- 如果在国际化资源文件中找不到对应代码的信息，就用这个代码作为名称  -->               
+        <property name="useCodeAsDefaultMessage" value="true" />
+    </bean>
+    
+    
      <!--配置拦截器, 多个拦截器,顺序执行 -->  
     <mvc:interceptors>    
         <mvc:interceptor>    
@@ -34,18 +49,28 @@
             <bean class="com.jiuji.cn.interceptor.CommonInterceptor"></bean> 
         </mvc:interceptor>  
         <!-- 当设置多个拦截器时，先按顺序调用preHandle方法，然后逆序调用每个拦截器的postHandle和afterCompletion方法 -->  
+        
+        <!-- 国际化操作拦截器 如果采用基于（请求/Session/Cookie）则必需配置 --> 
+         <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+             <!-- 通过这个参数来决定获取那个配置文件 -->
+            <property name="paramName" value="language" /> 
+         </bean>  
+    
     </mvc:interceptors> 
     
+    
+    <bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver" />
+    
     <!-- 避免ie执行ajax,返回json出现下载文件 -->
-    <bean id="mappingJacksonHttpMessageConverter"
-    class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">
+     <bean id="mappingJacksonHttpMessageConverter"
+    class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
        <property name="supportedMediaTypes">
           <list>
              <value>text/html;charset=utf-8</value>
              <value>application/json;charset=UTF-8</value>
           </list>
        </property>
-    </bean>
+    </bean> 
     
     <!-- 启动注解功能 -->
     <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
@@ -54,7 +79,7 @@
               <ref bean="mappingJacksonHttpMessageConverter"></ref>
            </list>
         </property>
-    </bean>
+    </bean>  
     
     <!-- 定义跳转的文件前后缀，视图模式 -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -78,7 +103,7 @@
 	      <aop:around method="record" pointcut-ref="loggerPointcut" />  
 	    </aop:aspect> 
 	</aop:config>    -->
-	
+		
 	
     
     </beans>

@@ -43,15 +43,13 @@ if(session.getAttribute("F_USER_ID")!=null){
 
 <body>
 <!--最大的背景-->
- <div class="maxbj"></div>  
+<div class="maxbj"></div>   
 
 
 <!--头部-->
-<top>
-	<section class="seck">
-    	
-        <div class="register_login">
-        
+<top id="top" style="margin-top:0px;">
+	<%-- <section class="seck"> 
+        <div class="register_login"> 
                <c:choose>
                 <c:when test="${F_USER_ID==''||empty F_USER_ID}"> 
                  <a href="${ctx}/homePageCtrl/toLogin.do" target="_self">会员登录</a>
@@ -62,22 +60,23 @@ if(session.getAttribute("F_USER_ID")!=null){
                      <a href="javascript:void(0)">${USERNAME}</a></li>
 				     <a href="${ctx}/userCtrl/logout.do" target="_self">登出</a> 
 				</c:otherwise>
-				</c:choose> 
-				 
+				</c:choose>  
         </div>
         <div class="vip_center">
         	<a href="${ctx}/homePageCtrl/toInformation.do">会员中心</a>
-            <%-- <a rel="erweima" href="<%=appSystem%>/H54B3F430_0802221451.apk">手机下载</a> --%>
+            <a rel="erweima" href="<%=appSystem%>/H54B3F430_0802221451.apk">手机下载</a>
         </div>
-    </section>
+    </section> --%>
 </top>
+ 
+  
 <!--header-->
 <div class="maxbj1">
 <header>
 	<b class="logo"><img src="${ctxStaticB}/module/homepage/images/logo2.png" width="145"></b>
     <search>
     	<form>
-        	<input type="text" placeholder="查询关键词..." required style=" width:440px; height:30px; text-indent:2em; float:left; box-shadow:none">
+        	<input type="text" placeholder="搜索厂牌潮品..." required style=" width:440px; height:30px; text-indent:2em; float:left; box-shadow:none">
             <button>搜索</button>
         </form>
     </search>
@@ -1188,6 +1187,9 @@ if(session.getAttribute("F_USER_ID")!=null){
 </body>
 
 <script>
+
+ 
+	
 var F_USER_ID = "<%=F_USER_ID%>";
 var tbshopcar = (function(){
 	var add = function(F_SKU,F_PRODUCT_ID,F_Price,F_Express){
@@ -1250,8 +1252,12 @@ var tbshouchang = (function(){
    return{
   		del:del,
   		add:add
-  }; 
+  };  
 })(); 
+
+$(document).ready(function(){
+	   $('#top').load('${ctx}/homePageCtrl/toHomeHeader.do'); 
+})
 </script>
 </html>
 		       

@@ -29,7 +29,8 @@
  	
  	<!-- 会话cookie模板 -->
  	<bean id="sessionIdCookie" class="org.apache.shiro.web.servlet.SimpleCookie">
- 	   <constructor-arg value="sid"/>
+ 	     <constructor-arg value="sid"/> 
+ 	  <!--  <constructor-arg name="name" value="meta.session.id"/> -->
  	   <property name="httpOnly" value="true"></property>
  	   <property name="maxAge" value="180000"></property>
  	</bean>
@@ -117,10 +118,13 @@
                     <bean
                         class="org.apache.shiro.web.filter.authc.PassThruAuthenticationFilter" />
                 </entry>
+                 <!--退出过滤器-->
+                 <entry key="logout" value-ref="systemLogoutFilter" />
             </map>
         </property>
         <property name="filterChainDefinitions">
             <value> 
+                /logout=logout 
                 /fileUploadController/** = anon
                 /page/modules/help/** = anon
                 /homePageCtrl/toLogin.do* = anon

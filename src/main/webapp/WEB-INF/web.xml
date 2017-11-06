@@ -15,7 +15,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
   
   <context-param>
      <param-name>contextConfigLocation</param-name>
-     <param-value>classpath:configure/spring/spring.xml</param-value> 
+     <param-value>classpath:configure/spring/spring.xml</param-value>  
   </context-param>  
    
  <context-param>
@@ -108,8 +108,8 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
     <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
     <init-param>
     <!-- 该省缺值为false，表示生命周期由springapplicationContext管理，设置为true则表示由servletcontainer管理 -->
-       <param-name>targetFilterLifecycle</param-name>
-       <param-value>true</param-value>
+        <param-name>targetFilterLifecycle</param-name> 
+        <param-value>true</param-value> 
     </init-param>
  </filter>
  <filter-mapping>
@@ -134,6 +134,19 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
     <filter-name>encodingFilter</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
+  
+  
+  <!--  生成html --> 
+   <filter>
+     <filter-name>StateHtmlFilter</filter-name>
+     <filter-class>com.lanbao.StateHtmlFilter</filter-class>  
+  </filter>
+  
+  <filter-mapping>
+    <filter-name>StateHtmlFilter</filter-name>
+    <url-pattern>*.do</url-pattern>
+  </filter-mapping>  
+  
   
     <filter>
       <filter-name>openSessionInViewFilter</filter-name>
@@ -215,8 +228,8 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
       <servlet-name>spring</servlet-name>
       <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
       <init-param>
-          <param-name>contentConfigLocation</param-name>
-          <param-value>classpath:configure/spring/spring-servlet.xml</param-value>
+          <param-name>contextConfigLocation</param-name> 
+          <param-value>classpath:configure/spring/spring-servlet.xml</param-value> 
       </init-param>  
        <!-- 配置随服务器启动自动初始化 -->
        <load-on-startup>1</load-on-startup>

@@ -62,6 +62,11 @@ public class HomePageCtrl extends CommonController {
 	}
 	
 	
+	@RequestMapping("/toHomeHeader")
+	public String toHomeHeader() {
+		return "/modules/homemain/homeheader";
+	}
+	
 
 	@RequestMapping("/toTop")
 	public String top() {
@@ -264,8 +269,9 @@ public class HomePageCtrl extends CommonController {
 	 * @return
 	 */
 	@RequestMapping("/toHomePage")
-	public String toHomePage(Model model, HttpSession session) {
-		homePageService.queryInfomation(model, session);
+	public String toHomePage(Model model, HttpSession session,HttpServletRequest req) {
+		homePageService.queryInfomation(model, session,req);
+		model.addAttribute("STATIC_PAG", true);  
 		return "/modules/homepage/homepage";
 	}
 	
@@ -276,8 +282,8 @@ public class HomePageCtrl extends CommonController {
 	 * @return
 	 */
 	@RequestMapping("/toWapHomePage")
-	public String wapHomePage(Model model, HttpSession session) {
-		homePageService.queryInfomation(model, session);
+	public String wapHomePage(Model model, HttpSession session,HttpServletRequest req) {
+		homePageService.queryInfomation(model, session,req);
 		return "/wapjiuji/index";
 	}
 	
