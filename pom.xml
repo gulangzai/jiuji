@@ -173,7 +173,7 @@
 	    
 	    <resource>
 	        <directory>src/main/resources</directory>
-	        <filtering>true</filtering> 
+	        <filtering>false</filtering> 
 	    </resource>
 	    <resource>
 	         <directory>src/main/test</directory>
