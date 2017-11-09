@@ -20,10 +20,17 @@ import javax.servlet.http.HttpServletResponseWrapper;
 import javax.xml.ws.ResponseWrapper;
 
 import org.apache.commons.lang.StringUtils;
+import org.apache.log4j.Logger;
 import org.springframework.web.filter.OncePerRequestFilter;
+ 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.apache.log4j.Logger;  
 
 public class StateHtmlFilter implements  Filter {
 
+	public static Logger  log=Logger.getLogger(StateHtmlFilter.class);  
+	
 	private boolean debug = true;
 	String stres = "";
 	private FilterConfig filterConfig = null;
@@ -93,6 +100,7 @@ public class StateHtmlFilter implements  Filter {
 						   request.getRequestDispatcher("/html/" + lastQianFolder+File.separator+strs + "").forward(request, response); 
 						} else { 
 							htmlFile.createNewFile();
+							log.info("创建"+htmlFile.getAbsolutePath());
 							if (debug || htmlDate == null || htmlDate.getDate() != now.getDate()) {
 								WrapperedResponse responseWrapper = new WrapperedResponse(response); // 创建自定义的应答对象
 								chain.doFilter(request, responseWrapper); // 完成过滤连的业务
