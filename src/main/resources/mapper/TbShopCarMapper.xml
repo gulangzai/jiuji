@@ -41,7 +41,7 @@
 					      (select F_Price from tb_product tp where tp.F_PRODUCT_ID = a.F_PRODUCT_ID) as F_Price, 
 					      (select F_ProductName from tb_product tp where tp.F_PRODUCT_ID = a.F_PRODUCT_ID) as F_ProductName, 
 					      (select F_ProductDesc from tb_product tp where tp.F_PRODUCT_ID = a.F_PRODUCT_ID) as F_ProductDesc,
-					      (select PATH from tb_pictures where TABLE_NAME='TB_PRODUCT' AND TABLE_UID_VALUE=a.F_PRODUCT_ID LIMIT 0,1) as F_PATH, 
+					      (select F_PATH from tb_product tp where tp.F_PRODUCT_ID = a.F_PRODUCT_ID) as F_PATH,  
 			             date_format(a.CREATE_DATE,'%Y-%c-%d %h:%i:%s') as CREATE_DATE,
 				a.F_SHOPCARID
 		from 

@@ -97,6 +97,8 @@ public class UserCtrl extends BaseController {
 			 PageData userBean = userService.getUserByFuserId(userId);
 	         session.setAttribute("F_USER_ID", userId);  
 	         session.setAttribute("USERNAME", userBean.getString("F_UserName")); 
+	         session.setAttribute("FDEGREE", userBean.getString("F_DEGREE")); 
+	         model.addAttribute(userBean);
 	         //ckeditor和ckfinder
 	         session.setAttribute("CKFinder_UserRole", "admin");
 	           
@@ -314,7 +316,7 @@ public class UserCtrl extends BaseController {
 	@RequestMapping("/checkUsername")
 	@ResponseBody
 	public void checkUsername(HttpSession session,HttpServletRequest request,HttpServletResponse response,String username,String mobile,String password,String email) throws Exception{
-		response.setCharacterEncoding("GBK");
+		//response.setCharacterEncoding("GBK");
 		response.setContentType("application/x-json");
 		PrintWriter out = response.getWriter();
 		ResultAction ra = userService.checkUsername(request,username,mobile,password,email); 
@@ -326,7 +328,7 @@ public class UserCtrl extends BaseController {
 	@RequestMapping("/checkEmail")
 	@ResponseBody
 	public void checkEmail(HttpSession session,HttpServletRequest request,HttpServletResponse response,String username,String mobile,String password,String email) throws Exception{
-		response.setCharacterEncoding("GBK");
+		//response.setCharacterEncoding("GBK");
 		response.setContentType("application/x-json");
 		PrintWriter out = response.getWriter();
 		ResultAction ra = userService.checkEmail(request,username,mobile,password,email); 
@@ -338,7 +340,7 @@ public class UserCtrl extends BaseController {
 	@RequestMapping("/checkMobile")
 	@ResponseBody
 	public void checkMobile(HttpSession session,HttpServletRequest request,HttpServletResponse response,String username,String mobile,String password,String email) throws Exception{
-		response.setCharacterEncoding("GBK");
+		//response.setCharacterEncoding("GBK");
 		response.setContentType("application/x-json");
 		PrintWriter out = response.getWriter();
 		ResultAction ra = userService.checkMobile(request,username,mobile,password,email); 
@@ -351,7 +353,7 @@ public class UserCtrl extends BaseController {
 	@RequestMapping("/haveAccountCheckMobile")
 	@ResponseBody
 	public void haveAccountCheckMobile(HttpSession session,HttpServletRequest request,HttpServletResponse response,String username,String mobile,String password,String email) throws Exception{
-		response.setCharacterEncoding("GBK");
+		//response.setCharacterEncoding("GBK");
 		response.setContentType("application/x-json");
 		PrintWriter out = response.getWriter();
 		ResultAction ra = userService.checkMobile(request,username,mobile,password,email); 

@@ -146,8 +146,7 @@ public class TbProduct  implements java.io.Serializable {
         this.FMain = FMain;
     }
     
-    @Column(name="F_ProductName", length=2200)
-
+    @Column(name="F_ProductName", length=2200) 
     public String getFProductName() {
         return this.FProductName;
     }

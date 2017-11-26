@@ -21,6 +21,17 @@
 <script type="text/javascript" src="${ctxStatic}/plugin/bootstrapvalidator/js/bootstrapValidator.js"></script>
 <script type="text/javascript" src="${ctxStatic}/plugin/bootstrapvalidator/js/language/zh_CN.js"></script>
 
+<% 
+String rootFileApp = request.getScheme()+"://"+request.getServerName()+":8088/app";  
+String rootFile = "https://www.jiujichina.com/fileSystem";
+String appSystem = "https://www.jiujichina.com/appSystem";
+
+String F_USER_ID = null;
+if(session.getAttribute("F_USER_ID")!=null){
+	   F_USER_ID = session.getAttribute("F_USER_ID").toString();
+} 
+%>
+
 </head>
 <body>
  <div class="contanier">
@@ -335,7 +346,7 @@ function checkPic(rand, file_type) {
              console.log(responseFile)
              if(responseFile!=undefined){
             	 if (responseFile.length != 0) {
-                     $(".showPic>img").attr("src", responseFile[0].url);
+                     $(".showPic>img").attr("src", "<%=rootFile%>"+responseFile[0].File_PATH);
                  }
              } 
         } 

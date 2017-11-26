@@ -1,8 +1,10 @@
 package com.jiuji.cn.service.impl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,38 +13,32 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.servlet.support.RequestContext;
 
+import com.alibaba.fastjson.JSONArray;
 import com.jiuji.cn.business.tbcarousel.dao.TbCarouselDao;
 import com.jiuji.cn.business.tbclass.dao.TbClassDao;
 import com.jiuji.cn.business.tbclass.vo.TbClass;
 import com.jiuji.cn.business.tbhot.service.TbHotService;
-import com.jiuji.cn.business.tbhot.vo.TbHot;
 import com.jiuji.cn.business.tbnotice.dao.TbNoticeDao;
 import com.jiuji.cn.business.tbnotice.vo.TbNotice;
 import com.jiuji.cn.business.tborder.dao.TbOrderDao;
-import com.jiuji.cn.business.tborder.vo.TbOrder;
 import com.jiuji.cn.business.tbproduct.dao.TbProductDao;
 import com.jiuji.cn.business.tbproduct.modal.TbProduct;
 import com.jiuji.cn.business.tbproduct.service.TbProductService;
+import com.jiuji.cn.business.tbshopcar.service.TbShopCarService;
 import com.jiuji.cn.business.tbspecial.dao.TbSpecialDao;
 import com.jiuji.cn.business.tbspecial.service.TbSpecialService;
-import com.jiuji.cn.model.TCarousel;
-import com.jiuji.cn.model.TClass;
-import com.jiuji.cn.model.TProduct;
-import com.jiuji.cn.model.TProductDto;
 import com.jiuji.cn.service.HomePageService;
 import com.lanbao.base.Page;
 import com.lanbao.base.PageData;
 
-import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 
 @Service
 public class HomePageServiceImpl implements HomePageService {
 
+	@Autowired
+	TbShopCarService tbShopCarService;
+	
 	@Autowired
 	TbCarouselDao tbCarouselDao;
 	
@@ -201,6 +197,15 @@ public class HomePageServiceImpl implements HomePageService {
 			}
 			
 			
+			/**
+			 * 我的购物车
+			 */
+			Page shopCar  = new Page();
+			PageData pd = new PageData();
+			pd.put("F_USER_ID", String.valueOf(session.getAttribute("F_USER_ID")));   
+			shopCar.setPd(pd);
+			List<PageData> shopCarList = tbShopCarService.list(shopCar);	 
+			
 			System.out.println("查询类型用时"+(end1-start));
 			System.out.println("查询最新用时"+(end2-start));
 			System.out.println("查询热门用时"+(end3-start));
@@ -211,6 +216,7 @@ public class HomePageServiceImpl implements HomePageService {
 			model.addAttribute("tproducts",tproducts);
 			model.addAttribute("tproductHots",tproductHots);
 			model.addAttribute("tproductSpecials",tproductSpecials);
+			model.addAttribute("shopCarList", JSONArray.toJSON(shopCarList));
 			
 			RequestContext rc = new RequestContext(req);
 			//model.addAttribute("welcome", rc.getMessage);

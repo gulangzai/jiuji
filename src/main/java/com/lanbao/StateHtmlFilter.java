@@ -50,7 +50,7 @@ public class StateHtmlFilter implements  Filter {
 		// 请求的uri
 		String uri = request.getRequestURI();
 		request.setCharacterEncoding("utf-8");
-		response.setCharacterEncoding("utf-8");
+		//response.setCharacterEncoding("utf-8");
         
 		boolean flag = true;
 		if(uri.indexOf("toHomeHeader")!=-1){

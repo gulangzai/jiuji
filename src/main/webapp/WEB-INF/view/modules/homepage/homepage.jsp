@@ -27,6 +27,13 @@
 <script>document.createElement("search")</script>
 <script>document.createElement("light")</script>
 <script>document.createElement("light1")</script>
+
+<link rel="stylesheet" type="text/css" href="${ctxStaticB}/module/cebianlan/css/base.css" /> 
+
+<script type="text/javascript" src="${ctxStaticB}/module/cebianlan/js/common.js"></script>
+<script>var shopCarList =  ${shopCarList};</script>
+<script type="text/javascript" src="${ctxStaticB}/module/cebianlan/js/quick_links.js"></script>
+
 </head>
 
 <% 
@@ -43,12 +50,12 @@ if(session.getAttribute("F_USER_ID")!=null){
 
 <body>
 <!--最大的背景-->
-<div class="maxbj"></div>   
+<!-- <div class="maxbj"></div> -->   
 
 
 <!--头部-->
-<top id="top" style="margin-top:0px;">
-	<%-- <section class="seck"> 
+<div  id="top"   style="margin-top:0px;">
+	  <section class="seck"> 
         <div class="register_login"> 
                <c:choose>
                 <c:when test="${F_USER_ID==''||empty F_USER_ID}"> 
@@ -64,10 +71,10 @@ if(session.getAttribute("F_USER_ID")!=null){
         </div>
         <div class="vip_center">
         	<a href="${ctx}/homePageCtrl/toInformation.do">会员中心</a>
-            <a rel="erweima" href="<%=appSystem%>/H54B3F430_0802221451.apk">手机下载</a>
+           <%--  <a rel="erweima" href="<%=appSystem%>/H54B3F430_0802221451.apk">手机下载</a> --%>
         </div>
-    </section> --%>
-</top>
+    </section> 
+</div>
  
   
 <!--header-->
@@ -226,7 +233,7 @@ if(session.getAttribute("F_USER_ID")!=null){
 	<ol id="bannerCtrl" class="flex-control-nav flex-control-paging">
 		<li class="active"><a>1</a></li>
 		<li><a>2</a></li>
-		<li><a>2</a></li> 
+		<li><a>3</a></li> 
 	</ol>
 </div>
 <script src="${ctxStaticB}/module/homepage/js/slider.js"></script>
@@ -1171,7 +1178,7 @@ if(session.getAttribute("F_USER_ID")!=null){
 
 
 <!--侧边栏-->
-<div class="toolbar">
+<%-- <div class="toolbar">
    <a href="${ctx}/homePageCtrl/toInformation.do?para=myOrder" target="_blank" class="toolbar-item toolbar-item-weixin" style=" position:relative">
       <em style=" position:absolute; display:block; line-height:20px; font-size:12px; color:#f00; top:-20px; left:0">(${myOrderNum})</em>
    <!--<span class="toolbar-layer"></span>-->
@@ -1182,14 +1189,89 @@ if(session.getAttribute("F_USER_ID")!=null){
        <span class="toolbar-layer"></span>
    </a> -->
    <a href="javascript:scroll(0,0)" id="top" class="toolbar-item toolbar-item-top"></a>
-</div>
+</div> --%>
 <!--购物车fly插件-->
+
+
+<%--  <c:choose>
+                <c:when test="${F_USER_ID==''||empty F_USER_ID}"> 
+                 <a href="${ctx}/homePageCtrl/toLogin.do" target="_self">会员登录</a>
+                  <a href="${ctx}/homePageCtrl/toRegister.do" target="_self">快速注册</a> 
+                </c:when>  
+                <c:otherwise>
+                     <em>您好，</em>
+                     <a href="javascript:void(0)">${USERNAME}</a></li>
+				     <a href="${ctx}/userCtrl/logout.do" target="_self">登出</a> 
+				</c:otherwise>
+				</c:choose>   --%>
+				
+
+
+<!--右侧贴边导航quick_links.js控制-->
+<div class="mui-mbar-tabs">
+	<div class="quick_link_mian">
+		<div class="quick_links_panel">
+			<div id="quick_links" class="quick_links">
+				<li>
+					<a href="#" class="my_qlinks"><i class="setting"></i></a>
+					<div class="ibar_login_box status_login" style="z-index:1">
+						<div class="avatar_box">
+							<p class="avatar_imgbox"><img src="${ctxStaticB}/module/person/images/touxiang.jpg" /></p>
+							<ul class="user_info">
+								<li>用户名：${USERNAME}</li>
+								<li>级&nbsp;别：${FDEGREE}</li>
+							</ul>
+						</div>
+						<div class="login_btnbox">
+							<a href="${ctx}/homePageCtrl/toInformation.do?para=myOrder" class="login_order">我的订单</a>
+							<a href="${ctx}/homePageCtrl/toInformation.do?para=myCollection" class="login_favorite">我的收藏</a>
+						</div>
+						<i class="icon_arrow_white"></i>
+					</div>
+				</li>
+			    <li id="shopCart">
+					<a href="#" class="message_list" ><i class="message"></i><div class="span">购物车</div><span class="cart_num">${myOrderNum}</span></a>
+				</li>  
+				<!-- <li>
+					<a href="#" class="history_list"><i class="view"></i></a>
+					<div class="mp_tooltip" style=" visibility:hidden;">我的资产<i class="icon_arrow_right_black"></i></div>
+				</li>
+				<li>
+					<a href="#" class="mpbtn_histroy"><i class="zuji"></i></a>
+					<div class="mp_tooltip">我的足迹<i class="icon_arrow_right_black"></i></div>
+				</li> 
+				-->
+				<li>
+					<a href="#" class="mpbtn_wdsc"><i class="wdsc"></i></a>
+					<div class="mp_tooltip">我的收藏<i class="icon_arrow_right_black"></i></div>
+				</li>
+				<!-- <li>
+					<a href="#" class="mpbtn_recharge"><i class="chongzhi"></i></a>
+					<div class="mp_tooltip">我要充值<i class="icon_arrow_right_black"></i></div>
+				</li> -->
+			</div>
+			<div class="quick_toggle">
+				<li>
+					<a href="http://wpa.qq.com/msgrd?v=3&uin=1871710810&site=qq&menu=yes" target="_blank"><i class="kfzx"></i></a>
+					<div class="mp_tooltip">客服中心<i class="icon_arrow_right_black"></i></div>
+				</li>
+				<li>
+					<a href="#none"><i class="mpbtn_qrcode"></i></a>
+					<div class="mp_qrcode" style="display:none;"><img src="${ctxStaticB}/images/logo/weixingongzhong.jpg" width="148" height="175" /><i class="icon_arrow_white"></i></div>
+				</li>
+				<li><a href="#top" class="return_top"><i class="top"></i></a></li>
+			</div>
+		</div>
+		<div id="quick_links_pop" class="quick_links_pop hide"></div>
+	</div>
+</div>
+
+
+
 </body>
 
 <script>
-
  
-	
 var F_USER_ID = "<%=F_USER_ID%>";
 var tbshopcar = (function(){
 	var add = function(F_SKU,F_PRODUCT_ID,F_Price,F_Express){
@@ -1256,8 +1338,95 @@ var tbshouchang = (function(){
 })(); 
 
 $(document).ready(function(){
-	   $('#top').load('${ctx}/homePageCtrl/toHomeHeader.do'); 
+	  // $('#top').load('${ctx}/homePageCtrl/toHomeHeader.do'); 
 })
+
+
 </script>
+
+<!--[if lte IE 8]>
+<script src="${ctxStaticB}/module/cebianlan/js/ieBetter.js"></script>
+<![endif]-->
+
+<script type="text/javascript" src="${ctxStaticB}/module/cebianlan/js/parabola.js"></script>
+<script type="text/javascript">
+	$(".quick_links_panel li").mouseenter(function(){
+		$(this).children(".mp_tooltip").animate({left:-92,queue:true});
+		$(this).children(".mp_tooltip").css("visibility","visible");
+		$(this).children(".ibar_login_box").css("display","block");
+		$(this).children(".ibar_login_box").css("z-index","9999");
+	});
+	$(".quick_links_panel li").mouseleave(function(){
+		$(this).children(".mp_tooltip").css("visibility","hidden");
+		$(this).children(".mp_tooltip").animate({left:-121,queue:true});
+		$(this).children(".ibar_login_box").css("display","none");
+		$(this).children(".ibar_login_box").css("z-index","9");
+	});
+	$(".quick_toggle li").mouseover(function(){
+		$(this).children(".mp_qrcode").show();
+	});
+	$(".quick_toggle li").mouseleave(function(){
+		$(this).children(".mp_qrcode").hide();
+	});
+
+// 元素以及其他一些变量
+var eleFlyElement = document.querySelector("#flyItem"), eleShopCart = document.querySelector("#shopCart");
+var numberItem = 0;
+// 抛物线运动
+var myParabola = funParabola(eleFlyElement, eleShopCart, {
+	speed: 400, //抛物线速度
+	curvature: 0.0008, //控制抛物线弧度
+	complete: function() {
+		eleFlyElement.style.visibility = "hidden";
+		eleShopCart.querySelector("span").innerHTML = ++numberItem;
+	}
+});
+// 绑定点击事件
+if (eleFlyElement && eleShopCart) {
+	
+	[].slice.call(document.getElementsByClassName("btnCart")).forEach(function(button) {
+		button.addEventListener("click", function(event) {
+			// 滚动大小
+			var scrollLeft = document.documentElement.scrollLeft || document.body.scrollLeft || 0,
+			    scrollTop = document.documentElement.scrollTop || document.body.scrollTop || 0;
+			eleFlyElement.style.left = event.clientX + scrollLeft + "px";
+			eleFlyElement.style.top = event.clientY + scrollTop + "px";
+			eleFlyElement.style.visibility = "visible";
+			
+			// 需要重定位
+			myParabola.position().move();			
+		});
+	});
+}
+
+$(function(){
+	//头像查询
+	 function checkPic(rand, file_type) {
+	     $.ajax({
+	         method: "GET",
+	         url: ctx + "/fileUploadController/queryFileByTargetUid.do?targetUid=" + rand + "&file_type=" + file_type
+	     }).success(function (data) {
+	         console.info(data);
+	         if(data!=undefined){
+	         	 var responseFile = JSON.parse(data).data; 
+	              // 循环遍历数据创建数组
+	             // console.log(responseFile)
+	              if(responseFile!=undefined){
+	             	 if (responseFile.length != 0) { 
+	             		 console.info($(".avatar_imgbox>img"));
+	                      $(".avatar_imgbox>img").attr("src", "<%=rootFile%>"+responseFile[0].File_PATH);
+	                  }
+	              } 
+	         } 
+	     })
+	 }
+	
+	if(F_USER_ID!=''){
+		checkPic(F_USER_ID,"11111");
+	}
+ });
+ 
+</script>
+
 </html>
 		       

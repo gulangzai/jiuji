@@ -44,7 +44,7 @@ public class CommonInterceptor extends HandlerInterceptorAdapter{
     public boolean preHandle(HttpServletRequest request,    
             HttpServletResponse response, Object handler) throws Exception {    
         log.info("==============执行顺序: 1、preHandle================");    
-        response.setCharacterEncoding("UTF-8");
+        //response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=utf-8"); 
 		request.setCharacterEncoding("UTF-8");
         String requestUri = request.getRequestURI();  

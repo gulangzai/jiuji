@@ -5,14 +5,12 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
  
  <context-param>
-     <description>啾唧网</description>
+     <description>jiujichina network</description>
      <param-name>webAppRootKey</param-name>
-     <param-value>www.jiujichina.com.jiuji</param-value> 
+     <param-value>${profiles.activation}</param-value> 
   </context-param>
    
-  <!-- spring和mybatis的配置文件 -->
-  
-  
+  <!-- spring and mybatis --> 
   <context-param>
      <param-name>contextConfigLocation</param-name>
      <param-value>classpath:configure/spring/spring.xml</param-value>  
@@ -23,7 +21,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
     <param-value>classpath:configure/log/log4j.properties</param-value>
   </context-param>
   
-  <!-- 该过滤器用于实现单点登出功能 -->
+  <!--the filters are used to implement a single point logout function -->
   <filter>
      <filter-name>CAS Single Sign Out Filter</filter-name>
      <filter-class>org.jasig.cas.client.session.SingleSignOutFilter</filter-class>
@@ -33,7 +31,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
       <url-pattern>/*</url-pattern>
   </filter-mapping> -->
   
-  <!-- 该过滤器负责用户的认证工作，必须启用它 -->
+  <!-- the filter is responsible for user authentication ,must enable it -->
   <filter>
      <filter-name>CASFilter</filter-name>
      <filter-class>org.jasig.cas.client.authentication.AuthenticationFilter</filter-class>
@@ -51,8 +49,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
      <url-pattern>/*</url-pattern>
   </filter-mapping> -->
   
-  <!--
- 该过滤器负责对Ticket的校验工作，必须启用它 -->
+  <!-- the filter is responsible for checking the ticket ,must enable it -->
 
 <filter> 
 	<filter-name>CAS Validation Filter</filter-name> 
@@ -72,8 +69,8 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 </filter-mapping> -->
 
 <!-- 
-该过滤器负责实现HttpServletRequest请求的包裹， 
-比如允许开发者通过HttpServletRequest的getRemoteUser()方法获得SSO登录用户的登录名，可选配置。 
+The filter is responsible for implementing it request package,
+Such as allowing developers through it getRemoteUser () method to obtain the SSO login user login name, optional configuration.
 -->
 
 <filter> 
@@ -87,7 +84,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 </filter-mapping> -->
 
 <!-- 
-该过滤器使得开发者可以通过org.jasig.cas.client.util.AssertionHolder来获取用户的登录名。 
+ This filter allows developers can get through it   org.jasig.cas.client.util.AssertionHolder来获取用户的登录名。 
 比如AssertionHolder.getAssertion().getPrincipal().getName()。 
 -->
 
@@ -107,7 +104,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
     <filter-name>shiroFilter</filter-name>
     <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
     <init-param>
-    <!-- 该省缺值为false，表示生命周期由springapplicationContext管理，设置为true则表示由servletcontainer管理 -->
+    <!-- The province short of value is false，the life cycle springapplicationContext manager， true means servletcontainer's management -->
         <param-name>targetFilterLifecycle</param-name> 
         <param-value>true</param-value> 
     </init-param>
@@ -116,7 +113,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
     <filter-name>shiroFilter</filter-name>
     <url-pattern>/*</url-pattern>
  </filter-mapping>
-  <!-- 编码过滤器 --> 
+  <!-- code filter --> 
   <filter>
      <filter-name>encodingFilter</filter-name>
      <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class> 
@@ -136,8 +133,9 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
   </filter-mapping>
   
   
-  <!--  生成html --> 
-   <filter>
+  <!-- generate html --> 
+<!--   
+  <filter>
      <filter-name>StateHtmlFilter</filter-name>
      <filter-class>com.lanbao.StateHtmlFilter</filter-class>  
   </filter>
@@ -145,7 +143,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
   <filter-mapping>
     <filter-name>StateHtmlFilter</filter-name>
     <url-pattern>*.do</url-pattern>
-  </filter-mapping>  
+  </filter-mapping>   -->
   
   
     <filter>
@@ -169,7 +167,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
     <url-pattern>/*</url-pattern>
   </filter-mapping> 
   
-  <!-- 单点退出，用于实现单点登出功能 -->
+  <!-- Single point out, for single point logout function -->
   <listener>
      <listener-class>org.jasig.cas.client.session.SingleSignOutHttpSessionListener</listener-class>
   </listener>
@@ -178,12 +176,12 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
     <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
   </listener>  
   
-  <!-- Spring监听器 -->
+  <!-- Spring listener -->
   <listener>
       <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class> 
   </listener>
   
-  <!-- 防止Spring内存溢出监听器 -->  
+  <!--prevent Spring listenner -->  
   <listener>
       <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
   </listener>
@@ -195,7 +193,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 
     <servlet-mapping>
         <servlet-name>login</servlet-name>
-        <!-- 业界标准 用.do后缀来表示 controler -->
+        <!-- Industry standard. Do the suffix  controler -->
         <url-pattern>/qqLogin.do</url-pattern>
     </servlet-mapping>
 

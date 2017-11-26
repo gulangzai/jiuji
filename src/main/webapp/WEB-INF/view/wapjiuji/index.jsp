@@ -199,13 +199,13 @@ String rootFile = "https://www.jiujichina.com/fileSystem";
                 	    
                 	        <div class="product">
                                 <div class="product-img">
-                                     <a href="${ctx}/tbProductController/toWapSingleProduct.do?f_parentSku=${tproductHot.F_PARENT_SKU}" title="${tproduct.F_PRODUCTNAME}"> <img src="${tproductHot.F_PATH}" alt=""/></a>
+                                     <a href="${ctx}/tbProductController/toWapSingleProduct.do?f_parentSku=${tproductHot.FParentSku}" title="${tproduct.FProductName}"> <img src="${tproductHot.FPath}" alt=""/></a>
                                 </div>
                                 <div class="product-mes">
-                                    <!-- <p class="product-name">${tproductHot.F_PRODUCTNAME}</p> 
-                                    <p class="product-intro">${tproductHot.F_PRODUCTDESC} </p> -->
-                                    <p class="current-price">¥<span>${tproductHot.F_SHOW_PRICE}RMB</span></p>
-                                    <p class="original-price">¥<del>${tproductHot.F_PRICE}RMB</del></p>
+                                    <!-- <p class="product-name">${tproductHot.FProductName}</p> 
+                                    <p class="product-intro">${tproductHot.FProductDesc} </p> -->
+                                    <p class="current-price">¥<span>${tproductHot.FShowPrice}RMB</span></p>
+                                    <p class="original-price">¥<del>${tproductHot.FPrice}RMB</del></p>
                                     <div class="shopping-car">喜</div>  
                                 </div>
                             </div>

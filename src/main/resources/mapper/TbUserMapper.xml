@@ -5,7 +5,7 @@
  
   
   <sql id="Base_Column_List" > 
-     F_USER_ID,F_UserName,F_Email,F_Mobile,F_Password,F_Deleted,F_OPEN_ID
+     F_USER_ID,F_UserName,F_Email,F_Mobile,F_Password,F_Deleted,F_OPEN_ID,F_DEGREE
   </sql>
   
   
@@ -231,7 +231,8 @@
 			F_Email,
 			F_Mobile,
 			F_RealName,
-			F_QQ
+			F_QQ,
+			F_DEGREE
 		from 
 			TB_USER  
 		where 

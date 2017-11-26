@@ -235,6 +235,8 @@ function toMenuContent(id){
 
 if("${para}"=='myOrder'){
 	toMenuContent($('#myOrder'));
+}else if("${para}"=="myCollection"){
+	toMenuContent($('#myCollection'));	 
 }else{
 	toMenuContent($('#personal'));
 }

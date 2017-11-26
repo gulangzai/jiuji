@@ -38,7 +38,7 @@
     <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"> 
       <property name="locations"> 
        <list>  
-          <value>classpath:configure/jdbc/dbconfig.properties</value> 
+          <value>classpath:configure/${env}/jdbc/dbconfig.properties</value> 
           <value>classpath:configure/hibernate/hibernate.properties</value>  
           <value>classpath:configure/redis/redis.properties</value>  
           <value>classpath:configure/mongodb/mongodb.properties</value>   

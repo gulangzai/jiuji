@@ -73,7 +73,7 @@ public class FileUploadController {
 
        String encoding = request.getCharacterEncoding();
        encoding = StringUtils.isBlank(encoding)?"utf-8":encoding;
-       response.setCharacterEncoding(encoding);
+       //response.setCharacterEncoding(encoding); 
 	    PrintWriter writer = response.getWriter();
 	    response.setContentType("application/json");
 	    String uploadType = request.getParameter("uploadType");

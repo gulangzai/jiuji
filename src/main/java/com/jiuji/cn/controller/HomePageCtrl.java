@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.jiuji.cn.business.tbuser.dao.TbUserDao;
 import com.jiuji.cn.business.tbuser.service.TbUserService;
@@ -306,7 +307,7 @@ public class HomePageCtrl extends CommonController {
 		return "/modules/product/recordContact";
 	}
 
-	@RequestMapping("/toInformation")
+	@RequestMapping(value="/toInformation",method=RequestMethod.GET)
 	public String toInformation(Model model, HttpSession session, HttpServletRequest request) { 
 	    model.addAttribute("para", request.getParameter("para"));
 		return "/modules/person/information";

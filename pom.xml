@@ -2,7 +2,7 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.jiujichina</groupId>
-  <artifactId>jiujichina-jiuji</artifactId>
+  <artifactId>jiuji</artifactId>
   <packaging>war</packaging>
   <version>1.0.0</version>
   <name>jiuji</name>
@@ -139,13 +139,50 @@
 	    <version>1.9.1</version>
     </dependency>
      
+     
+    
+   <!--  <dependency>  
+            <groupId>javax.servlet</groupId>  
+            <artifactId>servlet-api</artifactId>  
+            <version>2.5</version>  
+            <scope>provided</scope>  
+        </dependency>  
+        <dependency>  
+            <groupId>javax.servlet.jsp</groupId>  
+            <artifactId>jsp-api</artifactId>  
+            <version>2.2</version>  
+            <scope>provided</scope>  
+        </dependency>  
+        <dependency>  
+            <groupId>javax.servlet</groupId>  
+            <artifactId>jstl</artifactId>  
+            <version>1.2</version>  
+        </dependency>   -->
+        
+        
+        <dependency>  
+            <groupId>jsptags</groupId>  
+            <artifactId>pager-taglib</artifactId>  
+            <version>2.0</version>  
+            <scope>provided</scope>  
+        </dependency>  
+        
+
   </dependencies>
     
   <build>
     <finalName>jiuji</finalName>
     <defaultGoal>compile</defaultGoal>
     
+    
     <plugins>  
+    
+           <plugin>
+	          <groupId>org.apache.tomcat.maven</groupId>
+	          <artifactId>tomcat7-maven-plugin</artifactId>
+	          <version>2.2</version>
+	        </plugin> 
+	            
     
             <plugin>  
                 <groupId>org.apache.maven.plugins</groupId>  
@@ -164,21 +201,43 @@
 					<encoding>UTF-8</encoding>
 					 <compilerArgument>-XDignore.symbol.file</compilerArgument>
                 </configuration>  
-            </plugin>  
+            </plugin>
+            
+            <!--  web资源过滤器 -->
+             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId> 
+                <version>2.6</version>  
+                <configuration>  
+                    <warName>${profiles.activation}</warName>  
+                    <webResources>  
+                         <resource> 
+                            <filtering>true</filtering>
+                            <directory>src/main/webapp</directory> 
+                            <includes>
+				                    <include>**/web.xml</include>
+				              </includes>   
+                        </resource> 
+                    </webResources> 
+                    <webXml>src\main\webapp\WEB-INF\web.xml</webXml> 
+                </configuration>
+            </plugin> 
    </plugins>   
-   <outputDirectory>src\main\webapp\WEB-INF\classes</outputDirectory> 
+   <!-- <outputDirectory>src\main\webapp\WEB-INF\classes</outputDirectory>   -->
   
+   
     <!--resource filter-->
 	 <resources>    
 	    
 	    <resource>
 	        <directory>src/main/resources</directory>
-	        <filtering>false</filtering> 
+	        <filtering>true</filtering> 
 	    </resource>
 	    <resource>
 	         <directory>src/main/test</directory>
 	         <filtering>false</filtering>
 	    </resource> 
+	     
 	</resources> 
 		
   <pluginManagement>
@@ -211,6 +270,38 @@
         
   </build>
   
+  <profiles>
+     <profile>
+          <id>dev</id>
+          <activation>
+             <activeByDefault>true</activeByDefault>
+          </activation>
+          <properties>
+             <env>dev</env>
+             <profiles.activation>jiuji-dev</profiles.activation>  
+          </properties> 
+       </profile>
+       
+       <profile>
+          <id>pub</id> 
+          <properties>
+             <env>pub</env>
+             <profiles.activation>jiuji-pub</profiles.activation>  
+          </properties> 
+       </profile>
+       
+       
+       <profile>
+          <id>test</id> 
+          <properties>
+             <env>test</env>
+             <profiles.activation>jiuji-test</profiles.activation>  
+          </properties> 
+       </profile>
+        
+  </profiles>
+   
+  <!-- 
     <distributionManagement> 
 		<repository>
 			<id>releases</id>
@@ -225,13 +316,13 @@
 		<site>
 	      <id>jiuji</id>
 	      <url>dav:http://121.42.185.68/sites/</url>
-	    </site>
-    
+	    </site> 
 	</distributionManagement>  
+	
 	
 	<reporting>
 	    <plugins>  
-	        <!-- 选择性生成项目信息报告 -->
+	        选择性生成项目信息报告
 	        <plugin>  
             <groupId>org.apache.maven.plugins</groupId>  
             <artifactId>maven-project-info-reports-plugin</artifactId>  
@@ -271,7 +362,7 @@
                </configuration>
             </plugin> 
             
-            <!-- 遵循编码规范 -->
+            遵循编码规范
             <plugin>
                <groupId>org.apache.maven.plugins</groupId>
                <artifactId>maven-checkstyle-plugin</artifactId>
@@ -281,7 +372,7 @@
                </configuration>
             </plugin>
             
-            <!-- 分析源码工具 -->
+            分析源码工具
             <plugin>
                <groupId>org.apache.maven.plugins</groupId>
                <artifactId>maven-pmd-plugin</artifactId>
@@ -320,5 +411,5 @@
 	     <email>1871710810@qq.com</email>
 	     <timezone>8</timezone>
 	   </developer>
-	</developers>
+	</developers> -->
 </project>
