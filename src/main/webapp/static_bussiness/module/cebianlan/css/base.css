@@ -284,6 +284,7 @@ a.disabled, a.disabled:hover{cursor:default;pointer-events:none;}
 .cart_item_desc{
 	float:left;
 	width:150px;
+	height: 87px;
 	padding:3px 0 0 10px;
 }
 .cart_item_name{
